@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Bid My Car</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon-64x64.png" />
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body class="theme--default">
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html">
+                                <img class="navbar-logo" alt="Logo">
+                            </a>
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a class="active" href="index.html"
+                                           >Home</a>
+                                        
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" aria-label="Toggle navigation">Categories</a>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a class="dd-menu collapsed" href="javascript:void(0)"
+                                            data-bs-toggle="collapse" data-bs-target="#submenu-1-3"
+                                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                                            aria-label="Toggle navigation">Auctions</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-3">
+                                            <li class="nav-item"><a href="#">Ending Soon</a></li>
+                                            <li class="nav-item"><a href="#">Coming Soon</a></li>
+                                            <li class="nav-item"><a href="#">No Reserve</a></li>
+                                            <li class="nav-item"><a href="#">Newly Listed</a></li>
+                                        </ul>
+                                    </li>
+                                   
+                                    <li class="nav-item">
+                                        <a class="dd-menu collapsed" href="javascript:void(0)"
+                                            data-bs-toggle="collapse" data-bs-target="#submenu-1-5"
+                                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                                            aria-label="Toggle navigation">Services</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-5">
+                                            <li class="nav-item"><a href="#">Car Financing</a>
+                                            </li>
+                                            <li class="nav-item"><a href="#">Insurance</a></li>
+                                            <li class="nav-item"><a href="#">Calculators</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <div class="login-button">
+                                <ul>
+                                    <li>
+                                        <a href="login.html"><i class="lni lni-enter"></i> Login</a>
+                                    </li>
+                                    <li>
+                                        <a href="registration.html"><i class="lni lni-user"></i> Register</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </nav> <!-- navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Start Theme Alert -->
+    
+<div class="position-fixed top-140 start-50 translate-middle-x p-3" style="z-index: 11">
+  <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="100000">
+    <div class="d-flex">
+        <div class="toast-body">
+        Kindly reload to apply <span id="currentTheme"></span> theme.
+       </div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+  </div>
+</div>
+    <!-- End Theme Alert -->
+
+    <!-- Start Hero Area -->
+    <section class="hero-area overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
+                    <div class="hero-text text-center">
+                        <!-- Start Hero Text -->
+                        <div class="section-heading pt-30">
+                            <h2 class="wow fadeInUp" data-wow-delay=".3s">Welcome to Bid My Car</h2>
+                            <p class="wow fadeInUp" data-wow-delay=".5s">Kenya's No.1 Car Marketplace<br>Sell, Buy, Auction, Get Advice and more </p>
+                        </div>
+                        <!-- End Search Form -->
+                        <!-- Start Search Form -->
+                        <div class="search-form wow fadeInUp" data-wow-delay=".7s">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-12 p-0">
+                                    <div class="search-input">
+                                        <label for="keywords">
+                                            <i class="lni lni-calendar theme-color"></i>
+                                        </label>
+                                        <input type="text" name="keywnord" id="keyword" placeholder="YOM">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-2 col-md-2 col-12 p-0">
+                                    <div class="search-input">
+                                        <label for="category"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                                            <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                                            <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                                          </svg></label>
+                                          <select name="category" id="category">
+                                            <option value="none" selected disabled>Make</option>
+                                        <option value="">All</option><option value="acura">Acura</option><option value="alfa-romeo">Alfa Romeo</option><option value="am-general">AM General</option><option value="aston-martin">Aston Martin</option><option value="audi">Audi</option><option value="bentley">Bentley</option><option value="bmw">BMW</option><option value="buick">Buick</option><option value="cadillac">Cadillac</option><option value="chevrolet">Chevrolet</option><option value="chrysler">Chrysler</option><option value="dodge">Dodge</option><option value="ferrari">Ferrari</option><option value="fiat">FIAT</option><option value="fisker">Fisker</option><option value="ford">Ford</option><option value="freightliner">Freightliner</option><option value="genesis">Genesis</option><option value="gmc">GMC</option><option value="honda">Honda</option><option value="hummer">HUMMER</option><option value="hyundai">Hyundai</option><option value="infiniti">INFINITI</option><option value="isuzu">Isuzu</option><option value="jaguar">Jaguar</option><option value="jeep">Jeep</option><option value="karma">Karma</option><option value="kia">Kia</option><option value="lamborghini">Lamborghini</option><option value="land-rover">Land Rover</option><option value="lexus">Lexus</option><option value="lincoln">Lincoln</option><option value="lotus">Lotus</option><option value="lucid">Lucid</option><option value="maserati">Maserati</option><option value="maybach">Maybach</option><option value="mazda">Mazda</option><option value="mclaren">McLaren</option><option value="mercedes-benz">Mercedes-Benz</option><option value="mercury">Mercury</option><option value="mini">MINI</option><option value="mitsubishi">Mitsubishi</option><option value="nissan">Nissan</option><option value="oldsmobile">Oldsmobile</option><option value="plymouth">Plymouth</option><option value="polestar">Polestar</option><option value="pontiac">Pontiac</option><option value="porsche">Porsche</option><option value="ram">Ram</option><option value="rivian">Rivian</option><option value="rolls-royce">Rolls-Royce</option><option value="saab">Saab</option><option value="saturn">Saturn</option><option value="scion">Scion</option><option value="smart">smart</option><option value="subaru">Subaru</option><option value="suzuki">Suzuki</option><option value="tesla">Tesla</option><option value="toyota">Toyota</option><option value="volkswagen">Volkswagen</option><option value="volvo">Volvo</option>
+
+                                    
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-12 p-0">
+                                    <div class="search-input">
+                                        <label for="category"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+                                            <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+                                            <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
+                                          </svg></label>
+                                          <select name="category" id="category">
+                                            <option value="none" selected disabled>Model</option>
+                                            <option value="">All</option><option value="1-series">1 Series</option><option value="1-series-m">1 Series M</option><option value="2-series">2 Series</option><option value="3-series">3 Series</option><option value="4-series">4 Series</option><option value="5-series">5 Series</option><option value="6-series">6 Series</option><option value="7-series">7 Series</option><option value="8-series">8 Series</option><option value="i3">i3</option><option value="i4">i4</option><option value="i7">i7</option><option value="i8">i8</option><option value="ix">iX</option><option value="m2">M2</option><option value="m3">M3</option><option value="m4">M4</option><option value="m5">M5</option><option value="m6">M6</option><option value="m8">M8</option><option value="x1">X1</option><option value="x2">X2</option><option value="x3">X3</option><option value="x3-m">X3 M</option><option value="x4">X4</option><option value="x4-m">X4 M</option><option value="x5">X5</option><option value="x5-m">X5 M</option><option value="x6">X6</option><option value="x6-m">X6 M</option><option value="x7">X7</option><option value="z3">Z3</option><option value="z4">Z4</option><option value="z8">Z8</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-12 p-0">
+                                    <div class="search-input">
+                                        <label for="location">
+                                            <i class="lni lni-car theme-color"></i>
+                                        </label>
+                                        <select name="location" id="location">
+                                            <option value="none" selected disabled>Body Style</option>
+                                            <option value="">All</option>
+                                            <option value="convertible">Convertible</option>
+                                            <option value="coupe">Coupe</option>
+                                            <option value="hatchback">Hatchback</option><option value="sedan">Sedan</option><option value="suv">SUV</option><option value="truck">Truck</option><option value="van">Van</option><option value="wagon">Wagon</option><option value="unknown">Unknown</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-12 p-0">
+                                    <div class="search-btn button">
+                                        <button class="btn"><i class="lni lni-search-alt"></i> Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Search Form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero Area -->
+
+    <!-- Start Categories Area -->
+    <section class="categories">
+        <div class="container">
+            <div class="cat-inner">
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <div class="category-slider">
+                            <!-- Start Single Category -->
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="assets/images/carlogos/subaru.svg" alt="#">
+                                </div>
+
+                                <h3>Subaru</h3>
+                                <h5 class="total"><i class="lni lni-car mr"></i>35</h5>
+                            </a>
+                            <!-- End Single Category -->
+                            <!-- Start Single Category -->
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="assets/images/carlogos/bmw.svg" alt="#">
+                                </div>
+                                <h3>BMW</h3>
+                                <h5 class="total"><i class="lni lni-car mr"></i>22</h5>
+                            </a>
+                            <!-- End Single Category -->
+                            <!-- Start Single Category -->
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="assets/images/carlogos/mercedes.svg" alt="#">
+                                </div>
+                                <h3>Mercedes</h3>
+                                <h5 class="total"><i class="lni lni-car mr"></i>55</h5>
+                            </a>
+                            <!-- End Single Category -->
+                            <!-- Start Single Category -->
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="assets/images/carlogos/audi.svg" alt="#">
+                                </div>
+                                <h3>Audi</h3>
+                                <h5 class="total"><i class="lni lni-car mr"></i>21</h5>
+                            </a>
+                            <!-- End Single Category -->
+                            <!-- Start Single Category -->
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="assets/images/carlogos/mitsubishi.svg" alt="#">
+                                </div>
+                                <h3>Mitsubishi</h3>
+                                <h5 class="total"><i class="lni lni-car mr"></i>44</h5>
+                            </a>
+                            <!-- End Single Category -->
+                            <!-- Start Single Category -->
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="assets/images/carlogos/porsche.svg" alt="#">
+                                </div>
+                                <h3>Porsche</h3>
+                                <h5 class="total"><i class="lni lni-car mr"></i>65</h5>
+                            </a>
+                            <!-- End Single Category -->
+                            <!-- Start Single Category -->
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="assets/images/carlogos/bentley.svg" alt="#">
+                                </div>
+                                <h3>Bentley</h3>
+                                <h5 class="total"><i class="lni lni-car mr"></i>35</h5>
+                            </a>
+                            <!-- End Single Category -->
+                            <!-- Start Single Category -->
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="assets/images/carlogos/ford.svg" alt="#">
+                                </div>
+                                <h3>Ford</h3>
+                                <h5 class="total"><i class="lni lni-car mr"></i>22</h5>
+                            </a>
+                            <!-- End Single Category -->
+                            <!-- Start Single Category -->
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="assets/images/carlogos/toyota.svg" alt="#">
+                                </div>
+                                <h3>Toyota</h3>
+                                <h5 class="total"><i class="lni lni-car mr"></i>25</h5>
+                            </a>
+                            <!-- End Single Category -->
+                            <!-- Start Single Category -->
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="assets/images/carlogos/mazda.svg" alt="#">
+                                </div>
+                                <h3>Mazda</h3>
+                                <h5 class="total"><i class="lni lni-car mr"></i>42</h5>
+                            </a>
+                            <!-- End Single Category -->
+                            <!-- Start Single Category -->
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="assets/images/carlogos/nissan.svg" alt="#">
+                                </div>
+                                <h3>Nissan</h3>
+                                <h5 class="total"><i class="lni lni-car mr"></i>0</h5>
+                            </a>
+                            <!-- End Single Category -->
+                            <!-- Start Single Category -->
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="assets/images/carlogos/landrover.svg" alt="#">
+                                </div>
+                                <h3>Land Rover</h3>
+                                <h5 class="total"><i class="lni lni-car mr"></i>15</h5>
+                            </a>
+                            <!-- End Single Category -->
+                            <!-- Start Single Category -->
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="assets/images/carlogos/isuzu.svg" alt="#">
+                                </div>
+                                <h3>Isuzu</h3>
+                                <h5 class="total"><i class="lni lni-car mr"></i>65</h5>
+                            </a>
+                            <!-- End Single Category -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /End Categories Area -->
+    <!-- Start Items Grid Area -->
+    <section class="items-grid section custom-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Newly Listed</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
+                            Ipsum available, but the majority have suffered alteration in some form.</p>
+                            
+                    </div>
+                </div>
+            </div>
+            <div class="single-head">
+                <div class="row" data-masonry='{"percentPosition": true }'>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <!-- Start Single Grid -->
+                        <div class="single-grid wow fadeInUp" data-wow-delay=".2s">
+                            <div class="image">
+                                <a href="item-details.html" class="thumbnail"><img src="assets/images/cars/e63s.jpg" alt="#"></a>
+                                <div class="author">
+                                    <div class="author-image">
+                                        <a href="javascript:void(0)"><img src="https://via.placeholder.com/100x100" alt="#">
+                                            <span>James Kamau</span></a>
+                                    </div>
+                                    <p class="sale">On auction</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="top-content">
+                                    <a href="javascript:void(0)" class="tag">Car Auction</a>
+                                    <h3 class="title">
+                                        <a href="item-details.html">2018 Mercedes E63s AMG 4MATIC+</a>
+                                    </h3>
+                                    <p class="update-time">Last Updated: 2 mins ago</p>
+                                    <ul class="rating">
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><a href="javascript:void(0)">(35)</a></li>
+                                    </ul>
+                                    <ul class="info-list">
+                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i>1 day</a></li>
+                                    </ul>
+                                </div>
+                                <div class="bottom-content">
+                                    <p class="price">Current Bid: <span>KES 4,556,000</span></p>
+                                    <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Grid -->
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <!-- Start Single Grid -->
+                        <div class="single-grid wow fadeInUp" data-wow-delay=".4s">
+                            <div class="image">
+                                <a href="item-details.html" class="thumbnail"><img src="assets/images/cars/Macan1.jpg" alt="#"></a>
+                                <div class="author">
+                                    <div class="author-image">
+                                        <a href="javascript:void(0)"><img src="https://via.placeholder.com/100x100" alt="#">
+                                            <span>Alex Njui</span></a>
+                                    </div>
+                                    <p class="sale">For Sale</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="top-content">
+                                    <a href="javascript:void(0)" class="tag">Brand New</a>
+                                    <h3 class="title">
+                                        <a href="item-details.html">Porsche Macan GTS</a>
+                                    </h3>
+                                    <p class="update-time">Last Updated: 2 hours ago</p>
+                                    <ul class="rating">
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><a href="javascript:void(0)">(20)</a></li>
+                                    </ul>
+                                    <ul class="info-list">
+                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Along Ngong. Rd, Nairobi</a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Jan 7, 2023</a></li>
+                                    </ul>
+                                </div>
+                                <div class="bottom-content">
+                                    <p class="price">Starting Price: <span>KES 10,000,000</span></p>
+                                    <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Grid -->
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <!-- Start Single Grid -->
+                        <div class="single-grid wow fadeInUp" data-wow-delay=".6s">
+                            <div class="image">
+                                <a href="item-details.html" class="thumbnail"><img src="assets/images/cars/RS6.jpg" alt="#"></a>
+                                <div class="author">
+                                    <div class="author-image">
+                                        <a href="javascript:void(0)"><img src="https://via.placeholder.com/100x100" alt="#">
+                                            <span>Imports by Kairo</span></a>
+                                    </div>
+                                    <p class="sale">For Sale</p>
+                                </div>
+                                <p class="item-position"><i class="lni lni-bolt"></i> Featured</p>
+                            </div>
+                            <div class="content">
+                                <div class="top-content">
+                                    <a href="javascript:void(0)" class="tag">New Used</a>
+                                    <h3 class="title">
+                                        <a href="item-details.html">Audi RS6 Avant Vorsprung</a>
+                                    </h3>
+                                    <p class="update-time">Last Updated: 3 hours ago</p>
+                                    <ul class="rating">
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><a href="javascript:void(0)">(55)</a></li>
+                                    </ul>
+                                    <ul class="info-list">
+                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Mar 18, 2023</a></li>
+                                    </ul>
+                                </div>
+                                <div class="bottom-content">
+                                    <p class="price">Starting Price: <span>KES 23,540,000</span></p>
+                                    <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Grid -->
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <!-- Start Single Grid -->
+                        <div class="single-grid wow fadeInUp" data-wow-delay=".2s">
+                            <div class="image">
+                                <a href="item-details.html" class="thumbnail"><img src="assets/images/cars/Bentley.jpg" alt="#"></a>
+                                <div class="author">
+                                    <div class="author-image">
+                                        <a href="javascript:void(0)"><img src="https://via.placeholder.com/100x100" alt="#">
+                                            <span>Juma Mwanza</span></a>
+                                    </div>
+                                    <p class="sale">For Sale</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="top-content">
+                                    <a href="javascript:void(0)" class="tag">New, Assembled locally</a>
+                                    <h3 class="title">
+                                        <a href="item-details.html">2022 Bentley Bentayga</a>
+                                    </h3>
+                                    <p class="update-time">Last Updated: 4 hours ago</p>
+                                    <ul class="rating">
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><a href="javascript:void(0)">(35)</a></li>
+                                    </ul>
+                                    <ul class="info-list">
+                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Mombasa, KE</a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Apr 12, 2023</a></li>
+                                    </ul>
+                                </div>
+                                <div class="bottom-content">
+                                    <p class="price">Starting Price: <span>KES 9,500,000</span></p>
+                                    <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Grid -->
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <!-- Start Single Grid -->
+                        <div class="single-grid wow fadeInUp" data-wow-delay=".4s">
+                            <div class="image">
+                                <a href="item-details.html" class="thumbnail"><img src="assets/images/cars/X5M.jpg" alt="#"></a>
+                                <div class="author">
+                                    <div class="author-image">
+                                        <a href="javascript:void(0)"><img src="https://via.placeholder.com/100x100" alt="#">
+                                            <span>Thomas Deco</span></a>
+                                    </div>
+                                    <p class="sale">Rental</p>
+                                </div>
+                                <p class="item-position"><i class="lni lni-bolt"></i> Featured</p>
+                            </div>
+                            <div class="content">
+                                <div class="top-content">
+                                    <a href="javascript:void(0)" class="tag">Rental Cars</a>
+                                    <h3 class="title">
+                                        <a href="item-details.html">2021 BMW X5 M Competition</a>
+                                    </h3>
+                                    <p class="update-time">Last Updated: 5 hours ago</p>
+                                    <ul class="rating">
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><a href="javascript:void(0)">(35)</a></li>
+                                    </ul>
+                                    <ul class="info-list">
+                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nakuru, KE</a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> May 25, 2023</a></li>
+                                    </ul>
+                                </div>
+                                <div class="bottom-content">
+                                    <p class="price">Starts From: <span>KES 5,000/day</span></p>
+                                    <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Grid -->
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <!-- Start Single Grid -->
+                        <div class="single-grid wow fadeInUp" data-wow-delay=".6s">
+                            <div class="image">
+                                <a href="item-details.html" class="thumbnail"><img src="assets/images/cars/landrover.jpg" alt="#"></a>
+                                <div class="author">
+                                    <div class="author-image">
+                                        <a href="javascript:void(0)"><img src="https://via.placeholder.com/100x100" alt="#">
+                                            <span>Jonson Kuria</span></a>
+                                    </div>
+                                    <p class="sale">For Sale</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="top-content">
+                                    <a href="javascript:void(0)" class="tag">On Sale</a>
+                                    <h3 class="title">
+                                        <a href="item-details.html">2022 Range Rover Autobiography</a>
+                                    </h3>
+                                    <p class="update-time">Last Updated: 7 hours ago</p>
+                                    <ul class="rating">
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><a href="javascript:void(0)">(20)</a></li>
+                                    </ul>
+                                    <ul class="info-list">
+                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Feb 18, 2023</a></li>
+                                    </ul>
+                                </div>
+                                <div class="bottom-content">
+                                    <p class="price">Starting Price: <span>KES 3,450,000</span></p>
+                                    <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Grid -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /End Items Grid Area -->
+    <!-- Start Newsletter Area -->
+    <div class="newsletter section">
+        <div class="container">
+            <div class="inner-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="title">
+                            <i class="lni lni-alarm"></i>
+                            <h2>Newsletter</h2>
+                            <p>We don't send spam so don't worry.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="form">
+                            <form action="#" method="get" target="_blank" class="newsletter-form">
+                                <input name="EMAIL" placeholder="Your email address" type="email">
+                                <div class="button">
+                                    <button class="btn">Subscribe<span class="dir-part"></span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Newsletter Area -->
+
+    <!-- Start Footer Area -->
+    <footer class="footer">
+        <!-- Start Footer Top -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer mobile-app" style="margin-right:30px">
+                            <img class="footer-logo" alt="Logo">
+                            <!-- <div class="app-button">
+                                <a href="javascript:void(0)" class="btn">
+                                    <i class="lni lni-play-store"></i>
+                                    <span class="text">
+                                        <span class="small-text">Get It On</span>
+                                        Google Play
+                                    </span>
+                                </a>
+                                <a href="javascript:void(0)" class="btn">
+                                    <i class="lni lni-apple"></i>
+                                    <span class="text">
+                                        <span class="small-text">Get It On</span>
+                                        App Store
+                                    </span>
+                                </a>
+                            </div> -->
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer f-link">
+                            <h3>Locations</h3>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Nairobi</a></li>
+                                        <li><a href="javascript:void(0)">Mombasa</a></li>
+                                        <li><a href="javascript:void(0)">Nakuru</a></li>
+                                        <li><a href="javascript:void(0)">Naivasha</a></li>
+                                        <!-- <li><a href="javascript:void(0)">Boston</a></li> -->
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Kisumu</a></li>
+                                        <!-- <li><a href="javascript:void(0)">Seattle</a></li>
+                                        <li><a href="javascript:void(0)">Las Vegas</a></li>
+                                        <li><a href="javascript:void(0)">San Diego</a></li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer f-link">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="javascript:void(0)">About Us</a></li>
+                                <li><a href="javascript:void(0)">How It's Works</a></li>
+                                <li><a href="javascript:void(0)">FAQ</a></li>
+                                <li><a href="javascript:void(0)">Help & Support</a></li>
+                            </ul>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer f-contact">
+                            <h3>Contact</h3>
+                            <ul>
+                                <li>Along Kuno Rd. Hurlingham<br> Nairobi, KE</li>
+                                <li>Tel. +(254) 794 677 590  <br> Mail. support@bidmycar.com</li>
+                            </ul>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Footer Middle -->
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="inner">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content">
+                                <ul class="footer-bottom-links">
+                                    <li><a href="javascript:void(0)">Terms of use</a></li>
+                                    <li><a href="javascript:void(0)"> Privacy Policy</a></li>
+                                    <li><a href="javascript:void(0)">Cookie Policy</a></li>
+                                   
+                                </ul>
+                                <p class="copyright-text">Made with 🤍 by <a href="https://www.linkedin.com/in/adrian-etenyi-4590791b2/"
+                                        rel="nofollow" target="_blank">B.L.A.C.K</a><br>
+                                        ©2023 BidMyCar
+                                </p>
+                                <ul class="footer-social">
+                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Middle -->
+    </footer>
+    <!--/ End Footer Area -->
+    
+    <!-- ========================= toggle theme ========================= -->
+    <a onclick="themeToggle()" class="scroll-top btn-hover">
+        <i class="lni lni-sun"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script type="text/javascript">
+        //========= Category Slider 
+        tns({
+            container: '.category-slider',
+            items: 3,
+            slideBy: 'page',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: false,
+            controls: true,
+            controlsText: ['<i class="lni lni-chevron-left"></i>', '<i class="lni lni-chevron-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 2,
+                },
+                768: {
+                    items: 4,
+                },
+                992: {
+                    items: 5,
+                },
+                1170: {
+                    items: 6,
+                }
+            }
+        });
+    </script>
+    <script>
+        function themeToggle() {
+            var body = document.body;
+
+            if (body.classList.contains("theme--default")) {
+                body.classList.remove("theme--default");
+                body.classList.add("theme--dark");
+
+            } 
+            else if (body.classList.contains("theme--dark")) {
+                body.classList.remove("theme--dark");
+                body.classList.add("theme--default");
+            }
+        }
+
+        
+    </script>
+    <script>
+        let body = document.body;
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                // dark mode
+                // body.classList.remove("theme--default");
+                // body.classList.add("theme--dark");
+        }
+
+            
+    </script>
+    <script>
+
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                const newColorScheme = e.matches ? "dark" : "light";
+
+                console.log(e.matches)
+                var myToastEl = document.getElementById('liveToast')
+
+                var myToast = new bootstrap.Toast(myToastEl)
+                myToast.show();
+
+                var currentThemeText = document.getElementById("currentTheme")
+
+                if(e.matches == false){
+                    
+                    currentThemeText.innerHTML = "light";
+                }
+                else{
+                    currentThemeText.innerHTML = "dark";
+
+                }
+
+                
+                // if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                //         // dark mode
+                //         body.classList.remove("theme--default");
+                //         body.classList.add("theme--dark");
+                // }
+                // var myToastEl = document.getElementById('liveToast')
+                
+                // myToastEl.show()
+                // myToastEl.addEventListener('shown.bs.toast', function () {
+                //     myToastEl.show()
+                // })
+            });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+
+</body>
+
+</html>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Ads Details | BidMyCar</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon-64x64.png" />
+
+    <!-- ========================= CSS here ========================= -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script>
+        let body = document.body;
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                // dark mode
+                function initMap() {
+                    // Styles a map in night mode.
+                    const map = new google.maps.Map(document.getElementById("gmap_canvas"), {
+                        center: { lat: 40.674, lng: -73.945 },
+                        zoom: 12,
+                        styles: [
+                        { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+                        { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+                        { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+                        {
+                            featureType: "administrative.locality",
+                            elementType: "labels.text.fill",
+                            stylers: [{ color: "#d59563" }],
+                        },
+                        {
+                            featureType: "poi",
+                            elementType: "labels.text.fill",
+                            stylers: [{ color: "#d59563" }],
+                        },
+                        {
+                            featureType: "poi.park",
+                            elementType: "geometry",
+                            stylers: [{ color: "#263c3f" }],
+                        },
+                        {
+                            featureType: "poi.park",
+                            elementType: "labels.text.fill",
+                            stylers: [{ color: "#6b9a76" }],
+                        },
+                        {
+                            featureType: "road",
+                            elementType: "geometry",
+                            stylers: [{ color: "#38414e" }],
+                        },
+                        {
+                            featureType: "road",
+                            elementType: "geometry.stroke",
+                            stylers: [{ color: "#212a37" }],
+                        },
+                        {
+                            featureType: "road",
+                            elementType: "labels.text.fill",
+                            stylers: [{ color: "#9ca5b3" }],
+                        },
+                        {
+                            featureType: "road.highway",
+                            elementType: "geometry",
+                            stylers: [{ color: "#746855" }],
+                        },
+                        {
+                            featureType: "road.highway",
+                            elementType: "geometry.stroke",
+                            stylers: [{ color: "#1f2835" }],
+                        },
+                        {
+                            featureType: "road.highway",
+                            elementType: "labels.text.fill",
+                            stylers: [{ color: "#f3d19c" }],
+                        },
+                        {
+                            featureType: "transit",
+                            elementType: "geometry",
+                            stylers: [{ color: "#2f3948" }],
+                        },
+                        {
+                            featureType: "transit.station",
+                            elementType: "labels.text.fill",
+                            stylers: [{ color: "#d59563" }],
+                        },
+                        {
+                            featureType: "water",
+                            elementType: "geometry",
+                            stylers: [{ color: "#17263c" }],
+                        },
+                        {
+                            featureType: "water",
+                            elementType: "labels.text.fill",
+                            stylers: [{ color: "#515c6d" }],
+                        },
+                        {
+                            featureType: "water",
+                            elementType: "labels.text.stroke",
+                            stylers: [{ color: "#17263c" }],
+                        },
+                        ],
+                    });
+                }
+
+        }
+        else{
+            function initMap() {
+                    // Styles a map in night mode.
+                    const map = new google.maps.Map(document.getElementById("gmap_canvas"), {
+                        center: { lat: 40.674, lng: -73.945 },
+                        zoom: 12,
+                        
+                    });
+                }
+
+        }
+        
+    </script>
+</head>
+
+<body class="theme--default">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html">
+                                <img class="navbar-logo" alt="Logo">
+                            </a>
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a class="active" href="index.html"
+                                           >Home</a>
+                                        
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" aria-label="Toggle navigation">Categories</a>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a class="dd-menu collapsed" href="javascript:void(0)"
+                                            data-bs-toggle="collapse" data-bs-target="#submenu-1-3"
+                                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                                            aria-label="Toggle navigation">Auctions</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-3">
+                                            <li class="nav-item"><a href="#">Ending Soon</a></li>
+                                            <li class="nav-item"><a href="#">Coming Soon</a></li>
+                                            <li class="nav-item"><a href="#">No Reserve</a></li>
+                                            <li class="nav-item"><a href="#">Newly Listed</a></li>
+                                        </ul>
+                                    </li>
+                                   
+                                    <li class="nav-item">
+                                        <a class="dd-menu collapsed" href="javascript:void(0)"
+                                            data-bs-toggle="collapse" data-bs-target="#submenu-1-5"
+                                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                                            aria-label="Toggle navigation">Services</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-5">
+                                            <li class="nav-item"><a href="#">Car Financing</a>
+                                            </li>
+                                            <li class="nav-item"><a href="#">Insurance</a></li>
+                                            <li class="nav-item"><a href="#">Calculators</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <div class="login-button">
+                                <ul>
+                                    <li>
+                                        <a href="login.html"><i class="lni lni-enter"></i> Login</a>
+                                    </li>
+                                    <li>
+                                        <a href="registration.html"><i class="lni lni-user"></i> Register</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </nav> <!-- navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs">
+        <!-- <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Ad Details</h1>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <ul class="breadcrumb-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Ad Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <!-- End Breadcrumbs -->
+    
+    <!-- Start Item Details -->
+    <section class="item-details section pt-120">
+        <div class="container">
+            <div class="top-area">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <div class="product-images">
+                            <main id="gallery">
+                                <div class="main-img">
+                                    <img src="assets/images/cars/dbx1.jpg" id="current" alt="#">
+                                </div>
+                                <div class="images">
+                                    <img src="assets/images/cars/dbx2.jpg" class="img" alt="#">
+                                    <img src="assets/images/cars/dbx3.jpg" class="img" alt="#">
+                                    <img src="assets/images/cars/dbx4.jpg" class="img" alt="#">
+                                    <img src="assets/images/cars/dbx5.jpg" class="img" alt="#">
+                                    <img src="assets/images/cars/dbx6.jpg" class="img" alt="#">
+                                </div>
+                            </main>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <div class="product-info">
+                            <h2 class="title">2022 Aston Martin DBX 707</h2>
+                            <p class="location"><i class="lni lni-map-marker"></i><a href="javascript:void(0)">Nairobi, KE</a></p>
+                            <h3 class="price position-relative">
+                                KES 50,500,000
+                                <span class="position-absolute top-0 start-100 translate-right badge bg-warning text-dark">
+                                    Fixed
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </h3>
+                            <br>
+
+                            <div class="list-info">
+                                <h4>Specifications</h4>
+                                <ul>
+                                    <li><span>Condition:</span> New Used</li>
+                                    <li><span>Miles:</span> 729kms</li>
+                                    <li><span>Color:</span>Aston Martin Racing Green</li>
+                                    <li><span>Transmission:</span> 8 Speed Automatic</li>
+                                    <li><span>Engine Size:</span>4.0L V-8 Gas Turbocharged</li>
+                                    <li><span>Power Output:</span> 707HP</li>
+                                    <li><span>Model Year:</span> 2022</li>
+                                </ul>
+                            </div>
+                            <div class="contact-info">
+                                <ul>
+                                    <li>
+                                        <a href="tel:+254794677590" class="call">
+                                            <i class="lni lni-phone"></i>
+                                            +254 7********
+                                            <span>Call for an immediate response</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:example@gmail.com" class="mail">
+                                            <i class="lni lni-whatsapp"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="social-share">
+                                <h4>Share Ad</h4>
+                                <ul>
+                                    <li><a href="javascript:void(0)" class="facebook"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a href="javascript:void(0)" class="twitter"><i class="lni lni-twitter-original"></i></a></li>
+                                    <li><a href="javascript:void(0)" class="google"><i class="lni lni-google"></i></a></li>
+                                    <li><a href="javascript:void(0)" class="linkedin"><i class="lni lni-linkedin-original"></i></a></li>
+                                    <li><a href="javascript:void(0)" class="pinterest"><i class="lni lni-pinterest"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item-details-blocks">
+                <div class="row">
+                    <div class="col-lg-8 col-md-7 col-12">
+                        <!-- Start Single Block -->
+                        <div class="single-block description">
+                            <h3>Description</h3>
+                            <p>
+                               This 2023 Aston Martin DBX707 is located at The Collection on 200 Bird Rd. Coral Gables Fl 33146. Please contact Sales Manager Romy Vega at 305-476-5203 or rvega@thecollection.com for more information.ASTON MARTIN CERTIFIED PRE-OWNED This Certified Aston Martin includes a 140 point inspection, 24/7 roadside assistance, a warranty of: For total peace of mind, your authorized dealer will ensure that the car comes with a minimum of 12 months Aston Martin warranty. This offers you comprehensive protection against unexpected repair costs. Our warranty program also allows you to renew and extend your coverage up to 10 years or 85,000 miles (136,000 km). *Please consult with your Aston Martin Dealer for further information on the range of Aston Martin Extended Warranties (Extended Service Contract – North America) available., Comprehensive roadside assistance As the owner of an Aston Martin you should enjoy trouble-free motoring. However, should the unexpected occur, you’ll reap the benefit of a comprehensive roadside assistance package. Expert technicians, fully qualified to give your car the best possible care, will be on-hand in the case of any motoring emergency. LOADED WITH VALUE! Comes equipped with: Rear Air Conditioning, Sunroof, Bluetooth, Navigation System, Rear Heated Seats , Front Heated Seats. This Aston Martin DBX707 also includes Clock, Climate Control, Tachometer, Dual Zone Climate Control, Cruise Control, Privacy Glass/Tinted Windows, Power Steering, Telescoping Steering Wheel, Steering Radio Controls, Wood Trim, Power Mirrors, Moonroof, Leather Steering Wheel, Driver Airbag, Passenger Airbag, Intermittent Wipers, Rear Defogger, Security System, AM/FM, Sliding Rear Window, Rear Spoiler, Sport Seats, Center Arm Rest, Remote Fuel Door, Vanity Mirrors, Heated Mirrors, Rear Fog Lamps, Child Proof Door Locks, Daytime Running Lights, Reverse Camera, Side Curtain Airbags, Roll Stability Control, Rear-Side Airbags, Power Lift Gate, Tire Pressure Monitor, Premium Sound, Carpeted Floor Mats, Aux. Audio Input. Climate Control, Dual Zone Climate Control, Cruise Control, Tinted Windows, Power Steering, Power Mirrors, Leather Steering Wheel, Rear Air Conditioning, Wood Trim, Clock, Tachometer, Telescoping Steering Wheel, Steering Wheel Radio Controls, Sunroof, Moonroof, Driver Airbag, Passenger Airbag, Security System, Rear Defogger, Intermittent Wipers, AM/FM, Full Leather Interior Surface, Automatic, 4.0 Liter Twin Turbo Aux. Audio Input, Bluetooth, Carpeted Floor Mats, Center Arm Rest, Child Proof Door Locks, Daytime Running Lights, Front Heated Seats, Heated Mirrors, Navigation System, Power Lift Gate, Premium Sound, Rear Fog Lamps, Rear Heated Seats , Rear Spoiler, Rear Spoiler, Rear-Side Airbags, Remote Fuel Door, Reverse Camera, Roll Stability Control, Side Curtain Airbags, Sliding Rear Window, Sport Seats, Tire Pressure Monitor, Vanity Mirrors 
+                            </p>
+                            
+                        </div>
+                        <!-- End Single Block -->
+                        <!-- Start Single Block -->
+                        <div class="single-block tags">
+                            <h3>Features</h3> <!-- Remember to change 'tags' to 'features'-->
+                            <ul>
+                                <li><a href="javascript:void(0)">Front and Rear Airbags</a></li>
+                                <li><a href="javascript:void(0)">Tinted Windows</a></li>
+                                <li><a href="javascript:void(0)">Panoramic sunroof</a></li>
+                                <li><a href="javascript:void(0)">4WD</a></li>
+                                <li><a href="javascript:void(0)">4 Zone Aircon</a></li>
+                                <li><a href="javascript:void(0)">Sunblinds</a></li>
+                                <li><a href="javascript:void(0)">Traction Control</a></li>
+                                <li><a href="javascript:void(0)">360 Surround Camera</a></li>
+                                <li><a href="javascript:void(0)">Ambient Lighting</a></li>
+                                <li><a href="javascript:void(0)">Armrests</a></li>
+                            </ul>
+                        </div>
+                        <!-- End Single Block -->
+                      
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-12">
+                        <div class="item-details-sidebar">
+                            <!-- Start Single Block -->
+                            <div class="single-block author">
+                                <h3>Dealer</h3>
+                                <div class="content">
+                                    <img src="assets/images/dealers/mascardi.webp" alt="#">
+                                    <h4>Mascardi Cars</h4>
+                                    <span>Member Since May 15,2022</span>
+                                    <a href="javascript:void(0)" class="see-all">See All Active Ads</a>
+                                </div>
+                            </div>
+                            <!-- End Single Block -->
+                            <!-- Start Single Block -->
+                            <div class="single-block contant-seller comment-form ">
+                                <h3>Contact Dealer via Email</h3>
+                                <form action="#" method="POST">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" name="name" class="form-control"
+                                                    placeholder="Your Name" />
+                                                <label>Your name</label> 
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating mb-3">
+                                                <input type="email" name="email"
+                                                    class="form-control" placeholder="Your Email" />
+                                                <label>Your email</label> 
+
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-box form-group">
+                                                <textarea name="#" class="form-control form-control-custom"
+                                                    placeholder="Your Message">Hi, I am interested in purchasing this 2022 Aston Martin DBX 707</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="button">
+                                                <button type="submit" class="btn">Send Message</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- End Single Block -->
+                            <!-- Start Single Block -->
+                            <div class="single-block ">
+                                <h3>Location</h3>
+                                <div class="mapouter">
+                                    <div class="gmap_canvas" id="gmap_canvas">
+                                    </div>
+                                    
+                                    <style>
+                                        .mapouter {
+                                            position: relative;
+                                            text-align: right;
+                                            height: 300px;
+                                            width: 100%;
+                                        }
+                                    </style>
+                                    <style>
+                                        .gmap_canvas {
+                                            overflow: hidden;
+                                            background: none !important;
+                                            height: 300px;
+                                            width: 100%;
+                                        }
+                                    </style>
+                                
+                                </div>
+                            </div>
+                            <!-- End Single Block -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </section>
+    <!-- End Item Details -->
+    
+    <!-- Start Newsletter Area -->
+    <div class="newsletter section">
+        <div class="container">
+            <div class="inner-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="title">
+                            <i class="lni lni-alarm"></i>
+                            <h2>Newsletter</h2>
+                            <p>We don't send spam so don't worry.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="form">
+                            <form action="#" method="get" target="_blank" class="newsletter-form">
+                                <input name="EMAIL" placeholder="Your email address" type="email">
+                                <div class="button">
+                                    <button class="btn">Subscribe<span class="dir-part"></span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Newsletter Area -->
+
+    <!-- Start Footer Area -->
+    <footer class="footer">
+        <!-- Start Footer Top -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer mobile-app" style="margin-right:30px">
+                            <img class="footer-logo" alt="Logo">
+                            <!-- <div class="app-button">
+                                <a href="javascript:void(0)" class="btn">
+                                    <i class="lni lni-play-store"></i>
+                                    <span class="text">
+                                        <span class="small-text">Get It On</span>
+                                        Google Play
+                                    </span>
+                                </a>
+                                <a href="javascript:void(0)" class="btn">
+                                    <i class="lni lni-apple"></i>
+                                    <span class="text">
+                                        <span class="small-text">Get It On</span>
+                                        App Store
+                                    </span>
+                                </a>
+                            </div> -->
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer f-link">
+                            <h3>Locations</h3>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Nairobi</a></li>
+                                        <li><a href="javascript:void(0)">Mombasa</a></li>
+                                        <li><a href="javascript:void(0)">Nakuru</a></li>
+                                        <li><a href="javascript:void(0)">Naivasha</a></li>
+                                        <!-- <li><a href="javascript:void(0)">Boston</a></li> -->
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Kisumu</a></li>
+                                        <!-- <li><a href="javascript:void(0)">Seattle</a></li>
+                                        <li><a href="javascript:void(0)">Las Vegas</a></li>
+                                        <li><a href="javascript:void(0)">San Diego</a></li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer f-link">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="javascript:void(0)">About Us</a></li>
+                                <li><a href="javascript:void(0)">How It's Works</a></li>
+                                <li><a href="javascript:void(0)">FAQ</a></li>
+                                <li><a href="javascript:void(0)">Help & Support</a></li>
+                            </ul>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer f-contact">
+                            <h3>Contact</h3>
+                            <ul>
+                                <li>Along Kuno Rd. Hurlingham<br> Nairobi, KE</li>
+                                <li>Tel. +(254) 794 677 590  <br> Mail. support@bidmycar.com</li>
+                            </ul>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Footer Middle -->
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="inner">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content">
+                                <ul class="footer-bottom-links">
+                                    <li><a href="javascript:void(0)">Terms of use</a></li>
+                                    <li><a href="javascript:void(0)"> Privacy Policy</a></li>
+                                    <li><a href="javascript:void(0)">Cookie Policy</a></li>
+                                   
+                                </ul>
+                                <p class="copyright-text">Made with 🤍 by <a href="https://www.linkedin.com/in/adrian-etenyi-4590791b2/"
+                                        rel="nofollow" target="_blank">B.L.A.C.K</a><br>
+                                        ©2023 BidMyCar
+                                </p>
+                                <ul class="footer-social">
+                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Middle -->
+    </footer>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a onclick="themeToggle()" class="scroll-top btn-hover">
+        <i class="lni lni-sun"></i>
+     </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDn16FNZKrtIXZEivnLY9tv9KwKl6FcgM&callback=initMap"
+    async></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script type="text/javascript">
+        const current = document.getElementById("current");
+        const opacity = 0.6;
+        const imgs = document.querySelectorAll(".img");
+        imgs.forEach(img => {
+            img.addEventListener("click", (e) => {
+                //reset opacity
+                imgs.forEach(img => {
+                    img.style.opacity = 1;
+                });
+                current.src = e.target.src;
+                //adding class 
+                //current.classList.add("fade-in");
+                //opacity
+                e.target.style.opacity = opacity;
+            });
+        });
+    </script>
+     <script>
+        function themeToggle() {
+            var body = document.body;
+
+            if (body.classList.contains("theme--default")) {
+                body.classList.remove("theme--default");
+                body.classList.add("theme--dark");
+
+            } 
+            else if (body.classList.contains("theme--dark")) {
+                body.classList.remove("theme--dark");
+                body.classList.add("theme--default");
+            }
+        }
+
+        
+    </script>
+     <script>
+
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                const newColorScheme = e.matches ? "dark" : "light";
+
+
+                let body = document.body;
+
+                if(e.matches == false){
+                    
+                    body.classList.remove("theme--dark");
+                    body.classList.add("theme--default");
+                }
+                else{
+                    body.classList.remove("theme--default");
+                    body.classList.add("theme--dark");
+
+                }
+
+            });
+    </script>
+    
+</body>
+
+</html>
