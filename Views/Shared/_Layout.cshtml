@@ -2,41 +2,381 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    <title>@ViewBag.Title - Bid My Car</title>
+    <meta name="description" content="" />
+  
+        <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/content/images/logo/favicon-64x64.png")" />
+        <!-- other head content -->
+    
+
+
+
+
+
+    @Styles.Render("~/Content/css/bootstrap.min.css")
+    @Styles.Render("~/Content/css/LineIcons.2.0.css")
+    @Styles.Render("~/Content/css/animate.css")
+    @Styles.Render("~/Content/css/tiny-slider.css")
+    @Styles.Render("~/Content/css/glightbox.min.css")
+    @Styles.Render("~/Content/css/main.css")
+    @Styles.Render("~/Content/Site.css")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css")
+
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+<body class="theme--default">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
             </div>
         </div>
     </div>
+    <!-- /End Preloader -->
+    <header class="header navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <nav class="navbar navbar-expand-lg">
+                            @Html.ActionLink(" ", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                            <a class="navbar-brand" href="index.html">
+                                <img class="navbar-logo" alt="Logo">
+                            </a>
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link active" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("Categories", "Categories", "Home", null, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dd-menu collapsed nav-link" href="javascript:void(0)"
+                                           data-bs-toggle="collapse" data-bs-target="#submenu-1-3"
+                                           aria-controls="navbarSupportedContent" aria-expanded="false"
+                                           aria-label="Toggle navigation">Auctions</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-3">
+                                            <li class="nav-item">@Html.ActionLink("Ending Soon", "EndingSoon", "Auctions", null, new { @class = "nav-link" })</li>
+                                            <li class="nav-item">@Html.ActionLink("Coming Soon", "ComingSoon", "Auctions", null, new { @class = "nav-link" })</li>
+                                            <li class="nav-item">@Html.ActionLink("No Reserve", "NoReserve", "Auctions", null, new { @class = "nav-link" })</li>
+                                            <li class="nav-item">@Html.ActionLink("Newly Listed", "NewlyListed", "Auctions", null, new { @class = "nav-link" })</li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dd-menu collapsed nav-link" href="javascript:void(0)"
+                                           data-bs-toggle="collapse" data-bs-target="#submenu-1-5"
+                                           aria-controls="navbarSupportedContent" aria-expanded="false"
+                                           aria-label="Toggle navigation">Services</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-5">
+                                            <li class="nav-item">@Html.ActionLink("Car Financing", "CarFinancing", "Services", null, new { @class = "nav-link" })</li>
+                                            <li class="nav-item">@Html.ActionLink("Insurance", "Insurance", "Services", null, new { @class = "nav-link" })</li>
+                                            <li class="nav-item">@Html.ActionLink("Calculators", "Calculators", "Services", null, new { @class = "nav-link" })</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <div class="login-button">
+                                <ul>
+                                    <li>
+                                        @Html.ActionLink("login", "Login", "Home", null, new { @class = "nav-link active" })
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("register", "Register", "Home", null, new { @class = "nav-link active" })
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav> <!-- navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+
+
+
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <!-- Start Newsletter Area -->
+        <div class="newsletter section">
+            <div class="container">
+                <div class="inner-content">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="title">
+                                <i class="lni lni-alarm"></i>
+                                <h2>Newsletter</h2>
+                                <p>We don't send spam so don't worry.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="form">
+                                <form action="#" method="get" target="_blank" class="newsletter-form">
+                                    <input name="EMAIL" placeholder="Your email address" type="email">
+                                    <div class="button">
+                                        <button class="btn">Subscribe<span class="dir-part"></span></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Newsletter Area -->
+        <!-- Start Footer Area -->
+        <footer class="footer">
+            <!-- Start Footer Top -->
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <!-- Single Widget -->
+                            <div class="single-footer mobile-app" style="margin-right:30px">
+                                <img class="footer-logo" alt="Logo">
+                                <!-- <div class="app-button">
+                                <a href="javascript:void(0)" class="btn">
+                                    <i class="lni lni-play-store"></i>
+                                    <span class="text">
+                                        <span class="small-text">Get It On</span>
+                                        Google Play
+                                    </span>
+                                </a>
+                                <a href="javascript:void(0)" class="btn">
+                                    <i class="lni lni-apple"></i>
+                                    <span class="text">
+                                        <span class="small-text">Get It On</span>
+                                        App Store
+                                    </span>
+                                </a>
+                            </div> -->
+                            </div>
+                            <!-- End Single Widget -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <!-- Single Widget -->
+                            <div class="single-footer f-link">
+                                <h3>Locations</h3>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <ul>
+                                            <li><a href="javascript:void(0)">Nairobi</a></li>
+                                            <li><a href="javascript:void(0)">Mombasa</a></li>
+                                            <li><a href="javascript:void(0)">Nakuru</a></li>
+                                            <li><a href="javascript:void(0)">Naivasha</a></li>
+                                            <!-- <li><a href="javascript:void(0)">Boston</a></li> -->
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <ul>
+                                            <li><a href="javascript:void(0)">Kisumu</a></li>
+                                            <!-- <li><a href="javascript:void(0)">Seattle</a></li>
+                                        <li><a href="javascript:void(0)">Las Vegas</a></li>
+                                        <li><a href="javascript:void(0)">San Diego</a></li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Widget -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <!-- Single Widget -->
+                            <div class="single-footer f-link">
+                                <h3>Quick Links</h3>
+                                <ul>
+                                    <li><a href="javascript:void(0)">About Us</a></li>
+                                    <li><a href="javascript:void(0)">How It's Works</a></li>
+                                    <li><a href="javascript:void(0)">FAQ</a></li>
+                                    <li><a href="javascript:void(0)">Help & Support</a></li>
+                                </ul>
+                            </div>
+                            <!-- End Single Widget -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <!-- Single Widget -->
+                            <div class="single-footer f-contact">
+                                <h3>Contact</h3>
+                                <ul>
+                                    <li>Along Kuno Rd. Hurlingham<br> Nairobi, KE</li>
+                                    <li>Tel. +(254) 794 677 590  <br> Mail. support@bidmycar.com</li>
+                                </ul>
+                            </div>
+                            <!-- End Single Widget -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/ End Footer Middle -->
+            <!-- Start Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="inner">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="content">
+                                    <ul class="footer-bottom-links">
+                                        <li><a href="javascript:void(0)">Terms of use</a></li>
+                                        <li><a href="javascript:void(0)"> Privacy Policy</a></li>
+                                        <li><a href="javascript:void(0)">Cookie Policy</a></li>
+
+                                    </ul>
+                                    <p class="copyright-text">
+                                        Made with 🤍 by <a href="https://www.linkedin.com/in/adrian-etenyi-4590791b2/"
+                                                           rel="nofollow" target="_blank">B.L.A.C.K</a><br>
+                                        ©2023 BidMyCar
+                                    </p>
+                                    <ul class="footer-social">
+                                        <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer Middle -->
         </footer>
+        <!--/ End Footer Area -->
+        
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    @{
+        Layout = null;
+    }
+
+
+    <div class="container">
+        <!-- ========================= toggle theme ========================= -->
+        <a onclick="themeToggle()" class="scroll-top btn-hover">
+            <i class="lni lni-sun"></i>
+        </a>
+
+        <div class="category-slider">
+            <!-- slider content goes here -->
+        </div>
+    </div>
+
+
+    @Scripts.Render("~/Content/js/bootstrap.min.js")
+    @Scripts.Render("~/Content/js/wow.min.js")
+    @Scripts.Render("~/Content/js/tiny-slider.js")
+    @Scripts.Render("~/Content/js/glightbox.min.js")
+    @Scripts.Render("~/Content/js/main.js")
+    <script type="text/javascript">
+        //========= Category Slider
+        tns({
+            container: '.category-slider',
+            items: 3,
+            slideBy: 'page',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: false,
+            controls: true,
+            controlsText: ['<i class="lni lni-chevron-left"></i>', '<i class="lni lni-chevron-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 2,
+                },
+                768: {
+                    items: 4,
+                },
+                992: {
+                    items: 5,
+                },
+                1170: {
+                    items: 6,
+                }
+            }
+        });
+    </script>
+    <script>
+        function themeToggle() {
+            var body = document.body;
+
+            if (body.classList.contains("theme--default")) {
+                body.classList.remove("theme--default");
+                body.classList.add("theme--dark");
+
+            }
+            else if (body.classList.contains("theme--dark")) {
+                body.classList.remove("theme--dark");
+                body.classList.add("theme--default");
+            }
+        }
+    </script>
+    <script>
+        let body = document.body;
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // dark mode
+            // body.classList.remove("theme--default");
+            // body.classList.add("theme--dark");
+        }
+
+
+    </script>
+    <script>
+
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            const newColorScheme = e.matches ? "dark" : "light";
+
+            console.log(e.matches)
+            var myToastEl = document.getElementById('liveToast')
+
+            var myToast = new bootstrap.Toast(myToastEl)
+            myToast.show();
+
+            var currentThemeText = document.getElementById("currentTheme")
+
+            if (e.matches == false) {
+
+                currentThemeText.innerHTML = "light";
+            }
+            else {
+                currentThemeText.innerHTML = "dark";
+
+            }
+
+
+            // if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            //         // dark mode
+            //         body.classList.remove("theme--default");
+            //         body.classList.add("theme--dark");
+            // }
+            // var myToastEl = document.getElementById('liveToast')
+
+            // myToastEl.show()
+            // myToastEl.addEventListener('shown.bs.toast', function () {
+            //     myToastEl.show()
+            // })
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+
+
 </body>
 </html>

@@ -22,9 +22,18 @@ namespace BidMyCar
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content").Include(
+                      "~/Content/css/bootstrap.min.css",
+                       "~/Content/css/LineIcons.2.0.css",
+                        "~/Content/css/animate.css",
+                         "~/Content/css/tiny-slider.css",
+                          "~/Content/css/glightbox.min.css",
+                       "~/Content/main.css",
+                        "~/Content/css",
+                      "~/Content/Site.css"));
+           
+
+
         }
     }
 }
