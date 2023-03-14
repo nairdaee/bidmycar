@@ -21,9 +21,9 @@
     @Styles.Render("~/Content/css/tiny-slider.css")
     @Styles.Render("~/Content/css/glightbox.min.css")
     @Styles.Render("~/Content/css/main.css")
-    @Styles.Render("~/Content/Site.css")
+    @*@Styles.Render("~/Content/Site.css")
     @Scripts.Render("~/bundles/modernizr")
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/css")*@
 
 </head>
 <body class="theme--default">
@@ -105,11 +105,7 @@
     </header>
     <!-- End Header Area -->
 
-
-
-    <div class="container body-content">
         @RenderBody()
-        <hr />
         <!-- Start Newsletter Area -->
         <div class="newsletter section">
             <div class="container">
@@ -254,7 +250,6 @@
         </footer>
         <!--/ End Footer Area -->
         
-    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
