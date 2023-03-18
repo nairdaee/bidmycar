@@ -156,3 +156,7 @@ C:\Users\ENVY\source\repos\BidMyCar2\BidMyCar2\obj\Debug\BidMyCar.csproj.CoreCom
 C:\Users\ENVY\source\repos\BidMyCar2\BidMyCar2\obj\Debug\BidMyCar.csproj.CopyComplete
 C:\Users\ENVY\source\repos\BidMyCar2\BidMyCar2\obj\Debug\BidMyCar.dll
 C:\Users\ENVY\source\repos\BidMyCar2\BidMyCar2\obj\Debug\BidMyCar.pdb
+C:\Users\tiffa\Desktop\Project\obj\Debug\BidMyCar.csproj.AssemblyReference.cache
+C:\Users\tiffa\Desktop\Project\obj\Debug\BidMyCar.csproj.CoreCompileInputs.cache
+C:\Users\tiffa\Desktop\Project\obj\Debug\bidmycar.dll
+C:\Users\tiffa\Desktop\Project\obj\Debug\bidmycar.pdb
