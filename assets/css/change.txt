@@ -1,0 +1,22 @@
+BOOTSTRAP CUSTOM CHANGES
+
+.bs-tooltip-top .tooltip-arrow::before, .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+  border-top-color: hsl(171, 98%, 90%);
+}
+
+.bs-tooltip-end .tooltip-arrow::before, .bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+  border-right-color: hsl(171, 98%, 90%);
+}
+
+.bs-tooltip-bottom .tooltip-arrow::before, .bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
+  border-bottom-color:  hsl(171, 98%, 90%);
+}
+
+.bs-tooltip-start .tooltip-arrow::before, .bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
+  border-left-color:  hsl(171, 98%, 90%);
+}
+
+.tooltip-inner {
+  color: hsl(171, 98%, 21%);
+  background-color: hsl(171, 98%, 90%);
+}
