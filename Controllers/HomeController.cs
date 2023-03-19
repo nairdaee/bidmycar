@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BidMyCar.Models;
 
 namespace BidMyCar.Controllers
 {
@@ -31,6 +32,11 @@ namespace BidMyCar.Controllers
             return View();
         }
         public ActionResult register()
+        {
+            return View();
+        }
+
+        public ActionResult resetPassword()
         {
             return View();
         }
