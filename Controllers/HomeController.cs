@@ -1,6 +1,12 @@
 ﻿using BidMyCar.Models;
 using System.Web.Mvc;
-using BidMyCar.Models;
+using System.Linq;
+using System.Web.Helpers;
+using System.Web.UI.WebControls;
+using Microsoft.Ajax.Utilities;
+using System.Web.Security;
+using System.Web;
+using System;
 
 namespace BidMyCar.Controllers
 {
@@ -30,32 +36,76 @@ namespace BidMyCar.Controllers
 
             return View();
         }
+        //Login
         public ActionResult Login()
         {
             return View();
         }
+
+        //POST LOGIN
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(UsersInfo user)
+        {
+
+            var credentials = db.UsersInfo.Where(m => m.Email == user.Email).FirstOrDefault();
+            if (credentials != null)
+            {
+
+                if (string.Compare(Encryption.Hash(user.Password), credentials.Password) == 0)
+                {
+
+
+                    ViewBag.InsertMessage = "<script> alert('User Registered Successfully!')</script>";
+                    Session["UserID"] = user.UserID.ToString();
+                    Session["Email"] = user.Email.ToString();
+                    return RedirectToAction("Index", "UserProfile");
+
+                }
+                else
+                {
+                    ViewBag.LoginStatus = 0;
+                }
+            }
+            else
+            {
+                ViewBag.LoginStatus = 0;
+
+            }
+
+
+
+
+           return View();
+        }
+
+        //Registration
         public ActionResult Register()
         {
             return View();
         }
 
+
         //post registration
         [HttpPost]
-        public ActionResult Register(UsersInfo u)
+        public ActionResult Register(UsersInfo user)
         {
             if (ModelState.IsValid == true)
             {
 
                 //password hashing
 
-                u.Password = Encryption.Hash(u.Password);
-                u.ConfirmPassword = Encryption.Hash(u.ConfirmPassword);
+                user.Password = Encryption.Hash(user.Password);
+                user.ConfirmPassword = Encryption.Hash(user.ConfirmPassword);
 
-                db.UsersInfo.Add(u);
+                db.UsersInfo.Add(user);
 
                 if (db.SaveChanges() > 0)
                 {
                     ViewBag.InsertMessage = "<script> alert('User Registered Successfully!')</script>";
+                    Session["UserID"] = user.UserID.ToString();
+                    Session["Name"] = user.Name.ToString();
+                    return RedirectToAction("Index", "UserProfile");
 
                 }
                 else
