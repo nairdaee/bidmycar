@@ -17,11 +17,12 @@
                     @using (Html.BeginForm("Login", "Home", FormMethod.Post))
                     {
 
+                        //error message
                         if (ViewBag.Loginstatus != null)
                         {
                             if (ViewBag.LoginStatus == 0)
                             {
-                                <div class="alert alert-danger">Login Failed!</div>
+                                <div class="alert alert-danger">Invalid Credentials!</div>
                             }
                   
                     }

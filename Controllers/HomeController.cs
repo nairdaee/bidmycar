@@ -98,20 +98,31 @@ namespace BidMyCar.Controllers
                 user.Password = Encryption.Hash(user.Password);
                 user.ConfirmPassword = Encryption.Hash(user.ConfirmPassword);
 
-                db.UsersInfo.Add(user);
-
-                if (db.SaveChanges() > 0)
+                //check if user has already used the email to register
+                var check = db.UsersInfo.Where(m => m.Email == user.Email).FirstOrDefault();
+                if (check == null)
                 {
-                    ViewBag.InsertMessage = "<script> alert('User Registered Successfully!')</script>";
-                    Session["UserID"] = user.UserID.ToString();
-                    Session["Name"] = user.Name.ToString();
-                    return RedirectToAction("Index", "UserProfile");
+                    db.UsersInfo.Add(user);
 
+                    if (db.SaveChanges() > 0)
+                    {
+                        ViewBag.InsertMessage = "<script> alert('User Registered Successfully!')</script>";
+                        Session["UserID"] = user.UserID.ToString();
+                        Session["Name"] = user.Name.ToString();
+                        return RedirectToAction("Index", "UserProfile");
+
+                    }
+                    else
+                    {
+                        ViewBag.InsertMessage = "<script> alert('Registration failed!')</script>";
+                    }
                 }
                 else
                 {
-                    ViewBag.InsertMessage = "<script> alert('Registration failed!')</script>";
+                    ViewBag.LoginStatus = 0;
                 }
+
+
 
             }
 

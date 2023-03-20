@@ -15,6 +15,8 @@
                     <h4 class="title">Join BidMyCar.</h4>
                     @using (Html.BeginForm("Register", "Home", FormMethod.Post))
                     {
+
+
                         <div class="socila-login">
                             <ul>
                                 <li>
@@ -34,6 +36,16 @@
                         <div class="alt-option">
                             <span>Or</span>
                         </div>
+
+                        //error message
+                        if (ViewBag.Loginstatus != null)
+                        {
+                            if (ViewBag.LoginStatus == 0)
+                            {
+                                <div class="alert alert-danger">Email has already been registered!</div>
+                            }
+
+                        }
 
                         <div class="form-floating mb-3">
                             @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter your name" })
@@ -77,7 +89,7 @@
                             <button type="submit" class="btn">Register</button>
                         </div>
                         <p class="outer-link">
-                            Already have an account? <a href="/Registration/Login"> Login Now</a>
+                            Already have an account? <a href="/Home/Login"> Login Now</a>
                         </p>
 
                     }

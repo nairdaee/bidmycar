@@ -1,7 +1,15 @@
-﻿
+﻿@{
+    Layout = null;
+}
 
 <h2>Index</h2>
 
+
+@if (Session["Name"] != null)
+{
+
+    <h3>Welcome @Session["Name"].ToString()</h3>
+}
 
 
 @if (Session["Email"] != null)
@@ -9,6 +17,8 @@
 
     <h3>Welcome @Session["Email"].ToString()</h3>
 }
+
+
 
 
 
