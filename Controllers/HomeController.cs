@@ -133,5 +133,13 @@ namespace BidMyCar.Controllers
         {
             return View();
         }
+        public ActionResult ItemDetails()
+        {
+            return View();
+        }
+        public ActionResult SearchItems()
+        {
+            return View();
+        }
     }
 }
