@@ -133,9 +133,11 @@ namespace BidMyCar.Controllers
         {
             return View();
         }
-
-        [HttpPost]
-        public ActionResult ResetPassword(passwordReset reset)
+        public ActionResult ItemDetails()
+        {
+            return View();
+        }
+        public ActionResult SearchItems()
         {
             return View();
         }

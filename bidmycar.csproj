@@ -284,6 +284,8 @@
     <Content Include="Views\Home\login.cshtml" />
     <Content Include="Views\Home\register.cshtml" />
     <Content Include="Views\Home\resetPassword.cshtml" />
+    <Content Include="Views\Home\ItemDetails.cshtml" />
+    <Content Include="Views\Home\SearchItems.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
