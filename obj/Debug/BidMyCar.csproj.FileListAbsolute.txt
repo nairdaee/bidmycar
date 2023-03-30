@@ -318,81 +318,90 @@ C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\EntityFramework.dll
 C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\EntityFramework.SqlServer.dll
 C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\EntityFramework.xml
 C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\EntityFramework.SqlServer.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Bcl.HashCode.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Data.SqlClient.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.EntityFrameworkCore.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Configuration.Binder.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Configuration.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Logging.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Options.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Primitives.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Identity.Client.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.IdentityModel.Logging.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.IdentityModel.Protocols.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.IdentityModel.Tokens.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Buffers.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Collections.Immutable.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.ComponentModel.Annotations.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Diagnostics.DiagnosticSource.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Memory.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Numerics.Vectors.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Threading.Tasks.Extensions.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Bcl.HashCode.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Data.SqlClient.pdb
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Data.SqlClient.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.EntityFrameworkCore.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.EntityFrameworkCore.Relational.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Caching.Abstractions.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Caching.Memory.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Configuration.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Configuration.Abstractions.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Configuration.Binder.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.DependencyInjection.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Logging.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Logging.Abstractions.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Options.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Extensions.Primitives.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.Identity.Client.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.IdentityModel.JsonWebTokens.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.IdentityModel.Logging.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.IdentityModel.Protocols.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Microsoft.IdentityModel.Tokens.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Buffers.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Collections.Immutable.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Diagnostics.DiagnosticSource.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.IdentityModel.Tokens.Jwt.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Memory.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Numerics.Vectors.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\System.Threading.Tasks.Extensions.xml
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\de\Microsoft.Data.SqlClient.resources.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\es\Microsoft.Data.SqlClient.resources.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\fr\Microsoft.Data.SqlClient.resources.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\it\Microsoft.Data.SqlClient.resources.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\ja\Microsoft.Data.SqlClient.resources.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\ko\Microsoft.Data.SqlClient.resources.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\pt-BR\Microsoft.Data.SqlClient.resources.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\ru\Microsoft.Data.SqlClient.resources.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\zh-Hans\Microsoft.Data.SqlClient.resources.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\zh-Hant\Microsoft.Data.SqlClient.resources.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\CryptSharp.SCryptSubset.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\Scrypt.dll
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\CryptSharp.SCryptSubset.pdb
-C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\CryptSharp.SCryptSubset.xml
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\BidMyCar.dll.config
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\BidMyCar.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\BidMyCar.pdb
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\csc.exe
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\csc.exe.config
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\csc.rsp
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\csi.exe
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\csi.exe.config
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\csi.rsp
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\Microsoft.Managed.Core.targets
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.AppContext.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Collections.Immutable.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Console.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Globalization.Calendars.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.IO.Compression.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.IO.FileSystem.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Net.Http.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Net.Sockets.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Reflection.Metadata.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.ValueTuple.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Xml.XmlDocument.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Xml.XPath.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\vbc.exe
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\vbc.exe.config
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\vbc.rsp
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\VBCSCompiler.exe
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\roslyn\VBCSCompiler.exe.config
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\Antlr3.Runtime.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\EntityFramework.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\EntityFramework.SqlServer.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\Microsoft.Web.Infrastructure.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\Newtonsoft.Json.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.Helpers.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.Mvc.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.Optimization.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.Razor.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.WebPages.Deployment.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.WebPages.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.WebPages.Razor.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\WebGrease.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\EntityFramework.xml
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\EntityFramework.SqlServer.xml
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.Helpers.xml
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.Mvc.xml
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.Optimization.xml
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.Razor.xml
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.WebPages.xml
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.WebPages.Deployment.xml
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\System.Web.WebPages.Razor.xml
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\Newtonsoft.Json.xml
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\Antlr3.Runtime.pdb
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\obj\Debug\BidMyCar.csproj.AssemblyReference.cache
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\obj\Debug\BidMyCar.csproj.CoreCompileInputs.cache
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\obj\Debug\BidMyCar.csproj.CopyComplete
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\obj\Debug\BidMyCar.dll
+D:\3.2\NET\Web Apps\ptrial\BidMycar3\obj\Debug\BidMyCar.pdb
+C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\WebMatrix.Data.dll
+C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\WebMatrix.WebData.dll
+C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\WebMatrix.Data.xml
+C:\Users\tiffa\Desktop\Bid\nairdaee\bidmycar\bin\WebMatrix.WebData.xml

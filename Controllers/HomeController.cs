@@ -7,6 +7,9 @@ using Microsoft.Ajax.Utilities;
 using System.Web.Security;
 using System.Web;
 using System;
+using WebMatrix.WebData;
+using System.Net.Mail;
+using System.Net;
 
 namespace BidMyCar.Controllers
 {
@@ -129,7 +132,51 @@ namespace BidMyCar.Controllers
             return View();
         }
 
-        public ActionResult ResetPassword()
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        //post
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult ForgotPassword(forgotPassword user)
+        {
+                //find the email account and verifying
+                using (db)
+                {
+                    var account = db.UsersInfo.Where(m => m.Email == user.Email).FirstOrDefault();
+
+                //if account is verified send the link to the email
+                   if(account != null)
+                    {
+                       string resetCode = Guid.NewGuid().ToString();
+
+                    }
+                else { ViewBag.LoginStatus = 0;}
+                }
+
+
+ 
+
+        return View();
+    }
+
+        //sending verification link
+        [NonAction]
+        public void SendResetLink(string Email, string emailFor="VerifyAccount")
+        {
+
+        }
+
+
+
+    public ActionResult ItemDetails()
+        {
+            return View();
+        }
+        public ActionResult SearchItems()
         {
             return View();
         }
