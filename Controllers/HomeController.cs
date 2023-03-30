@@ -151,7 +151,7 @@ namespace BidMyCar.Controllers
                 //if account is verified send the link to the email
                    if(account != null)
                     {
-                        ViewBag.InsertMessage = "<script> alert('Email found!')</script>";
+                       string resetCode = Guid.NewGuid().ToString();
 
                     }
                 else { ViewBag.LoginStatus = 0;}
@@ -162,6 +162,15 @@ namespace BidMyCar.Controllers
 
         return View();
     }
+
+        //sending verification link
+        [NonAction]
+        public void SendResetLink(string Email, string emailFor="VerifyAccount")
+        {
+
+        }
+
+
 
     public ActionResult ItemDetails()
         {
