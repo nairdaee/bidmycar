@@ -6,7 +6,7 @@ using System.Web;
 
 namespace BidMyCar.Models
 {
-    public class passwordReset
+    public class forgotPassword
     {
         [Required(ErrorMessage = "Email is required!")]
         [EmailAddress(ErrorMessage ="Invalid email format!")]
