@@ -7,9 +7,11 @@ using Microsoft.Ajax.Utilities;
 using System.Web.Security;
 using System.Web;
 using System;
-using WebMatrix.WebData;
-using System.Net.Mail;
-using System.Net;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Runtime.ConstrainedExecution;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace BidMyCar.Controllers
 {
@@ -20,12 +22,9 @@ namespace BidMyCar.Controllers
 
         //creating an object of the database
         BidMyCarEntities db = new BidMyCarEntities();
+        CarDetailsDbContext db2 = new CarDetailsDbContext();
 
-        public ActionResult Index()
-        {
-            return View();
-        }
-
+        
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -132,53 +131,151 @@ namespace BidMyCar.Controllers
             return View();
         }
 
-        public ActionResult ForgotPassword()
+        public ActionResult ResetPassword()
         {
             return View();
         }
+        //public ActionResult ItemDetails()
 
-        //post
-        [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public ActionResult ForgotPassword(forgotPassword user)
+        //{
+        //    using (var db = new CarDetailsDbContext())
+        //    {
+        //        //var features = db.CarDetails.ToList();
+        //        //return View(features);
+        //        var features = db.CarDetails.FirstOrDefault(); // assuming there is only one CarDetail object in the database
+        //        var featureList = features.Features.Split(','); // assuming features is a comma-separated string
+        //        return View(featureList);
+        //    }
+        //    //return View();
+        //}
+        public ActionResult Index()
         {
-                //find the email account and verifying
-                using (db)
+            //List<Make> cars = CarDetailsDbContext.Make.ToList();
+
+            //// Create a list of ViewModels to pass to the view
+            //List<CarViewModel> carViewModels = new List<CarViewModel>();
+            //foreach (var car in cars)
+            //{
+            //    CarViewModel carViewModel = new CarViewModel();
+            //    carViewModel.Name = car.Name;
+            //    carViewModel.Description = car.Description;
+            //    carViewModel.ImageUrl = car.ImageUrl;
+            //    carViewModel.Price = car.Price;
+
+            //    // Add the ViewModel to the list
+            //    carViewModels.Add(carViewModel);
+            //}
+
+            //// Pass the list of ViewModels to the view
+            //return View(carViewModels); 
+            //return View();
+            List<CarDetail> cars = new List<CarDetail>();
+
+            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["BidMyCarEntities1"].ConnectionString.Replace("metadata=res://*/", "")))
+
+            {
+                connection.Open();
+                string query = "SELECT * FROM CarDetails";
+                using (var command = new SqlCommand(query, connection))
                 {
-                    var account = db.UsersInfo.Where(m => m.Email == user.Email).FirstOrDefault();
-
-                //if account is verified send the link to the email
-                   if(account != null)
+                    using (var reader = command.ExecuteReader())
                     {
-                       string resetCode = Guid.NewGuid().ToString();
+                        while (reader.Read())
+                        {
+                            CarDetail car = new CarDetail();
+                            car.CarID = reader.GetInt32(0);
+                            car.YOM = reader.GetInt32(1);
+                            car.Make = reader.GetString(2);
+                            car.Model = reader.GetString(3);
+                            car.BodyType = reader.GetString(4);
+                            car.Condition = reader.GetString(5);
+                            car.Category = reader.GetString(6);
+                            car.Features = reader.GetString(7);
+                            car.CarDescription = reader.GetString(8);
+                            car.CarLocation = reader.GetString(9);
+                            car.UploadDate = reader.GetDateTime(10);
+                            car.Price = reader.GetInt32(11);
+                            car.UserID = reader.GetInt32(12);
+                            car.Color = reader.GetString(13);
+                            car.Miles = reader.GetInt32(14);
+                            car.Transmission = reader.GetString(15);
+                            car.EngineSize = reader.GetString(16);
+                            car.PowerOutput = reader.GetString(17);
 
+                            // Add the car to the list
+                            cars.Add(car);
+                        }
                     }
-                else { ViewBag.LoginStatus = 0;}
                 }
+            }
+
+            // Create a list of ViewModels to pass to the view
+            List<CarDetail> carViewModels = new List<CarDetail>();
+            foreach (var car in cars)
+            {
+                CarDetail carViewModel = new CarDetail();
+               
+
+                carViewModel.CarID = car.CarID;
+                carViewModel.Model = car.Model;
+                carViewModel.YOM = car.YOM;
+                carViewModel.Price = car.Price;
+                carViewModel.Features = car.Features;
+                carViewModel.CarLocation = car.CarLocation;
+                carViewModel.CarDescription = car.CarDescription;
+                carViewModel.BodyType = car.BodyType;
+                carViewModel.Category = car.Category;
+                carViewModel.Make = car.Make;
+                carViewModel.UploadDate = car.UploadDate;
+                carViewModel.Condition = car.Condition;
+                carViewModel.Miles = car.Miles;
+                carViewModel.Color = car.Color;
+                carViewModel.Transmission = car.Transmission;
+                carViewModel.EngineSize = car.EngineSize;
+                carViewModel.PowerOutput = car.PowerOutput;
+                carViewModels.Add(carViewModel);
+
+            }
+
+            // Pass the list of ViewModels to the view
+            return View(carViewModels);
+        }
+        public ActionResult ItemDetails()
+        {
+            using (var db = new CarDetailsDbContext())
+            {
+                var features = db.CarDetails.FirstOrDefault();
+                //var featureList = features.Features.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries); 
+                // return View(featureList);
+                var viewModel = new CarDetail
+                {
+                    CarID = features.CarID,
+                    Model = features.Model,
+                    YOM = features.YOM,
+                    Price = features.Price,
+                    Features = features.Features,
+                    CarLocation = features.CarLocation,
+                    CarDescription = features.CarDescription,
+                    BodyType = features.BodyType,
+                    Category = features.Category,
+                    Make = features.Make,
+                    UploadDate = features.UploadDate,
+                    Condition = features.Condition,
+                    Miles = features.Miles,
+                    Color = features.Color,
+                    Transmission = features.Transmission,
+                    EngineSize = features.EngineSize,
+                    PowerOutput = features.PowerOutput
 
 
- 
+                };
+                return View(viewModel);
 
-        return View();
+
+            }
+
+        }
+
     }
 
-        //sending verification link
-        [NonAction]
-        public void SendResetLink(string Email, string emailFor="VerifyAccount")
-        {
-
-        }
-
-
-
-    public ActionResult ItemDetails()
-        {
-            return View();
-        }
-        public ActionResult SearchItems()
-        {
-            return View();
-        }
     }
-}

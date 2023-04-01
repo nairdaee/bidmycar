@@ -16,7 +16,6 @@ namespace BidMyCar.Models
 
     public partial class UsersInfo
     {
-
         public int UserID { get; set; }
 
         [DisplayName("Fullname")]
@@ -27,7 +26,6 @@ namespace BidMyCar.Models
         [Required(ErrorMessage = "Email is required!")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-
 
         [DisplayName("Password")]
         [Required(ErrorMessage = "Password is required!")]
@@ -40,6 +38,8 @@ namespace BidMyCar.Models
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Confirm password and password do not match")]
         public string ConfirmPassword { get; set; }
-        public string resetCode { get; set; }
     }
+
+
 }
+

@@ -4,12 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="BidMyCarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'BidMyCar.dbo.CarDetails' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="CarDetails">
-          <Property Name="CarID" Type="int" />
-        </EntityType>-->
+      <Schema Namespace="BidMyCarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="UsersInfo">
           <Key>
             <PropertyRef Name="UserID" />
@@ -18,12 +13,12 @@ warning 6013: The table/view 'BidMyCar.dbo.CarDetails' does not have a primary k
           <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="resetCode" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityContainer Name="BidMyCarModelStoreContainer">
           <EntitySet Name="UsersInfo" EntityType="Self.UsersInfo" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BidMyCarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -35,7 +30,6 @@ warning 6013: The table/view 'BidMyCar.dbo.CarDetails' does not have a primary k
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="resetCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityContainer Name="BidMyCarEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="UsersInfoes" EntityType="Self.UsersInfo" />
@@ -49,7 +43,6 @@ warning 6013: The table/view 'BidMyCar.dbo.CarDetails' does not have a primary k
           <EntitySetMapping Name="UsersInfoes">
             <EntityTypeMapping TypeName="BidMyCarModel.UsersInfo">
               <MappingFragment StoreEntitySet="UsersInfo">
-                <ScalarProperty Name="resetCode" ColumnName="resetCode" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Email" ColumnName="Email" />

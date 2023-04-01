@@ -179,9 +179,21 @@
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 p-0">
+                                @*<div class="search-btn button">
+            <button id="search" class="btn"><i class="lni lni-search-alt"></i> Search</button>
+
+        </div>*@
                                 <div class="search-btn button">
-                                    <button class="btn"><i class="lni lni-search-alt"></i> Search</button>
+                                    <button class="btn" onclick="redirectToCarDetails()"><i class="lni lni-search-alt"></i> Search</button>
                                 </div>
+
+                                    <script>
+                                        function redirectToCarDetails() {
+                                        var url = '@Url.Content("~/CarDetails/SearchItems")';
+                                        window.location.href = url;
+                                        }
+                                    </script>
+
                             </div>
                         </div>
                     </div>
@@ -202,7 +214,7 @@
                         <!-- Start Single Category -->
                         <a href="#" class="single-cat">
                             <div class="icon">
-                                <img src="~/Content/images/carlogos/subaru.svg" alt="#">
+                                <img src="~/Content/images/carlogos/subaru.svg" alt="#"  >
                             </div>
 
                             <h3>Subaru</h3>
@@ -339,270 +351,313 @@
                 </div>
             </div>
         </div>
-        <div class="single-head">
-            <div class="row" data-masonry='{"percentPosition": true }'>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Grid -->
-                    <div class="single-grid wow fadeInUp" data-wow-delay=".2s">
-                        <div class="image">
-                            <a href="item-details.html" class="thumbnail"><img src="~/Content/images/cars/e63s.jpg" alt="#"></a>
-                            <div class="author">
-                                <div class="author-image">
-                                    <a href="javascript:void(0)">
-                                        <img src="https://via.placeholder.com/100x100" alt="#">
-                                        <span>James Kamau</span>
-                                    </a>
-                                </div>
-                                <p class="sale">On auction</p>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="top-content">
-                                <a href="javascript:void(0)" class="tag">Car Auction</a>
-                                <h3 class="title">
-                                    <a href="item-details.html">2018 Mercedes E63s AMG 4MATIC+</a>
-                                </h3>
-                                <p class="update-time">Last Updated: 2 mins ago</p>
-                                <ul class="rating">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><a href="javascript:void(0)">(35)</a></li>
-                                </ul>
-                                <ul class="info-list">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i>1 day</a></li>
-                                </ul>
-                            </div>
-                            <div class="bottom-content">
-                                <p class="price">Current Bid: <span>KES 4,556,000</span></p>
-                                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Grid -->
+
+        <!-- Start Single Grid -->
+        <!--<div class="single-grid wow fadeInUp" data-wow-delay=".2s">
+        <div class="image">
+            <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="~/Content/images/cars/e63s.jpg" alt="#"></a>
+            <div class="author">
+                <div class="author-image">
+                    <a href="javascript:void(0)">
+                        <img src="https://via.placeholder.com/100x100" alt="#">
+                        <span>James Kamau</span>
+                    </a>
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Grid -->
-                    <div class="single-grid wow fadeInUp" data-wow-delay=".4s">
-                        <div class="image">
-                            <a href="item-details.html" class="thumbnail"><img src="~/Content/images/cars/Macan1.jpg" alt="#"></a>
-                            <div class="author">
-                                <div class="author-image">
-                                    <a href="javascript:void(0)">
-                                        <img src="https://via.placeholder.com/100x100" alt="#">
-                                        <span>Alex Njui</span>
-                                    </a>
-                                </div>
-                                <p class="sale">For Sale</p>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="top-content">
-                                <a href="javascript:void(0)" class="tag">Brand New</a>
-                                <h3 class="title">
-                                    <a href="item-details.html">Porsche Macan GTS</a>
-                                </h3>
-                                <p class="update-time">Last Updated: 2 hours ago</p>
-                                <ul class="rating">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><a href="javascript:void(0)">(20)</a></li>
-                                </ul>
-                                <ul class="info-list">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Along Ngong. Rd, Nairobi</a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Jan 7, 2023</a></li>
-                                </ul>
-                            </div>
-                            <div class="bottom-content">
-                                <p class="price">Starting Price: <span>KES 10,000,000</span></p>
-                                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Grid -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Grid -->
-                    <div class="single-grid wow fadeInUp" data-wow-delay=".6s">
-                        <div class="image">
-                            <a href="item-details.html" class="thumbnail"><img src="~/Content/images/cars/RS6.jpg" alt="#"></a>
-                            <div class="author">
-                                <div class="author-image">
-                                    <a href="javascript:void(0)">
-                                        <img src="https://via.placeholder.com/100x100" alt="#">
-                                        <span>Imports by Kairo</span>
-                                    </a>
-                                </div>
-                                <p class="sale">For Sale</p>
-                            </div>
-                            <p class="item-position"><i class="lni lni-bolt"></i> Featured</p>
-                        </div>
-                        <div class="content">
-                            <div class="top-content">
-                                <a href="javascript:void(0)" class="tag">New Used</a>
-                                <h3 class="title">
-                                    <a href="item-details.html">Audi RS6 Avant Vorsprung</a>
-                                </h3>
-                                <p class="update-time">Last Updated: 3 hours ago</p>
-                                <ul class="rating">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><a href="javascript:void(0)">(55)</a></li>
-                                </ul>
-                                <ul class="info-list">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Mar 18, 2023</a></li>
-                                </ul>
-                            </div>
-                            <div class="bottom-content">
-                                <p class="price">Starting Price: <span>KES 23,540,000</span></p>
-                                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Grid -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Grid -->
-                    <div class="single-grid wow fadeInUp" data-wow-delay=".2s">
-                        <div class="image">
-                            <a href="item-details.html" class="thumbnail"><img src="~/Content/images/cars/Bentley.jpg" alt="#"></a>
-                            <div class="author">
-                                <div class="author-image">
-                                    <a href="javascript:void(0)">
-                                        <img src="https://via.placeholder.com/100x100" alt="#">
-                                        <span>Juma Mwanza</span>
-                                    </a>
-                                </div>
-                                <p class="sale">For Sale</p>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="top-content">
-                                <a href="javascript:void(0)" class="tag">New, Assembled locally</a>
-                                <h3 class="title">
-                                    <a href="item-details.html">2022 Bentley Bentayga</a>
-                                </h3>
-                                <p class="update-time">Last Updated: 4 hours ago</p>
-                                <ul class="rating">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><a href="javascript:void(0)">(35)</a></li>
-                                </ul>
-                                <ul class="info-list">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Mombasa, KE</a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Apr 12, 2023</a></li>
-                                </ul>
-                            </div>
-                            <div class="bottom-content">
-                                <p class="price">Starting Price: <span>KES 9,500,000</span></p>
-                                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Grid -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Grid -->
-                    <div class="single-grid wow fadeInUp" data-wow-delay=".4s">
-                        <div class="image">
-                            <a href="item-details.html" class="thumbnail"><img src="~/Content/images/cars/X5M.jpg" alt="#"></a>
-                            <div class="author">
-                                <div class="author-image">
-                                    <a href="javascript:void(0)">
-                                        <img src="https://via.placeholder.com/100x100" alt="#">
-                                        <span>Thomas Deco</span>
-                                    </a>
-                                </div>
-                                <p class="sale">Rental</p>
-                            </div>
-                            <p class="item-position"><i class="lni lni-bolt"></i> Featured</p>
-                        </div>
-                        <div class="content">
-                            <div class="top-content">
-                                <a href="javascript:void(0)" class="tag">Rental Cars</a>
-                                <h3 class="title">
-                                    <a href="item-details.html">2021 BMW X5 M Competition</a>
-                                </h3>
-                                <p class="update-time">Last Updated: 5 hours ago</p>
-                                <ul class="rating">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><a href="javascript:void(0)">(35)</a></li>
-                                </ul>
-                                <ul class="info-list">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nakuru, KE</a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> May 25, 2023</a></li>
-                                </ul>
-                            </div>
-                            <div class="bottom-content">
-                                <p class="price">Starts From: <span>KES 5,000/day</span></p>
-                                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Grid -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Grid -->
-                    <div class="single-grid wow fadeInUp" data-wow-delay=".6s">
-                        <div class="image">
-                            <a href="item-details.html" class="thumbnail"><img src="~/Content/images/cars/landrover.jpg" alt="#"></a>
-                            <div class="author">
-                                <div class="author-image">
-                                    <a href="javascript:void(0)">
-                                        <img src="https://via.placeholder.com/100x100" alt="#">
-                                        <span>Jonson Kuria</span>
-                                    </a>
-                                </div>
-                                <p class="sale">For Sale</p>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="top-content">
-                                <a href="javascript:void(0)" class="tag">On Sale</a>
-                                <h3 class="title">
-                                    <a href="item-details.html">2022 Range Rover Autobiography</a>
-                                </h3>
-                                <p class="update-time">Last Updated: 7 hours ago</p>
-                                <ul class="rating">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><a href="javascript:void(0)">(20)</a></li>
-                                </ul>
-                                <ul class="info-list">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Feb 18, 2023</a></li>
-                                </ul>
-                            </div>
-                            <div class="bottom-content">
-                                <p class="price">Starting Price: <span>KES 3,450,000</span></p>
-                                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Grid -->
-                </div>
+                <p class="sale">On auction</p>
             </div>
         </div>
-    </div>
+        <div class="content">
+            <div class="top-content">
+                <a href="javascript:void(0)" class="tag">Car Auction</a>
+                <h3 class="title">
+                    <a href="~/CarDetails/ItemDetails">2018 Mercedes E63s AMG 4MATIC+</a>
+                </h3>
+                <p class="update-time">Last Updated: 2 mins ago</p>
+                <ul class="rating">
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><a href="javascript:void(0)">(35)</a></li>
+                </ul>
+                <ul class="info-list">
+                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
+                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i>1 day</a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <p class="price">Current Bid: <span>KES 4,556,000</span></p>
+                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+            </div>
+        </div>
+    </div>-->
+        <!-- End Single Grid -->
+        <!--</div>
+    <div class="col-lg-4 col-md-6 col-12">-->
+        <!-- Start Single Grid -->
+        <!--<div class="single-grid wow fadeInUp" data-wow-delay=".4s">
+        <div class="image">
+            <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="~/Content/images/cars/Macan1.jpg" alt="#"></a>
+            <div class="author">
+                <div class="author-image">
+                    <a href="javascript:void(0)">
+                        <img src="https://via.placeholder.com/100x100" alt="#">
+                        <span>Alex Njui</span>
+                    </a>
+                </div>
+                <p class="sale">For Sale</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="top-content">
+                <a href="javascript:void(0)" class="tag">Brand New</a>
+                <h3 class="title">
+                    <a href="~/CarDetails/ItemDetails">Porsche Macan GTS</a>
+                </h3>
+                <p class="update-time">Last Updated: 2 hours ago</p>
+                <ul class="rating">
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><a href="javascript:void(0)">(20)</a></li>
+                </ul>
+                <ul class="info-list">
+                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Along Ngong. Rd, Nairobi</a></li>
+                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Jan 7, 2023</a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <p class="price">Starting Price: <span>KES 10,000,000</span></p>
+                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+            </div>
+        </div>
+    </div>-->
+        <!-- End Single Grid -->
+        <!--</div>
+    <div class="col-lg-4 col-md-6 col-12">-->
+        <!-- Start Single Grid -->
+        <!--<div class="single-grid wow fadeInUp" data-wow-delay=".6s">
+        <div class="image">
+            <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="~/Content/images/cars/RS6.jpg" alt="#"></a>
+            <div class="author">
+                <div class="author-image">
+                    <a href="javascript:void(0)">
+                        <img src="https://via.placeholder.com/100x100" alt="#">
+                        <span>Imports by Kairo</span>
+                    </a>
+                </div>
+                <p class="sale">For Sale</p>
+            </div>
+            <p class="item-position"><i class="lni lni-bolt"></i> Featured</p>
+        </div>
+        <div class="content">
+            <div class="top-content">
+                <a href="javascript:void(0)" class="tag">New Used</a>
+                <h3 class="title">
+                    <a href="~/CarDetails/ItemDetails">Audi RS6 Avant Vorsprung</a>
+                </h3>
+                <p class="update-time">Last Updated: 3 hours ago</p>
+                <ul class="rating">
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><a href="javascript:void(0)">(55)</a></li>
+                </ul>
+                <ul class="info-list">
+                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
+                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Mar 18, 2023</a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <p class="price">Starting Price: <span>KES 23,540,000</span></p>
+                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+            </div>
+        </div>
+    </div>-->
+        <!-- End Single Grid -->
+        <!--</div>
+    <div class="col-lg-4 col-md-6 col-12">-->
+        <!-- Start Single Grid -->
+        <!--<div class="single-grid wow fadeInUp" data-wow-delay=".2s">
+        <div class="image">
+            <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="~/Content/images/cars/Bentley.jpg" alt="#"></a>
+            <div class="author">
+                <div class="author-image">
+                    <a href="javascript:void(0)">
+                        <img src="https://via.placeholder.com/100x100" alt="#">
+                        <span>Juma Mwanza</span>
+                    </a>
+                </div>
+                <p class="sale">For Sale</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="top-content">
+                <a href="javascript:void(0)" class="tag">New, Assembled locally</a>
+                <h3 class="title">
+                    <a href="~/CarDetails/ItemDetails">2022 Bentley Bentayga</a>
+                </h3>
+                <p class="update-time">Last Updated: 4 hours ago</p>
+                <ul class="rating">
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><a href="javascript:void(0)">(35)</a></li>
+                </ul>
+                <ul class="info-list">
+                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Mombasa, KE</a></li>
+                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Apr 12, 2023</a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <p class="price">Starting Price: <span>KES 9,500,000</span></p>
+                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+            </div>
+        </div>
+    </div>-->
+        <!-- End Single Grid -->
+        <!--</div>
+    <div class="col-lg-4 col-md-6 col-12">-->
+        <!-- Start Single Grid -->
+        <!--<div class="single-grid wow fadeInUp" data-wow-delay=".4s">
+        <div class="image">
+            <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="~/Content/images/cars/X5M.jpg" alt="#"></a>
+            <div class="author">
+                <div class="author-image">
+                    <a href="javascript:void(0)">
+                        <img src="https://via.placeholder.com/100x100" alt="#">
+                        <span>Thomas Deco</span>
+                    </a>
+                </div>
+                <p class="sale">Rental</p>
+            </div>
+            <p class="item-position"><i class="lni lni-bolt"></i> Featured</p>
+        </div>
+        <div class="content">
+            <div class="top-content">
+                <a href="javascript:void(0)" class="tag">Rental Cars</a>
+                <h3 class="title">
+                    <a href="~/CarDetails/ItemDetails">2021 BMW X5 M Competition</a>
+                </h3>
+                <p class="update-time">Last Updated: 5 hours ago</p>
+                <ul class="rating">
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><a href="javascript:void(0)">(35)</a></li>
+                </ul>
+                <ul class="info-list">
+                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nakuru, KE</a></li>
+                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> May 25, 2023</a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <p class="price">Starts From: <span>KES 5,000/day</span></p>
+                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+            </div>
+        </div>
+    </div>-->
+        <!-- End Single Grid -->
+        <!--</div>
+    <div class="col-lg-4 col-md-6 col-12">-->
+        <!-- Start Single Grid -->
+        <!--<div class="single-grid wow fadeInUp" data-wow-delay=".6s">
+        <div class="image">
+            <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="~/Content/images/cars/landrover.jpg" alt="#"></a>
+            <div class="author">
+                <div class="author-image">
+                    <a href="javascript:void(0)">
+                        <img src="https://via.placeholder.com/100x100" alt="#">
+                        <span>Jonson Kuria</span>
+                    </a>
+                </div>
+                <p class="sale">For Sale</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="top-content">
+                <a href="javascript:void(0)" class="tag">On Sale</a>
+                <h3 class="title">
+                    <a href="~/CarDetails/ItemDetails">2022 Range Rover Autobiography</a>
+                </h3>
+                <p class="update-time">Last Updated: 7 hours ago</p>
+                <ul class="rating">
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><a href="javascript:void(0)">(20)</a></li>
+                </ul>
+                <ul class="info-list">
+                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
+                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Feb 18, 2023</a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <p class="price">Starting Price: <span>KES 3,450,000</span></p>
+                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+            </div>
+        </div>
+    </div>-->
+        @foreach (var item in Model)
+        {
+            <div class="single-head">
+                <div class="row" data-masonry='{"percentPosition": true }'>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="single-grid wow fadeInUp" data-wow-delay=".2s">
+                            <div class="image">
+                                <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="@Url.Content("~/Content/images/cars/e63s.jpg")" alt="#"></a>
+                                <div class="author">
+                                    <div class="author-image">
+                                        <a href="javascript:void(0)">
+                                            <img src="https://via.placeholder.com/100x100" alt="#">
+                                            <span>@item.Model</span>
+                                        </a>
+                                    </div>
+                                    <p class="sale">@item.Category</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="top-content">
+                                    <a href="javascript:void(0)" class="tag">Car Auction</a>
+                                    <h3 class="title">
+                                        <a href="~/CarDetails/ItemDetails">@item.YOM @item.Make @item.Model</a>
+                                    </h3>
+                                    <p class="update-time">Last Updated: @item.UploadDate</p>
+                                    <ul class="rating">
+                                        @for (int i = 0; i < 5; i++)
+                                        {
+                                            <li><i class="lni lni-star-filled"></i></li>
+                                        }
+                                        <li><a href="javascript:void(0)">@item.Miles</a></li>
+                                    </ul>
+                                    <ul class="info-list">
+                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> @item.CarLocation</a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> @item.UploadDate</a></li>
+                                    </ul>
+                                </div>
+                                <div class="bottom-content">
+                                    <p class="price">Current Bid: <span>@item.Price</span></p>
+                                    <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- End Single Grid -->
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
 </section>
 <!-- /End Items Grid Area -->

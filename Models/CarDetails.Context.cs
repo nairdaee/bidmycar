@@ -13,22 +13,18 @@ namespace BidMyCar.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BidMyCarEntities : DbContext
+    public partial class BidMyCarEntities1 : DbContext
     {
-        public BidMyCarEntities()
-            : base("name=BidMyCarEntities")
+        public BidMyCarEntities1()
+            : base("name=BidMyCarEntities1")
         {
         }
-        public BidMyCarEntities(string connectionString)
-           : base(connectionString)
-        {
-        }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<UsersInfo> UsersInfo { get; set; }
+        public virtual DbSet<CarDetail> CarDetails { get; set; }
     }
 }
