@@ -41,7 +41,7 @@ namespace BidMyCar.Models
         [Compare("Password", ErrorMessage = "Confirm password and password do not match")]
         public string ConfirmPassword { get; set; }
 
-        [Required(ErrorMessage = "")]
+        
         public string resetCode { get; set; }
     }
 }

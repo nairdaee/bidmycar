@@ -5,7 +5,6 @@
 @model BidMyCar.Models.UsersInfo
 
 @Html.Raw(ViewBag.InsertMessage)
-
 <!-- start Registration section -->
 <section class="login registration section pt-120">
     <div class="container">
@@ -13,8 +12,10 @@
             <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
                 <div class="form-head">
                     <h4 class="title">Join BidMyCar.</h4>
-                    @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+                    @using (Html.BeginForm("Register", "Authentication", FormMethod.Post))
                     {
+
+
 
 
                         <div class="socila-login">
@@ -38,14 +39,19 @@
                         </div>
 
                         //error message
-                        if (ViewBag.Loginstatus != null)
+                        // Display any error messages 
+                        if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
                         {
-                            if (ViewBag.LoginStatus == 0)
-                            {
-                                <div class="alert alert-danger">Email has already been registered!</div>
-                            }
-
+                            <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
                         }
+
+                        //Display any success messages
+                        if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                        {
+                            <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+                        }
+
+
 
                         <div class="form-floating mb-3">
                             @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter your name" })
@@ -89,7 +95,7 @@
                             <button type="submit" class="btn">Register</button>
                         </div>
                         <p class="outer-link">
-                            Already have an account? <a href="/Home/Login"> Login Now</a>
+                            Already have an account? <a href="/Authentication/Login"> Login Now</a>
                         </p>
 
                     }
