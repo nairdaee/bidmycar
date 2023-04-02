@@ -10,6 +10,13 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Helpers;
+using GoogleAuthentication.Services;
+using System.Threading.Tasks;
+using Google.Apis.Auth.OAuth2;
+using Newtonsoft.Json;
+using System.Data.Entity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace BidMyCar.Controllers
 {
@@ -20,9 +27,82 @@ namespace BidMyCar.Controllers
         //creating an object of the database
         BidMyCarEntities db = new BidMyCarEntities();
 
+
+        // GET: Authentication/LoginCallback
+        public async Task<ActionResult> LoginCallback(string code, UsersInfo newUser)
+        {
+            if (string.IsNullOrEmpty(code))
+            {
+                // No authorization code, redirect to login page
+                return RedirectToAction("Login");
+            }
+
+            try
+            {
+                // Get Google access token using authorization code
+                var clientId = "288450486046-7ni9arjrk2derhn1s5vbg7nakt3105is.apps.googleusercontent.com";
+                var clientSecret = "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";
+                var url = "http://localhost:60694/Authentication/LoginCallback";
+                var token = await GoogleAuth.GetAuthAccessToken(code, clientId, clientSecret, url);
+                var userProfile = await GoogleAuth.GetProfileResponseAsync(token.AccessToken.ToString());
+                
+
+                if(userProfile != null)
+                {
+                    var googleUser = JsonConvert.DeserializeObject<GoogleInfo>(userProfile);
+
+                    // Check if user already exists in the database
+                    var existingUser = await db.UsersInfo.FirstOrDefaultAsync(u => u.Email == googleUser.Email);
+                    if (existingUser == null)
+                    {
+                        // if User does not exist, create a new user entity
+                       
+                        newUser.Email = googleUser.Email;
+                        newUser.Name = googleUser.GivenName;
+                        newUser.GoogleId = googleUser.Id;
+
+                        // Save the new user to the database
+                        db.UsersInfo.Add(newUser);
+                        db.SaveChanges();
+
+                        // Store the user information in the session
+                        Session["UserId"] = newUser.UserID;
+                        Session["Email"] = newUser.Email;
+                        Session["Name"] = newUser.Name;
+                    }
+                    else
+                    {
+                        // Store the user information in the session
+                        Session["UserId"] = existingUser.UserID;
+                        Session["Email"] = existingUser.Email;
+                        Session["Name"] = existingUser.Name;
+
+                    }
+
+                }
+           
+        }
+
+            catch (Exception ex) { 
+            }
+
+
+
+            return RedirectToAction("Index", "UsersProfile");
+
+        }
+
+
+
         // GET: Authentication
         public ActionResult Register()
         {
+            var clientId = "288450486046-7ni9arjrk2derhn1s5vbg7nakt3105is.apps.googleusercontent.com";
+            var url = "http://localhost:60694/Authentication/LoginCallback";
+            var response = GoogleAuth.GetAuthUrl(clientId, url);
+            ViewBag.Response = response;
+
+
             return View();
         }
 
@@ -48,7 +128,7 @@ namespace BidMyCar.Controllers
 
                     //store data into session
                     Session["UserID"] = user.UserID.ToString();
-                    Session["Username"] = user.Name.ToString();
+                    Session["Name"] = user.Name.ToString();
 
                     //redirect to user profile
                     return RedirectToAction("Index", "UsersProfile");
@@ -67,6 +147,13 @@ namespace BidMyCar.Controllers
         //login
         public ActionResult Login()
         {
+           
+
+            var clientId = "288450486046-7ni9arjrk2derhn1s5vbg7nakt3105is.apps.googleusercontent.com";
+            var url = "http://localhost:60694/Authentication/LoginCallback";
+            var response = GoogleAuth.GetAuthUrl(clientId, url);
+            ViewBag.Response = response;
+
             return View();
         }
 
@@ -107,6 +194,10 @@ namespace BidMyCar.Controllers
 
             return View();
         }
+
+
+
+
 
         //forgot Password
         public ActionResult ForgotPassword()
