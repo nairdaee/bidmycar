@@ -1,0 +1,225 @@
+﻿@{
+    Layout = "~/Views/Shared/Dash_Layout.cshtml";
+}
+
+<section class="dashboard section">
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-body">
+            <div class="dashboard-sidebar">
+                <div class="user-image">
+                    <img src="./assets/images/avatars/image1.jpg" alt="#">
+                    <h3>
+                        Adrian Etenyi
+                        <span><a href="javascript:void(0)">@nairdaee</a></span>
+                    </h3>
+
+                </div>
+                <div class="dashboard-menu">
+                    <ul>
+                        <li><a href="dashboard.html"><i class="lni lni-dashboard"></i> Dashboard</a></li>
+                        <li>
+                            <a class="active" href="profile-settings.html"><i class="lni lni-pencil-alt"></i> Edit Profile</a>
+                        </li>
+                        <li>
+                            <a href="my-items.html">
+                                <i class="lni lni-bolt-alt"></i> <span class="position-relative">
+                                    My Ads<span class="position-absolute top-0 start-100 translate-right-up badge rounded-pill bg-success">
+                                        8
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li><a href="favourite-items.html"><i class="lni lni-heart"></i> Favourite ads</a></li>
+                        <li>
+                            <a href="post-item.html">
+                                <i class="lni lni-circle-plus"></i> Post An
+                                Ad
+                            </a>
+                        </li>
+                        <li>
+                            <a href="bookmarked-items.html">
+                                <i class="lni lni-bookmark"></i> <span class="position-relative">
+                                    Bookmarked<span class="position-absolute top-0 start-100 translate-right-up badge rounded-pill bg-danger">
+                                        4
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="messages.html">
+                                <i class="lni lni-envelope"></i><span class="position-relative">
+                                    Messages<span class="position-absolute top-0 start-100 translate-right-up badge rounded-pill bg-warning">
+                                        9+
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li><a href="delete-account.html"><i class="lni lni-trash"></i> Close account</a></li>
+                        <li><a href="invoice.html"><i class="lni lni-printer"></i> Invoice</a></li>
+                    </ul>
+                    <div class="button">
+                        <a class="btn" href="javascript:void(0)">Logout</a>
+                        <button type="button" class="btn close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close"><i class="lni lni-chevron-left mr-5"></i>Collapse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+                <div class="main-content">
+                    <div class="dashboard-block mt-0">
+                        <h3 class="block-title">Favourite Cars</h3>
+                        <!-- Start Items Area -->
+                        <div class="my-items">
+                            <!-- Start List Title -->
+                            <div class="item-list-title">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5 col-md-5 col-12">
+                                        <p>Name</p>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <p>Manufacturer</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <p>Condition</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12 align-right">
+                                        <p>Action</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End List Title -->
+                            <!-- Start Single List -->
+                            <div class="single-item-list">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5 col-md-5 col-12">
+                                        <div class="item-image">
+                                            <img src="./assets/images/cars/911.jpg" alt="#">
+                                            <div class="content">
+                                                <h3 class="title"><a href="javascript:void(0)">2023 Porsche 911 Turbo S</a></h3>
+                                                <span class="price">Ksh. 50,000,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <p>Porsche</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <p>Brand New</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12 align-right">
+                                        <ul class="action-btn">
+                                            <li><a href="javascript:void(0)"><i class="lni lni-eye"></i></a></li>
+                                            <li><a href="javascript:void(0)"><i class="lni lni-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single List -->
+                            <!-- Start Single List -->
+                            <div class="single-item-list">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5 col-md-5 col-12">
+                                        <div class="item-image">
+                                            <img src="./assets/images/cars/dbx1.jpg" alt="#">
+                                            <div class="content">
+                                                <h3 class="title"><a href="javascript:void(0)">2023 Aston Martin DBX 707</a></h3>
+                                                <span class="price">Ksh. 67,000,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <p>Aston Martin</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <p>Lightly Used</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12 align-right">
+                                        <ul class="action-btn">
+                                            <li><a href="javascript:void(0)"><i class="lni lni-eye"></i></a></li>
+                                            <li><a href="javascript:void(0)"><i class="lni lni-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single List -->
+                            <!-- Start Single List -->
+                            <div class="single-item-list">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5 col-md-5 col-12">
+                                        <div class="item-image">
+                                            <img src="./assets/images/cars/flyingspur.jpg" alt="#">
+                                            <div class="content">
+                                                <h3 class="title"><a href="javascript:void(0)">2023 Bentley Flying Spur W12</a></h3>
+                                                <span class="price">Ksh. 39,000,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <p>Bentley</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <p>New</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12 align-right">
+                                        <ul class="action-btn">
+                                            <li><a href="javascript:void(0)"><i class="lni lni-eye"></i></a></li>
+                                            <li><a href="javascript:void(0)"><i class="lni lni-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single List -->
+                            <!-- Start Single List -->
+                            <div class="single-item-list">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5 col-md-5 col-12">
+                                        <div class="item-image">
+                                            <img src="./assets/images/cars/Bentley.jpg" alt="#">
+                                            <div class="content">
+                                                <h3 class="title"><a href="javascript:void(0)">2020 Bentley Bentayga</a></h3>
+                                                <span class="price">Ksh. 19,500,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <p>Bentley</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <p>Used</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12 align-right">
+                                        <ul class="action-btn">
+                                            <li><a href="javascript:void(0)"><i class="lni lni-eye"></i></a></li>
+                                            <li><a href="javascript:void(0)"><i class="lni lni-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single List -->
+                            <!-- Pagination -->
+                            <div class="pagination left">
+                                <ul class="pagination-list">
+                                    <li class="active"><a href="javascript:void(0)">1</a></li>
+                                    <li><a href="javascript:void(0)">2</a></li>
+                                    <li><a href="javascript:void(0)">3</a></li>
+                                    <li><a href="javascript:void(0)">4</a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                            <!--/ End Pagination -->
+                        </div>
+                        <!-- End Items Area -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

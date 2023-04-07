@@ -1,0 +1,584 @@
+﻿@{
+    Layout = "~/Views/Shared/Dash_Layout.cshtml";
+}
+<!-- Start Dashboard Section -->
+<section class="dashboard section">
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-body">
+            <div class="dashboard-sidebar">
+                <div class="user-image">
+                    <img src="./assets/images/avatars/image1.jpg" alt="#">
+                    <h3>
+                        Adrian Etenyi
+                        <span><a href="javascript:void(0)">nairdaee</a></span>
+                    </h3>
+
+                </div>
+                <div class="dashboard-menu">
+                    <ul>
+                        <li><a href="dashboard.html"><i class="lni lni-dashboard"></i> Dashboard</a></li>
+                        <li>
+                            <a class="active" href="profile-settings.html"><i class="lni lni-pencil-alt"></i> Edit Profile</a>
+                        </li>
+                        <li>
+                            <a href="my-items.html">
+                                <i class="lni lni-bolt-alt"></i> <span class="position-relative">
+                                    My Ads<span class="position-absolute top-0 start-100 translate-right-up badge rounded-pill bg-success">
+                                        8
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li><a href="favourite-items.html"><i class="lni lni-heart"></i> Favourite ads</a></li>
+                        <li>
+                            <a href="post-item.html">
+                                <i class="lni lni-circle-plus"></i> Post An
+                                Ad
+                            </a>
+                        </li>
+                        <li>
+                            <a href="bookmarked-items.html">
+                                <i class="lni lni-bookmark"></i> <span class="position-relative">
+                                    Bookmarked<span class="position-absolute top-0 start-100 translate-right-up badge rounded-pill bg-danger">
+                                        4
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="messages.html">
+                                <i class="lni lni-envelope"></i><span class="position-relative">
+                                    Messages<span class="position-absolute top-0 start-100 translate-right-up badge rounded-pill bg-warning">
+                                        9+
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li><a href="delete-account.html"><i class="lni lni-trash"></i> Close account</a></li>
+                        <li><a href="invoice.html"><i class="lni lni-printer"></i> Invoice</a></li>
+                    </ul>
+                    <div class="button">
+                        <a class="btn" href="javascript:void(0)">Logout</a>
+                        <button type="button" class="btn close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close"><i class="lni lni-chevron-left mr-5"></i>Collapse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+                <div class="main-content">
+                    <!-- Start Post Ad Block Area -->
+                    <div class="dashboard-block mt-0">
+
+                        <div class="inner-block">
+                            <!-- Start Post Ad Tab -->
+                            <div class="post-ad-tab">
+                                <nav class="mt-5">
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <button class="nav-link active" id="nav-item-info-tab" data-bs-toggle="tab"
+                                                data-bs-target="#nav-item-info" type="button" role="tab"
+                                                aria-controls="nav-item-info" aria-selected="true">
+                                            <span class="serial">01</span>
+                                            <span class="sub-title">Car Information</span>
+                                        </button>
+                                        <button class="nav-link" id="nav-item-details-tab" data-bs-toggle="tab"
+                                                data-bs-target="#nav-item-details" type="button" role="tab"
+                                                aria-controls="nav-item-details" aria-selected="false">
+                                            <span class="serial">02</span>
+                                            <span class="sub-title">Price & Features</span>
+                                        </button>
+                                        <button class="nav-link" id="nav-user-info-tab" data-bs-toggle="tab"
+                                                data-bs-target="#nav-user-info" type="button" role="tab"
+                                                aria-controls="nav-user-info" aria-selected="false">
+                                            <span class="serial">03</span>
+                                            <span class="sub-title">Media & Links</span>
+                                        </button>
+                                    </div>
+                                </nav>
+                                <h3 class="block-title"></h3>
+                                <div class="tab-content" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="nav-item-info" role="tabpanel"
+                                         aria-labelledby="nav-item-info-tab">
+                                        <!-- Start Post Ad Step One Content -->
+                                        <div class="step-one-content">
+                                            <form class="default-form-style" method="post" action="#">
+                                                <div class="row">
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="form-group">
+                                                            <label>Car Title*</label>
+                                                            <input name="title" type="text"
+                                                                   placeholder="Enter Car Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="form-group">
+                                                            <label>Car Condition*</label>
+                                                            <div class="selector-head">
+                                                                <span class="arrow">
+                                                                    <i class="lni lni-chevron-down"></i>
+                                                                </span>
+                                                                <select class="user-chosen-select">
+                                                                    <option value="none" selected disabled>Select a Car Condition</option>
+                                                                    <option value="brandnew">Brand New</option>
+                                                                    <option value="nsused">New, Slightly Used</option>
+                                                                    <option value="used">Used</option>
+                                                                    <option value="crash-damage">Crash Damaged</option>
+                                                                    <option value="rebuilt">Rebuilt</option>
+                                                                    <option value="salvage">Salvage</option>
+
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="form-group">
+                                                            <label>Year Of Manufacture*</label>
+                                                            <input name="title" type="text"
+                                                                   placeholder="Enter YOM">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="form-group">
+                                                            <label>Manufacturer*</label>
+                                                            <div class="selector-head">
+                                                                <span class="arrow">
+                                                                    <i class="lni lni-chevron-down"></i>
+                                                                </span>
+                                                                <select class="user-chosen-select">
+                                                                    <option value="none">Select a Manufacturer</option>
+                                                                    <option value="acura">Acura</option>
+                                                                    <option value="alfa-romeo">Alfa Romeo</option>
+                                                                    <option value="am-general">AM General</option>
+                                                                    <option value="aston-martin">Aston Martin</option>
+                                                                    <option value="audi">Audi</option>
+                                                                    <option value="bentley">Bentley</option>
+                                                                    <option value="bmw">BMW</option>
+                                                                    <option value="buick">Buick</option>
+                                                                    <option value="cadillac">Cadillac</option>
+                                                                    <option value="chevrolet">Chevrolet</option>
+                                                                    <option value="chrysler">Chrysler</option>
+                                                                    <option value="dodge">Dodge</option>
+                                                                    <option value="ferrari">Ferrari</option>
+                                                                    <option value="fiat">FIAT</option>
+                                                                    <option value="fisker">Fisker</option>
+                                                                    <option value="ford">Ford</option>
+                                                                    <option value="freightliner">Freightliner</option>
+                                                                    <option value="genesis">Genesis</option>
+                                                                    <option value="gmc">GMC</option>
+                                                                    <option value="honda">Honda</option>
+                                                                    <option value="hummer">HUMMER</option>
+                                                                    <option value="hyundai">Hyundai</option>
+                                                                    <option value="infiniti">INFINITI</option>
+                                                                    <option value="isuzu">Isuzu</option>
+                                                                    <option value="jaguar">Jaguar</option>
+                                                                    <option value="jeep">Jeep</option>
+                                                                    <option value="karma">Karma</option>
+                                                                    <option value="kia">Kia</option>
+                                                                    <option value="lamborghini">Lamborghini</option>
+                                                                    <option value="land-rover">Land Rover</option>
+                                                                    <option value="lexus">Lexus</option>
+                                                                    <option value="lincoln">Lincoln</option>
+                                                                    <option value="lotus">Lotus</option>
+                                                                    <option value="lucid">Lucid</option>
+                                                                    <option value="maserati">Maserati</option>
+                                                                    <option value="maybach">Maybach</option>
+                                                                    <option value="mazda">Mazda</option>
+                                                                    <option value="mclaren">McLaren</option>
+                                                                    <option value="mercedes-benz">Mercedes-Benz</option>
+                                                                    <option value="mercury">Mercury</option>
+                                                                    <option value="mini">MINI</option>
+                                                                    <option value="mitsubishi">Mitsubishi</option>
+                                                                    <option value="nissan">Nissan</option>
+                                                                    <option value="oldsmobile">Oldsmobile</option>
+                                                                    <option value="plymouth">Plymouth</option>
+                                                                    <option value="polestar">Polestar</option>
+                                                                    <option value="pontiac">Pontiac</option>
+                                                                    <option value="porsche">Porsche</option>
+                                                                    <option value="ram">Ram</option>
+                                                                    <option value="rivian">Rivian</option>
+                                                                    <option value="rolls-royce">Rolls-Royce</option>
+                                                                    <option value="saab">Saab</option>
+                                                                    <option value="saturn">Saturn</option>
+                                                                    <option value="scion">Scion</option>
+                                                                    <option value="smart">smart</option>
+                                                                    <option value="subaru">Subaru</option>
+                                                                    <option value="suzuki">Suzuki</option>
+                                                                    <option value="tesla">Tesla</option>
+                                                                    <option value="toyota">Toyota</option>
+                                                                    <option value="volkswagen">Volkswagen</option>
+                                                                    <option value="volvo">Volvo</option>
+
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="form-group">
+                                                            <label>Model*</label>
+                                                            <div class="selector-head">
+                                                                <span class="arrow">
+                                                                    <i class="lni lni-chevron-down"></i>
+                                                                </span>
+                                                                <select class="user-chosen-select">
+                                                                    <option value="none">Select a Model</option>
+                                                                    <option value="1-series">1 Series</option>
+                                                                    <option value="1-series-m">1 Series M</option>
+                                                                    <option value="2-series">2 Series</option>
+                                                                    <option value="3-series">3 Series</option>
+                                                                    <option value="4-series">4 Series</option>
+                                                                    <option value="5-series">5 Series</option>
+                                                                    <option value="6-series">6 Series</option>
+                                                                    <option value="7-series">7 Series</option>
+                                                                    <option value="8-series">8 Series</option>
+                                                                    <option value="i3">i3</option>
+                                                                    <option value="i4">i4</option>
+                                                                    <option value="i7">i7</option>
+                                                                    <option value="i8">i8</option>
+                                                                    <option value="ix">iX</option>
+                                                                    <option value="m2">M2</option>
+                                                                    <option value="m3">M3</option>
+                                                                    <option value="m4">M4</option>
+                                                                    <option value="m5">M5</option>
+                                                                    <option value="m6">M6</option>
+                                                                    <option value="m8">M8</option>
+                                                                    <option value="x1">X1</option>
+                                                                    <option value="x2">X2</option>
+                                                                    <option value="x3">X3</option>
+                                                                    <option value="x3-m">X3 M</option>
+                                                                    <option value="x4">X4</option>
+                                                                    <option value="x4-m">X4 M</option>
+                                                                    <option value="x5">X5</option>
+                                                                    <option value="x5-m">X5 M</option>
+                                                                    <option value="x6">X6</option>
+                                                                    <option value="x6-m">X6 M</option>
+                                                                    <option value="x7">X7</option>
+                                                                    <option value="z3">Z3</option>
+                                                                    <option value="z4">Z4</option>
+                                                                    <option value="z8">Z8</option>
+
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="form-group">
+                                                            <label>Body Style*</label>
+                                                            <div class="selector-head">
+                                                                <span class="arrow">
+                                                                    <i class="lni lni-chevron-down"></i>
+                                                                </span>
+                                                                <select class="user-chosen-select">
+                                                                    <option value="none" selected disabled>Select a Body Style</option>
+                                                                    <option value="convertible">Convertible</option>
+                                                                    <option value="coupe">Coupe</option>
+                                                                    <option value="hatchback">Hatchback</option>
+                                                                    <option value="sedan">Sedan</option>
+                                                                    <option value="suv">SUV</option>
+                                                                    <option value="truck">Truck</option>
+                                                                    <option value="van">Van</option>
+                                                                    <option value="wagon">Wagon</option>
+                                                                    <option value="unknown">Unknown</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group button mb-0">
+                                                            <button type="submit" class="btn ">Next Step</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Start Post Ad Step One Content -->
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-item-details" role="tabpanel"
+                                         aria-labelledby="nav-item-details-tab">
+                                        <!-- Start Post Ad Step Two Content -->
+                                        <div class="step-two-content">
+                                            <form class="default-form-style" method="post" action="#">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-12">
+                                                        <div class="form-group">
+                                                            <label>Listing Type*</label>
+                                                            <div class="selector-head">
+                                                                <span class="arrow">
+                                                                    <i class="lni lni-chevron-down"></i>
+                                                                </span>
+                                                                <select class="user-chosen-select">
+                                                                    <option value="none">Select listing type</option>
+                                                                    <option value="none">Fixed</option>
+                                                                    <option value="none">Auction</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-12">
+                                                        <div class="form-group">
+                                                            <label>Select Currency*</label>
+                                                            <div class="selector-head">
+                                                                <span class="arrow">
+                                                                    <i class="lni lni-chevron-down"></i>
+                                                                </span>
+                                                                <select class="user-chosen-select">
+                                                                    <option value="none">Select the currency</option>
+                                                                    <option value="none">KES</option>
+                                                                    <option value="none">USD</option>
+                                                                    <option value="none">GBP</option>
+                                                                    <option value="none">EURO</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5 col-12">
+                                                        <div class="form-group">
+                                                            <label>Add Price*</label>
+                                                            <input name="price" type="text"
+                                                                   placeholder="Enter Price">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="toggle-tokens mb-60">
+                                                            <label>Select Available Features*</label><br><br>
+                                                            <label>
+                                                                <input type="checkbox" name="surround" />
+                                                                <span><i class="lni lni-checkmark mr-5"></i>Surround sound camera</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="sunroof" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Sunroof</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="park_assist" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Parking Assist</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="heated_seats" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Heated Seats</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="v8" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>V8</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="cupholders" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Cupholders</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="cld" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Center Locking Diff</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="tow_bar" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Towing Bar</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="two_tone" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Two Tone Leather</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="bt" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Bluetooth</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="acc" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Adaptive Cruise Control</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="lka" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Lane Keeping Assist</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="traction_control" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Traction Control</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="headlight" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Headlight Washers</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="led" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Matrix LED Headlamps</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="cfp" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Carbon Fibre Package</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="ai" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Air Ionization</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="memory" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Memory Seats</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="heated_seats" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Cooled Seats</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="v8" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Massage Seats</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="surround" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Surround sound camera</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="sunroof" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Sunroof</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="park_assist" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Parking Assist</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="heated_seats" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Heated Seats</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="v8" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>V8</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="cupholders" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Cupholders</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="sunroof" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Sunroof</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="park_assist" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Parking Assist</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="heated_seats" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>Heated Seats</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="checkbox" name="v8" />
+                                                                <span><i class="lni lni-checkmark  mr-5"></i>V8</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label>Additional Description*</label>
+                                                            <textarea name="message"
+                                                                      placeholder="Briefly describe other important car features"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group button mb-0">
+                                                            <button type="submit"
+                                                                    class="btn alt-btn">
+                                                                Previous
+                                                            </button>
+                                                            <button type="submit" class="btn ">Next Step</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Start Post Ad Step Two Content -->
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-user-info" role="tabpanel"
+                                         aria-labelledby="nav-user-info-tab">
+                                        <!-- Start Post Ad Step Three Content -->
+                                        <div class="step-two-content">
+                                            <form class="default-form-style" method="post" action="#">
+                                                <div class="row">
+
+                                                    <div class="col-lg-6 col-12">
+                                                        <form class="default-form-style" method="post" action="#">
+                                                            <div class="upload-input" id="multi-images">
+                                                                <div class="fallback">
+                                                                    <input name="file" type="file" multiple />
+                                                                </div>
+                                                                <input type="file" id="upload" name="upload">
+                                                                <label for="upload" class="text-center content">
+                                                                    <span class="text">
+                                                                        <span class="d-block mb-15">
+                                                                            Drop files anywhere
+                                                                            to Upload
+                                                                        </span>
+                                                                        <span class=" mb-15 plus-icon">
+                                                                            <i class="lni lni-plus"></i>
+                                                                        </span>
+                                                                        <span class="main-btn d-block btn-hover">
+                                                                            Select
+                                                                            File
+                                                                        </span>
+                                                                        <span class="d-block">
+                                                                            Maximum upload file size
+                                                                            10Mb
+                                                                        </span>
+                                                                    </span>
+                                                                </label>
+
+                                                            </div>
+
+                                                        </form>
+
+                                                    </div>
+                                                    <div class="col-lg-6 col-12">
+                                                        <div class="form-group">
+                                                            <label class="video-label">SpinCar Link* <span>How to get</span></label>
+                                                            <input name="video" type="text"
+                                                                   placeholder="Enter Spincar 3D Link">
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="video-label">
+                                                                Video Link* <span>
+                                                                    Only
+                                                                    YouTube & Vimeo
+                                                                </span>
+                                                            </label>
+                                                            <input name="video" type="text"
+                                                                   placeholder="Enter video review">
+                                                            <a href="javascript:void(0)" class="add-video">
+                                                                <i class="lni lni-plus"></i> Add Video
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check mb-30">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                   id="flexCheckDefault">
+                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                                I agree to all Terms of Use & Posting Rules
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group button mb-0">
+                                                            <button type="submit"
+                                                                    class="btn alt-btn">
+                                                                Previous
+                                                            </button>
+                                                            <button type="submit" class="btn ">Submit For Review</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Start Post Ad Step Three Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Post Ad Tab -->
+                        </div>
+                    </div>
+                    <!-- End Post Ad Block Area -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Dashboard Section -->

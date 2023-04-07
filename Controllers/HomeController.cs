@@ -12,6 +12,9 @@ using System.Data.Entity;
 using System.Runtime.ConstrainedExecution;
 using System.Configuration;
 using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using System.Web.Configuration;
+using System.Data.Entity.Core.Common.CommandTrees;
 
 namespace BidMyCar.Controllers
 {
@@ -38,6 +41,7 @@ namespace BidMyCar.Controllers
 
             return View();
         }
+       
         //Login
         public ActionResult Login()
         {
@@ -83,6 +87,10 @@ namespace BidMyCar.Controllers
 
         //Registration
         public ActionResult Register()
+        {
+            return View();
+        }
+        public ActionResult Dash_Layout()
         {
             return View();
         }
@@ -150,25 +158,7 @@ namespace BidMyCar.Controllers
         //}
         public ActionResult Index()
         {
-            //List<Make> cars = CarDetailsDbContext.Make.ToList();
-
-            //// Create a list of ViewModels to pass to the view
-            //List<CarViewModel> carViewModels = new List<CarViewModel>();
-            //foreach (var car in cars)
-            //{
-            //    CarViewModel carViewModel = new CarViewModel();
-            //    carViewModel.Name = car.Name;
-            //    carViewModel.Description = car.Description;
-            //    carViewModel.ImageUrl = car.ImageUrl;
-            //    carViewModel.Price = car.Price;
-
-            //    // Add the ViewModel to the list
-            //    carViewModels.Add(carViewModel);
-            //}
-
-            //// Pass the list of ViewModels to the view
-            //return View(carViewModels); 
-            //return View();
+           
             List<CarDetail> cars = new List<CarDetail>();
 
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["BidMyCarEntities1"].ConnectionString.Replace("metadata=res://*/", "")))
@@ -207,6 +197,7 @@ namespace BidMyCar.Controllers
                         }
                     }
                 }
+
             }
 
             // Create a list of ViewModels to pass to the view
@@ -239,7 +230,67 @@ namespace BidMyCar.Controllers
 
             // Pass the list of ViewModels to the view
             return View(carViewModels);
+
         }
+
+        //public ActionResult Index(CarDetail searchModel)
+        //{
+
+        //    //using (var db = new CarDetailsDbContext())
+        //    //{
+        //    //    var cars = db.CarDetails.FromSqlInterpolated($@"
+        //    //        SELECT *
+        //    //        FROM CarDetails
+        //    //        WHERE (YOM IS NULL OR YOM = {searchModel.YOM}) 
+        //    //          AND (Make LIKE {searchModel.Make} OR {searchModel.Make} IS NULL)
+        //    //          AND (Model LIKE {searchModel.Model} OR {searchModel.Model} IS NULL)
+        //    //          AND (BodyType LIKE {searchModel.BodyType} OR {searchModel.BodyType} IS NULL)")
+        //    //.ToList();
+
+        //    //    return View("SearchItems", cars);
+
+
+
+
+        //        //var cars = db.CarDetails.Where(c =>
+        //        //    (searchModel.YOM.HasValue == false || c.YOM == searchModel.YOM.Value) &&
+        //        //    (string.IsNullOrEmpty(searchModel.Make) || c.Make.Contains(searchModel.Make)) &&
+        //        //    (string.IsNullOrEmpty(searchModel.Model) || c.Model.Contains(searchModel.Model)) &&
+        //        //    (string.IsNullOrEmpty(searchModel.BodyType) || c.BodyType.Contains(searchModel.BodyType))
+        //        //).ToList();
+
+        //        //return View("SearchItems", cars);
+        //    //}
+        //}
+        //public ActionResult Index(CarDetail searchModel)
+        //{
+        //    using (var db = new CarDetailsDbContext())
+        //    {
+        //        var cars = db.CarDetails.AsQueryable();
+
+        //        if (searchModel.YOM == 0)
+        //        {
+        //            cars = cars.Where(c => c.YOM == searchModel.YOM);
+        //        }
+
+        //        if (!string.IsNullOrEmpty(searchModel.Make))
+        //        {
+        //            cars = cars.Where(c => c.Make.Contains(searchModel.Make));
+        //        }
+
+        //        if (!string.IsNullOrEmpty(searchModel.Model))
+        //        {
+        //            cars = cars.Where(c => c.Model.Contains(searchModel.Model));
+        //        }
+
+        //        if (!string.IsNullOrEmpty(searchModel.BodyType))
+        //        {
+        //            cars = cars.Where(c => c.BodyType.Contains(searchModel.BodyType));
+        //        }
+
+        //        return View("SearchItems", cars.ToList());
+        //    }
+        //}
         public ActionResult ItemDetails()
         {
             using (var db = new CarDetailsDbContext())

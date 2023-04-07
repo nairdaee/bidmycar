@@ -1,0 +1,174 @@
+﻿@{
+    Layout = "~/Views/Shared/Dash_Layout.cshtml";
+}
+<section class="dashboard section">
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-body">
+            <div class="dashboard-sidebar">
+                <div class="user-image">
+                    <img src="./assets/images/avatars/image1.jpg" alt="#">
+                    <h3>
+                        Adrian Etenyi
+                        <span><a href="javascript:void(0)">@nairdaee</a></span>
+                    </h3>
+
+                </div>
+                <div class="dashboard-menu">
+                    <ul>
+                        <li><a href="dashboard.html"><i class="lni lni-dashboard"></i> Dashboard</a></li>
+                        <li>
+                            <a class="active" href="profile-settings.html"><i class="lni lni-pencil-alt"></i> Edit Profile</a>
+                        </li>
+                        <li>
+                            <a href="my-items.html">
+                                <i class="lni lni-bolt-alt"></i> <span class="position-relative">
+                                    My Ads<span class="position-absolute top-0 start-100 translate-right-up badge rounded-pill bg-success">
+                                        8
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li><a href="favourite-items.html"><i class="lni lni-heart"></i> Favourite ads</a></li>
+                        <li>
+                            <a href="post-item.html">
+                                <i class="lni lni-circle-plus"></i> Post An
+                                Ad
+                            </a>
+                        </li>
+                        <li>
+                            <a href="bookmarked-items.html">
+                                <i class="lni lni-bookmark"></i> <span class="position-relative">
+                                    Bookmarked<span class="position-absolute top-0 start-100 translate-right-up badge rounded-pill bg-danger">
+                                        4
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="messages.html">
+                                <i class="lni lni-envelope"></i><span class="position-relative">
+                                    Messages<span class="position-absolute top-0 start-100 translate-right-up badge rounded-pill bg-warning">
+                                        9+
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li><a href="delete-account.html"><i class="lni lni-trash"></i> Close account</a></li>
+                        <li><a href="invoice.html"><i class="lni lni-printer"></i> Invoice</a></li>
+                    </ul>
+                    <div class="button">
+                        <a class="btn" href="javascript:void(0)">Logout</a>
+                        <button type="button" class="btn close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close"><i class="lni lni-chevron-left mr-5"></i>Collapse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-12">
+                <div class="main-content">
+                    <!-- Start Profile Settings Area -->
+                    <div class="dashboard-block mt-0 profile-settings-block">
+                        <h3 class="block-title">Update Profile</h3>
+                        <div class="inner-block">
+                            <div class="image">
+                                <img src="https://via.placeholder.com/300x300" alt="#">
+                            </div>
+                            <form class="profile-setting-form" method="post" action="#">
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <label>First Name*</label>
+                                            <input name="first-name" type="text" placeholder="Steve">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <label>Last Name*</label>
+                                            <input name="last-name" type="text" placeholder="Aldridge">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <label>Username*</label>
+                                            <input name="usernames" type="text" placeholder="@username">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <label>Email Address*</label>
+                                            <input name="email" type="email" placeholder="username@gmail.com">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group upload-image">
+                                            <label>Profile Image*</label>
+                                            <input name="profile-image" type="file" placeholder="Upload Image">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group message">
+                                            <label>About You*</label>
+                                            <textarea name="message" placeholder="Enter about yourself"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group button mb-0">
+                                            <button type="submit" class="btn ">Update Profile</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End Profile Settings Area -->
+                    <!-- Start Password Change Area -->
+                    <div class="dashboard-block password-change-block">
+                        <h3 class="block-title">Change Password</h3>
+                        <div class="inner-block">
+                            <form class="default-form-style" method="post" action="#">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Current Password*</label>
+                                            <input name="current-password" type="password"
+                                                   placeholder="Enter old password">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>New Password*</label>
+                                            <input name="new-password" type="password"
+                                                   placeholder="Enter new password">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Retype Password*</label>
+                                            <input name="retype-password" type="password"
+                                                   placeholder="Retype password">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group button mb-0">
+                                            <button type="submit" class="btn ">Update Password</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End Password Change Area -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
