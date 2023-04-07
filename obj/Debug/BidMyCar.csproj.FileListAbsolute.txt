@@ -479,3 +479,13 @@ D:\3.2\NET\Web Apps\ptrial\BidMycar3\obj\Debug\BidMyCar.csproj.CoreCompileInputs
 D:\3.2\NET\Web Apps\ptrial\BidMycar3\obj\Debug\BidMyCar.csproj.CopyComplete
 D:\3.2\NET\Web Apps\ptrial\BidMycar3\obj\Debug\BidMyCar.dll
 D:\3.2\NET\Web Apps\ptrial\BidMycar3\obj\Debug\BidMyCar.pdb
+D:\3.2\NET\Web Apps\ptrial\BidMyCar3\bin\Microsoft.EntityFrameworkCore.dll
+D:\3.2\NET\Web Apps\ptrial\BidMyCar3\bin\System.Threading.Tasks.Extensions.dll
+D:\3.2\NET\Web Apps\ptrial\BidMyCar3\bin\Microsoft.Bcl.HashCode.dll
+D:\3.2\NET\Web Apps\ptrial\BidMyCar3\bin\Microsoft.EntityFrameworkCore.xml
+D:\3.2\NET\Web Apps\ptrial\BidMyCar3\bin\System.Net.Http.Formatting.dll
+D:\3.2\NET\Web Apps\ptrial\BidMyCar3\bin\System.Web.Http.dll
+D:\3.2\NET\Web Apps\ptrial\BidMyCar3\bin\System.Web.Http.WebHost.dll
+D:\3.2\NET\Web Apps\ptrial\BidMyCar3\bin\System.Net.Http.Formatting.xml
+D:\3.2\NET\Web Apps\ptrial\BidMyCar3\bin\System.Web.Http.xml
+D:\3.2\NET\Web Apps\ptrial\BidMyCar3\bin\System.Web.Http.WebHost.xml

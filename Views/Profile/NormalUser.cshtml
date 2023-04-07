@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Views/Shared/Dash_Layout.cshtml";
+}
+<!-- Start Dashboard Section -->
+<section class="dashboard section">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-12">
+                <div class="main-content">
+                    <!-- Start Profile Settings Area -->
+                    <div class="dashboard-block mt-0 profile-settings-block">
+                        <h3 class="block-title">Your Profile</h3>
+                        <div class="inner-block">
+                            <div class="image">
+                                <img src="https://via.placeholder.com/300x300" alt="#">
+                            </div>
+                            <form class="profile-setting-form">
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <label>Your Name*</label>
+                                            <input type="text" name="name" id="txtName" required="required" value="Adrian Etenyi" "  />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <label>Username*</label>
+                                            <input type="text" name="name" id="txtUsername" required="required" value="nairdaee" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <label>Email Address*</label>
+                                            <input type="email" name="email" id="txtEmail" required="required" value="etadriano2@gmail.com" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <label>Phone Number</label>
+                                            <input type="tel" name="email" required="required" />
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group upload-image">
+                                            <label>Profile Image*</label>
+                                            <input type="file" name="photo" accept="image/*" id="txtLogo">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group message">
+                                            <label>About You*</label>
+                                            <textarea name="description" cols="40" rows="10" id="txtDescription"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group button mb-0">
+                                            <button type="submit" class="btn ">Create Profile</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End Profile Settings Area -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
