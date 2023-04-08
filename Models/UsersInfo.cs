@@ -41,6 +41,8 @@ namespace BidMyCar.Models
         public string ConfirmPassword { get; set; }
 
         public string resetCode { get; set; }
+
+  
         public string GoogleId { get; set; }
     }
 }

@@ -37,11 +37,10 @@ namespace BidMyCar.Controllers
                 return RedirectToAction("Login");
             }
 
-            try
-            {
+
                 // Get Google access token using authorization code
-                var clientId = "288450486046-7ni9arjrk2derhn1s5vbg7nakt3105is.apps.googleusercontent.com";
-                var clientSecret = "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";
+                var clientId = "288450486046-07ts86j3aobfbr611dc973rq9vu586jq.apps.googleusercontent.com";
+                var clientSecret = "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";
                 var url = "http://localhost:60694/Authentication/LoginCallback";
                 var token = await GoogleAuth.GetAuthAccessToken(code, clientId, clientSecret, url);
                 var userProfile = await GoogleAuth.GetProfileResponseAsync(token.AccessToken.ToString());
@@ -55,12 +54,14 @@ namespace BidMyCar.Controllers
                     var existingUser = await db.UsersInfo.FirstOrDefaultAsync(u => u.Email == googleUser.Email);
                     if (existingUser == null)
                     {
-                        // if User does not exist, create a new user entity
-                       
+                    // if User does not exist, create a new user entity
+                    try
+                    {
                         newUser.Email = googleUser.Email;
                         newUser.Name = googleUser.GivenName;
                         newUser.GoogleId = googleUser.Id;
 
+                        
                         // Save the new user to the database
                         db.UsersInfo.Add(newUser);
                         db.SaveChanges();
@@ -69,6 +70,24 @@ namespace BidMyCar.Controllers
                         Session["UserId"] = newUser.UserID;
                         Session["Email"] = newUser.Email;
                         Session["Name"] = newUser.Name;
+                    }
+
+                    catch (DbEntityValidationException ex)
+                    {
+                        var errorMessages = ex.EntityValidationErrors
+                                .SelectMany(x => x.ValidationErrors)
+                                .Select(x => x.ErrorMessage);
+
+                        // Join the error messages into a single string.
+                        var fullErrorMessage = string.Join("; ", errorMessages);
+
+                        // Combine the original exception message with the new one.
+                        var exceptionMessage = string.Concat(ex.Message, " The validation errors are: ", fullErrorMessage);
+
+                        // Throw a new DbEntityValidationException with the improved exception message.
+                        throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
+                    }
+                    
                     }
                     else
                     {
@@ -81,10 +100,7 @@ namespace BidMyCar.Controllers
 
                 }
            
-        }
-
-            catch (Exception ex) { 
-            }
+       
 
 
 
@@ -97,7 +113,7 @@ namespace BidMyCar.Controllers
         // GET: Authentication
         public ActionResult Register()
         {
-            var clientId = "288450486046-7ni9arjrk2derhn1s5vbg7nakt3105is.apps.googleusercontent.com";
+            var clientId = "288450486046-07ts86j3aobfbr611dc973rq9vu586jq.apps.googleusercontent.com";
             var url = "http://localhost:60694/Authentication/LoginCallback";
             var response = GoogleAuth.GetAuthUrl(clientId, url);
             ViewBag.Response = response;
@@ -149,7 +165,7 @@ namespace BidMyCar.Controllers
         {
            
 
-            var clientId = "288450486046-7ni9arjrk2derhn1s5vbg7nakt3105is.apps.googleusercontent.com";
+            var clientId = "288450486046-07ts86j3aobfbr611dc973rq9vu586jq.apps.googleusercontent.com";
             var url = "http://localhost:60694/Authentication/LoginCallback";
             var response = GoogleAuth.GetAuthUrl(clientId, url);
             ViewBag.Response = response;

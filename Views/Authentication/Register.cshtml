@@ -39,7 +39,7 @@
                         </div>
 
                         //error message
-                        // Display any error messages 
+                        // Display any error messages
                         if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
                         {
                             <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
@@ -52,7 +52,7 @@
                         }
 
 
-
+                       
                         <div class="form-floating mb-3">
                             @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter your name" })
                             @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
@@ -71,7 +71,11 @@
                         <div class="form-floating mb-3">
                             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Enter your name" })
                             @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
-                            <label>Password</label>
+                            <label>Confirm Password</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            @Html.HiddenFor(a => a.GoogleId)
                         </div>
 
 
@@ -104,4 +108,5 @@
         </div>
     </div>
 </section>
+@Scripts.Render("~/bundles/jqueryval")
 <!-- End Registration section -->
