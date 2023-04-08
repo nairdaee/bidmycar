@@ -26,7 +26,10 @@ Transmission VARCHAR(255) NOT NULL,
 EngineSize VARCHAR(255) NOT NULL,
 PowerOutput VARCHAR(255) NOT NULL
 )
-/*add status colums in the above table*/
+/*add status and rating colums in the above table*/
 
 
 
+
+use BidMyCar;
+SELECT * FROM CarDetails

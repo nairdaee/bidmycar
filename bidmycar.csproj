@@ -52,9 +52,15 @@
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.EntityFrameworkCore.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -63,6 +69,12 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.9\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -130,6 +142,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CarDetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Encryption.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -189,6 +202,7 @@
     <Content Include="Content\css\LineIcons.2.0.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\tiny-slider.css" />
+    <Content Include="Content\images\avatars\image1.jpg" />
     <Content Include="Content\images\carlogos\audi.svg" />
     <Content Include="Content\images\carlogos\bentley.svg" />
     <Content Include="Content\images\carlogos\bmw.svg" />
@@ -222,6 +236,9 @@
     <Content Include="Content\images\cars\Macan6.jpg" />
     <Content Include="Content\images\cars\RS6.jpg" />
     <Content Include="Content\images\cars\X5M.jpg" />
+    <Content Include="Content\images\categories\car_buyer.svg" />
+    <Content Include="Content\images\categories\car_dealership.svg" />
+    <Content Include="Content\images\categories\independent_car_seller.svg" />
     <Content Include="Content\images\favicon.svg" />
     <Content Include="Content\images\logo\android-chrome-192x192.png" />
     <Content Include="Content\images\logo\android-chrome-512x512.png" />
@@ -323,6 +340,16 @@
     <Content Include="Views\Home\resetPassword.cshtml" />
     <Content Include="Views\CarDetails\ItemDetails.cshtml" />
     <Content Include="Views\CarDetails\SearchItems.cshtml" />
+    <Content Include="Views\Shared\Dash_Layout.cshtml" />
+    <Content Include="Views\Profile\SelectUserType.cshtml" />
+    <Content Include="Views\Profile\Dashboard.cshtml" />
+    <Content Include="Views\Profile\NormalUser.cshtml" />
+    <Content Include="Views\Profile\ProfileSettings.cshtml" />
+    <Content Include="Views\Profile\MyItems.cshtml" />
+    <Content Include="Views\Profile\BookmarkedItems.cshtml" />
+    <Content Include="Views\Profile\PostItem.cshtml" />
+    <Content Include="Views\Profile\Dealership.cshtml" />
+    <Content Include="Views\Profile\IndividualSeller.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

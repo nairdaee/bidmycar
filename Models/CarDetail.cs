@@ -11,9 +11,11 @@ namespace BidMyCar.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class CarDetail
     {
+        [Key]
         public int CarID { get; set; }
         public int YOM { get; set; }
         public string Make { get; set; }
