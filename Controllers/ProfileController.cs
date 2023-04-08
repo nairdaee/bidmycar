@@ -41,5 +41,15 @@ namespace BidMyCar.Controllers
         {
             return View();
         }
+
+        public ActionResult Dealership()
+        {
+            return View();
+        }
+
+        public ActionResult IndividualSeller()
+        {
+            return View();
+        }
     }
 }

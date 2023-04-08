@@ -1,28 +1,4 @@
-﻿@*<!DOCTYPE html>
-
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>@ViewBag.Title</title>
-    </head>
-    <body>
-        <div>
-
-            @RenderBody()
-        </div>
-    </body>
-    </html>*@
-@*<!DOCTYPE html>
-    <html class="no-js" lang="zxx">
-
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <title>Bid My Car</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon-64x64.png" />*@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -32,14 +8,6 @@
     <meta name="description" content="" />
 
     <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/content/images/logo/favicon-64x64.png")" />
-    <!-- other head content -->
-    <!-- ========================= CSS here ========================= -->
-    @*<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
-        <link rel="stylesheet" href="assets/css/animate.css" />
-        <link rel="stylesheet" href="assets/css/tiny-slider.css" />
-        <link rel="stylesheet" href="assets/css/glightbox.min.css" />
-        <link rel="stylesheet" href="assets/css/main.css" />*@
     @Styles.Render("~/Content/css/bootstrap.min.css")
     @Styles.Render("~/Content/css/LineIcons.2.0.css")
     @Styles.Render("~/Content/css/animate.css")
@@ -114,10 +82,10 @@
                             <div class="login-button">
                                 <ul>
                                     <li>
-                                        <a href="dashboard.html"><i class="lni lni-dashboard"></i> Dashboard</a>
+                                        <a href="/Profile/Dashboard"><i class="lni lni-dashboard"></i> Dashboard</a>
                                     </li>
                                     <li>
-                                        <a href="index.html"><i class="lni lni-exit"></i> Logout</a>
+                                        <a href="/"><i class="lni lni-exit"></i> Logout</a>
                                     </li>
                                 </ul>
                             </div>
@@ -151,13 +119,6 @@
         <i class="lni lni-sun"></i>
     </a>
 
-    <!-- ========================= dashboard icon ========================= -->
-    <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" class="dashboard-icon btn-hover">
-        <svg data-bs-placement="top" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Dashboard</b>" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="75" height="75" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><g xmlns="http://www.w3.org/2000/svg"><path d="m9.25 0h-7.5c-.965 0-1.75.785-1.75 1.75v4.5c0 .965.785 1.75 1.75 1.75h7.5c.965 0 1.75-.785 1.75-1.75v-4.5c0-.965-.785-1.75-1.75-1.75z" fill="#016a5a" data-original="#000000" style="" class="" /><path d="m9.25 10h-7.5c-.965 0-1.75.785-1.75 1.75v10.5c0 .965.785 1.75 1.75 1.75h7.5c.965 0 1.75-.785 1.75-1.75v-10.5c0-.965-.785-1.75-1.75-1.75z" fill="#016a5a" data-original="#000000" style="" class="" /><path d="m22.25 16h-7.5c-.965 0-1.75.785-1.75 1.75v4.5c0 .965.785 1.75 1.75 1.75h7.5c.965 0 1.75-.785 1.75-1.75v-4.5c0-.965-.785-1.75-1.75-1.75z" fill="#016a5a" data-original="#000000" style="" class="" /><path d="m22.25 0h-7.5c-.965 0-1.75.785-1.75 1.75v10.5c0 .965.785 1.75 1.75 1.75h7.5c.965 0 1.75-.785 1.75-1.75v-10.5c0-.965-.785-1.75-1.75-1.75z" fill="#016a5a" data-original="#000000" class="" /></g></g></svg>
-        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-            <span class="visually-hidden">New alerts</span>
-        </span>
-    </a>
 
     <!-- ========================= JS here ========================= -->
     @Scripts.Render("~/Content/js/bootstrap.min.js")

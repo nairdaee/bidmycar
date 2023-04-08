@@ -348,6 +348,8 @@
     <Content Include="Views\Profile\MyItems.cshtml" />
     <Content Include="Views\Profile\BookmarkedItems.cshtml" />
     <Content Include="Views\Profile\PostItem.cshtml" />
+    <Content Include="Views\Profile\Dealership.cshtml" />
+    <Content Include="Views\Profile\IndividualSeller.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

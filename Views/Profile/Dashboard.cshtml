@@ -1,6 +1,25 @@
 ﻿@{
     Layout = "~/Views/Shared/Dash_Layout.cshtml";
 }
+
+<!-- Start Breadcrumbs -->
+<div class="breadcrumbs mt-80">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="breadcrumbs-content">
+                    <h1 class="page-title">My Dashboard</h1>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <ul class="breadcrumb-nav">
+                    <li>Dashboard</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Breadcrumbs -->
 <!-- Start Dashboard Section -->
 <section class="dashboard section">
     <div class="container">
@@ -17,18 +36,26 @@
                     </div>
                     <div class="dashboard-menu">
                         <ul>
+                            <li><a href="/Profile/Dashboard"><i class="lni lni-dashboard"></i> Dashboard</a></li>
                             <li>
-                                <a class="active" href="dashboard.html">
-                                    <i class="lni lni-dashboard"></i>
-                                    Dashboard
+                                <a class="active" href="/Profile/ProfileSettings"><i class="lni lni-pencil-alt"></i> Edit Profile</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/MyItems">
+                                    <i class="lni lni-bolt-alt"></i> My Cars
                                 </a>
                             </li>
                             <li>
-                                <a href="profile-settings.html"><i class="lni lni-pencil-alt"></i> Edit Profile</a>
+                                <a href="/Profile/PostItem">
+                                    <i class="lni lni-circle-plus"></i> Post An
+                                    Ad
+                                </a>
                             </li>
-                            <li><a href="my-items.html"><i class="lni lni-bolt-alt"></i> My Ads</a></li>
-                            <li><a href="post-item.html"><i class="lni lni-circle-plus"></i> Post An Ad</a></li>
-                            <li><a href="bookmarked-items.html"><i class="lni lni-bookmark"></i> Favorite Cars</a></li>
+                            <li>
+                                <a href="/Profile/BookmarkedItems">
+                                    <i class="lni lni-bookmark"></i> Favorite Cars
+                                </a>
+                            </li>
                         </ul>
                         <div class="button">
                             <a class="btn" href="javascript:void(0)">Logout</a>

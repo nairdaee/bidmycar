@@ -1,27 +1,30 @@
 ﻿@{
     Layout = "~/Views/Shared/Dash_Layout.cshtml";
 }
+
+
+
 <!-- Start Breadcrumbs -->
 <div class="breadcrumbs mt-80">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="breadcrumbs-content">
-                    <h1 class="page-title">Edit Profile</h1>
+                    <h1 class="page-title">Create Seller Profile</h1>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <ul class="breadcrumb-nav">
                     <li><a class="previous" href="/Profile/Dashboard">Dashboard</a></li>
-                    <li>Edit my profile</li>
+                    <li>New Seller Profile</li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
 <!-- End Breadcrumbs -->
-<section class="dashboard section">
 
+<section class="dashboard section">
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-body">
             <div class="dashboard-sidebar">
@@ -55,6 +58,7 @@
                                 <i class="lni lni-bookmark"></i> Favorite Cars
                             </a>
                         </li>
+
                     </ul>
                     <div class="button">
                         <a class="btn" href="javascript:void(0)">Logout</a>
@@ -64,7 +68,6 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <div class="row">
 
@@ -72,52 +75,77 @@
                 <div class="main-content">
                     <!-- Start Profile Settings Area -->
                     <div class="dashboard-block mt-0 profile-settings-block">
-                        <h3 class="block-title">Update Profile</h3>
+                        <h3 class="block-title">Your Seller Profile</h3>
                         <div class="inner-block">
                             <div class="image">
                                 <img src="https://via.placeholder.com/300x300" alt="#">
                             </div>
-                            <form class="profile-setting-form" method="post" action="#">
+                            <form class="profile-setting-form" method="post" ">
+
                                 <div class="row">
                                     <div class="col-lg-6 col-12">
                                         <div class="form-group">
-                                            <label>First Name*</label>
-                                            <input name="first-name" type="text" placeholder="Steve">
+                                            <label>Your Full Name*</label>
+                                            <input type="text" name="name" id="txtName" required="required">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <div class="form-group">
-                                            <label>Last Name*</label>
-                                            <input name="last-name" type="text" placeholder="Aldridge">
+                                            <label>Location*</label>
+                                            <input type="text" name="location" id="txtLocation" required="required" />
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <div class="form-group">
                                             <label>Username*</label>
-                                            <input name="usernames" type="text" placeholder="@username">
+                                            <input type="text" name="username" id="txtUsername" required="required" />
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <div class="form-group">
                                             <label>Email Address*</label>
-                                            <input name="email" type="email" placeholder="username@gmail.com">
+                                            <input type="email" name="email" id="txtEmail" required="required" />
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <label>Phone Number</label>
+                                            <input type="tel" name="email" required="required" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
                                         <div class="form-group upload-image">
-                                            <label>Profile Image*</label>
-                                            <input name="profile-image" type="file" placeholder="Upload Image">
+                                            <label>Profile Photo</label>
+                                            <input type="file" name="image" id="txtLogo" required="required" />
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group message">
-                                            <label>About You*</label>
-                                            <textarea name="message" placeholder="Enter about yourself"></textarea>
+                                            <label>Your Bio</label>
+                                            <textarea name="desc" id="txtDescription" required="required" rows="10"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group message">
+                                            <label>Instagram</label>
+                                            <input type="url" name="ig_url" maxlength="200" id="txtInstagramUrl">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group message">
+                                            <label>Twitter</label>
+                                            <input type="url" name="tw_url" maxlength="200" id="txtTwitterUrl">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group message">
+                                            <label>Youtube</label>
+                                            <input type="url" name="yt_url" maxlength="200" id="txtYoutubeUrl">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group button mb-0">
-                                            <button type="submit" class="btn ">Update Profile</button>
+                                            <button type="submit" class="btn ">Create Profile</button>
                                         </div>
                                     </div>
                                 </div>
@@ -125,43 +153,6 @@
                         </div>
                     </div>
                     <!-- End Profile Settings Area -->
-                    <!-- Start Password Change Area -->
-                    <div class="dashboard-block password-change-block">
-                        <h3 class="block-title">Change Password</h3>
-                        <div class="inner-block">
-                            <form class="default-form-style" method="post" action="#">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label>Current Password*</label>
-                                            <input name="current-password" type="password"
-                                                   placeholder="Enter old password">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label>New Password*</label>
-                                            <input name="new-password" type="password"
-                                                   placeholder="Enter new password">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label>Retype Password*</label>
-                                            <input name="retype-password" type="password"
-                                                   placeholder="Retype password">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group button mb-0">
-                                            <button type="submit" class="btn ">Update Password</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- End Password Change Area -->
                 </div>
             </div>
         </div>
