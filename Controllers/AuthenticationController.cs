@@ -91,9 +91,9 @@ namespace BidMyCar.Controllers
                 {
                     // Store the user information in the session
                     Session["UserId"] = existingUser.UserID;
-                    Session["Email"] = existingUser.Email;
-                    Session["Name"] = existingUser.Name;
-
+                    int userId = (int)Session["UserId"];
+                    var userData = db.UsersInfo.FirstOrDefault(u => u.UserID == userId);
+                    ViewBag.UserData = userData;
                 }
 
             }
