@@ -19,11 +19,7 @@ namespace BidMyCar.Models
             : base("name=BidMyCarEntities")
         {
         }
-        public BidMyCarEntities(string connectionString)
-           : base(connectionString)
-        {
-        }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

@@ -1,16 +1,15 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Bid My Car</title>
     <meta name="description" content="" />
-
-    <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/content/images/logo/favicon-64x64.png")" />
-    <!-- other head content -->
-
+  
+        <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/content/images/logo/favicon-64x64.png")" />
+        <!-- other head content -->
+    
 
 
 
@@ -23,8 +22,8 @@
     @Styles.Render("~/Content/css/glightbox.min.css")
     @Styles.Render("~/Content/css/main.css")
     @*@Styles.Render("~/Content/Site.css")
-        @Scripts.Render("~/bundles/modernizr")
-        @Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css")*@
 
 </head>
 <body class="theme--default">
@@ -91,10 +90,12 @@
                             <div class="login-button">
                                 <ul>
                                     <li>
-                                        @Html.ActionLink("login", "Login", "Authentication", null, new { @class = "nav-link active" })
+                                        <i class="lni lni-enter"></i>
+                                        @Html.ActionLink("Login", "Login", "Authentication", null, new { @class = "nav-link active" })
                                     </li>
                                     <li>
-                                        @Html.ActionLink("register", "Register", "Authentication", null, new { @class = "nav-link active" })
+                                        <i class="lni lni-user"></i>
+                                        @Html.ActionLink("Register", "Register", "Authentication", null, new { @class = "nav-link active" })
                                     </li>
                                 </ul>
                             </div>
