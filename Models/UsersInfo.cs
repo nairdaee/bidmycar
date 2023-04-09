@@ -27,6 +27,7 @@ namespace BidMyCar.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+
         [DisplayName("Password")]
         [Required(ErrorMessage = "Password is required!")]
         [DataType(DataType.Password)]
@@ -38,8 +39,10 @@ namespace BidMyCar.Models
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Confirm password and password do not match")]
         public string ConfirmPassword { get; set; }
+
+        public string resetCode { get; set; }
+
+  
+        public string GoogleId { get; set; }
     }
-
-
 }
-

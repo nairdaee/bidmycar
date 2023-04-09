@@ -14,18 +14,21 @@
 
 
 
-                    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                    @using (Html.BeginForm("Login", "Authentication", FormMethod.Post))
                     {
 
                         //error message
-                        if (ViewBag.Loginstatus != null)
+                        // Display any error messages
+                        if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
                         {
-                            if (ViewBag.LoginStatus == 0)
-                            {
-                                <div class="alert alert-danger">Invalid Credentials!</div>
-                            }
-                  
-                    }
+                            <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                        }
+
+                        //Display any success messages
+                        if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                        {
+                            <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+                        }
 
                         @Html.AntiForgeryToken()
                         <div class="form-floating mb-3">
@@ -48,7 +51,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12">
-                                    <a href="/Home/resetPassword" class="lost-pass">Lost your password?</a>
+                                    <a href="/Authentication/ForgotPassword" class="lost-pass">Lost your password?</a>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +70,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" class="google"><i class="lni lni-google"></i>Continue with Google</a>
+                                    <a href="@ViewBag.Response" class="google"><i class="lni lni-google"></i>Continue with Google</a>
                                 </li>
                                 <li>
                                     <a href="javascript:void(0)" class="apple"><i class="lni lni-apple"></i>Continue with Apple</a>
@@ -75,7 +78,7 @@
                             </ul>
                         </div>
                         <p class="outer-link">
-                            No account? <a href="/Home/register">Create one</a>
+                            No account? <a href="/Authentication/Register">Create one</a>
                         </p>
                     }
 
