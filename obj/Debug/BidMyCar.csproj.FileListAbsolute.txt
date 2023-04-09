@@ -503,3 +503,7 @@ C:\Users\user\source\repos\bid\obj\Debug\BidMyCar.csproj.AssemblyReference.cache
 C:\Users\user\source\repos\bid\obj\Debug\BidMyCar.csproj.CopyComplete
 C:\Users\user\source\repos\bid\obj\Debug\BidMyCar.dll
 C:\Users\user\source\repos\bid\obj\Debug\BidMyCar.pdb
+C:\Users\tiffa\Desktop\New folder\bidmycar\obj\Debug\BidMyCar.csproj.AssemblyReference.cache
+C:\Users\tiffa\Desktop\New folder\bidmycar\obj\Debug\BidMyCar.csproj.CoreCompileInputs.cache
+C:\Users\tiffa\Desktop\New folder\bidmycar\obj\Debug\BidMyCar.dll
+C:\Users\tiffa\Desktop\New folder\bidmycar\obj\Debug\BidMyCar.pdb
