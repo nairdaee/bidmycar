@@ -42,107 +42,15 @@ namespace BidMyCar.Controllers
             return View();
         }
        
-        //Login
-        public ActionResult Login()
-        {
-            return View();
-        }
 
-        //POST LOGIN
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Login(UsersInfo user)
-        {
-
-            var credentials = db.UsersInfo.Where(m => m.Email == user.Email).FirstOrDefault();
-            if (credentials != null)
-            {
-
-                if (string.Compare(Encryption.Hash(user.Password), credentials.Password) == 0)
-                {
-
-
-                    ViewBag.InsertMessage = "<script> alert('User Registered Successfully!')</script>";
-                    Session["UserID"] = user.UserID.ToString();
-                    Session["Email"] = user.Email.ToString();
-                    return RedirectToAction("Index", "UserProfile");
-
-                }
-                else
-                {
-                    ViewBag.LoginStatus = 0;
-                }
-            }
-            else
-            {
-                ViewBag.LoginStatus = 0;
-
-            }
-
-
-
-
-           return View();
-        }
-
-        //Registration
-        public ActionResult Register()
-        {
-            return View();
-        }
         public ActionResult Dash_Layout()
         {
             return View();
         }
 
 
-        //post registration
-        [HttpPost]
-        public ActionResult Register(UsersInfo user)
-        {
-            if (ModelState.IsValid == true)
-            {
-
-                //password hashing
-
-                user.Password = Encryption.Hash(user.Password);
-                user.ConfirmPassword = Encryption.Hash(user.ConfirmPassword);
-
-                //check if user has already used the email to register
-                var check = db.UsersInfo.Where(m => m.Email == user.Email).FirstOrDefault();
-                if (check == null)
-                {
-                    db.UsersInfo.Add(user);
-
-                    if (db.SaveChanges() > 0)
-                    {
-                        ViewBag.InsertMessage = "<script> alert('User Registered Successfully!')</script>";
-                        Session["UserID"] = user.UserID.ToString();
-                        Session["Name"] = user.Name.ToString();
-                        return RedirectToAction("Index", "UserProfile");
-
-                    }
-                    else
-                    {
-                        ViewBag.InsertMessage = "<script> alert('Registration failed!')</script>";
-                    }
-                }
-                else
-                {
-                    ViewBag.LoginStatus = 0;
-                }
 
 
-
-            }
-
-            return View();
-        }
-
-        public ActionResult ResetPassword()
-        {
-            return View();
-        }
         //public ActionResult ItemDetails()
 
         //{
