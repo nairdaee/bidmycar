@@ -20,10 +20,10 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="product-info">
-                        <h2 class="title">2022 Aston Martin DBX 707</h2>
-                        <p class="location"><i class="lni lni-map-marker"></i><a href="javascript:void(0)">Nairobi, KE</a></p>
+                        <h2 class="title">@Model.YOM @Model.Make @Model.Model </h2>
+                        <p class="location"><i class="lni lni-map-marker"></i><a href="javascript:void(0)">@Model.CarLocation</a></p>
                         <h3 class="price position-relative">
-                            KES 50,500,000
+                            @Model.Price
                             <span class="position-absolute top-0 start-100 translate-right badge bg-warning text-dark">
                                 Fixed
                                 <span class="visually-hidden">unread messages</span>
@@ -34,13 +34,13 @@
                         <div class="list-info">
                             <h4>Specifications</h4>
                             <ul>
-                                <li><span>Condition:</span> New Used</li>
-                                <li><span>Miles:</span> 729kms</li>
-                                <li><span>Color:</span>Aston Martin Racing Green</li>
-                                <li><span>Transmission:</span> 8 Speed Automatic</li>
-                                <li><span>Engine Size:</span>4.0L V-8 Gas Turbocharged</li>
-                                <li><span>Power Output:</span> 707HP</li>
-                                <li><span>Model Year:</span> 2022</li>
+                                <li><span>Condition:</span>@Model.Condition</li>
+                                <li><span>Miles:</span> @Model.Miles</li>
+                                <li><span>Color:</span>@Model.Color</li>
+                                <li><span>Transmission:</span>@Model.Transmission</li>
+                                <li><span>Engine Size:</span>@Model.EngineSize</li>
+                                <li><span>Power Output:</span>@Model.PowerOutput</li>
+                                <li><span>Model Year:</span> @Model.YOM</li>
                             </ul>
                         </div>
                         <div class="contact-info">
@@ -80,7 +80,7 @@
                     <div class="single-block description">
                         <h3>Description</h3>
                         <p>
-                            This 2023 Aston Martin DBX707 is located at The Collection on 200 Bird Rd. Coral Gables Fl 33146. Please contact Sales Manager Romy Vega at 305-476-5203 or rvega@thecollection.com for more information.ASTON MARTIN CERTIFIED PRE-OWNED This Certified Aston Martin includes a 140 point inspection, 24/7 roadside assistance, a warranty of: For total peace of mind, your authorized dealer will ensure that the car comes with a minimum of 12 months Aston Martin warranty. This offers you comprehensive protection against unexpected repair costs. Our warranty program also allows you to renew and extend your coverage up to 10 years or 85,000 miles (136,000 km). *Please consult with your Aston Martin Dealer for further information on the range of Aston Martin Extended Warranties (Extended Service Contract – North America) available., Comprehensive roadside assistance As the owner of an Aston Martin you should enjoy trouble-free motoring. However, should the unexpected occur, you’ll reap the benefit of a comprehensive roadside assistance package. Expert technicians, fully qualified to give your car the best possible care, will be on-hand in the case of any motoring emergency. LOADED WITH VALUE! Comes equipped with: Rear Air Conditioning, Sunroof, Bluetooth, Navigation System, Rear Heated Seats , Front Heated Seats. This Aston Martin DBX707 also includes Clock, Climate Control, Tachometer, Dual Zone Climate Control, Cruise Control, Privacy Glass/Tinted Windows, Power Steering, Telescoping Steering Wheel, Steering Radio Controls, Wood Trim, Power Mirrors, Moonroof, Leather Steering Wheel, Driver Airbag, Passenger Airbag, Intermittent Wipers, Rear Defogger, Security System, AM/FM, Sliding Rear Window, Rear Spoiler, Sport Seats, Center Arm Rest, Remote Fuel Door, Vanity Mirrors, Heated Mirrors, Rear Fog Lamps, Child Proof Door Locks, Daytime Running Lights, Reverse Camera, Side Curtain Airbags, Roll Stability Control, Rear-Side Airbags, Power Lift Gate, Tire Pressure Monitor, Premium Sound, Carpeted Floor Mats, Aux. Audio Input. Climate Control, Dual Zone Climate Control, Cruise Control, Tinted Windows, Power Steering, Power Mirrors, Leather Steering Wheel, Rear Air Conditioning, Wood Trim, Clock, Tachometer, Telescoping Steering Wheel, Steering Wheel Radio Controls, Sunroof, Moonroof, Driver Airbag, Passenger Airbag, Security System, Rear Defogger, Intermittent Wipers, AM/FM, Full Leather Interior Surface, Automatic, 4.0 Liter Twin Turbo Aux. Audio Input, Bluetooth, Carpeted Floor Mats, Center Arm Rest, Child Proof Door Locks, Daytime Running Lights, Front Heated Seats, Heated Mirrors, Navigation System, Power Lift Gate, Premium Sound, Rear Fog Lamps, Rear Heated Seats , Rear Spoiler, Rear Spoiler, Rear-Side Airbags, Remote Fuel Door, Reverse Camera, Roll Stability Control, Side Curtain Airbags, Sliding Rear Window, Sport Seats, Tire Pressure Monitor, Vanity Mirrors
+                            @Model.CarDescription
                         </p>
 
                     </div>
@@ -88,18 +88,20 @@
                     <!-- Start Single Block -->
                     <div class="single-block tags">
                         <h3>Features</h3> <!-- Remember to change 'tags' to 'features'-->
+                        
                         <ul>
-                            <li><a href="javascript:void(0)">Front and Rear Airbags</a></li>
-                            <li><a href="javascript:void(0)">Tinted Windows</a></li>
-                            <li><a href="javascript:void(0)">Panoramic sunroof</a></li>
-                            <li><a href="javascript:void(0)">4WD</a></li>
-                            <li><a href="javascript:void(0)">4 Zone Aircon</a></li>
-                            <li><a href="javascript:void(0)">Sunblinds</a></li>
-                            <li><a href="javascript:void(0)">Traction Control</a></li>
-                            <li><a href="javascript:void(0)">360 Surround Camera</a></li>
-                            <li><a href="javascript:void(0)">Ambient Lighting</a></li>
-                            <li><a href="javascript:void(0)">Armrests</a></li>
+                            @*@foreach (var Feature in Model.Features)
+        {
+            <li><a href="javascript:void(0)">@Feature</a></li>
+        }*@
+                            @foreach (var feature in Model.Features.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                            {
+                                <li><a href="javascript:void(0)">@feature</a></li>
+                            }
                         </ul>
+
+
+
                     </div>
                     <!-- End Single Block -->
 
@@ -111,8 +113,7 @@
                             <h3>Dealer</h3>
                             <div class="content">
                                 <img src="~/Content/images/dealers/mascardi.webp" alt="#">
-                                <h4>Mascardi Cars</h4>
-                                <span>Member Since May 15,2022</span>
+                                <h4>Mascardi Cars</h4>                                
                                 <a href="javascript:void(0)" class="see-all">See All Active Ads</a>
                             </div>
                         </div>
@@ -140,7 +141,7 @@
                                     <div class="col-12">
                                         <div class="form-box form-group">
                                             <textarea name="#" class="form-control form-control-custom"
-                                                      placeholder="Your Message">Hi, I am interested in purchasing this 2022 Aston Martin DBX 707</textarea>
+                                                      placeholder="Your Message">Hi, I am interested in purchasing this @Model.YOM @Model.Make @Model.Model</textarea>
                                         </div>
                                     </div>
                                     <div class="col-12">

@@ -1,4 +1,5 @@
-﻿<div class="position-fixed top-140 start-50 translate-middle-x p-3" style="z-index: 11">
+﻿@*@model BidMyCar.Models.CarDetail*@
+<div class="position-fixed top-140 start-50 translate-middle-x p-3" style="z-index: 11">
     <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="100000">
         <div class="d-flex">
             <div class="toast-body">
@@ -22,6 +23,8 @@
                     </div>
                     <!-- End Search Form -->
                     <!-- Start Search Form -->
+                    @using (Html.BeginForm("SearchItems", "CarDetails", FormMethod.Get))
+                    {
                     <div class="search-form wow fadeInUp" data-wow-delay=".7s">
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-12 p-0">
@@ -29,7 +32,11 @@
                                     <label for="keywords">
                                         <i class="lni lni-calendar theme-color"></i>
                                     </label>
-                                    <input type="text" name="keywnord" id="keyword" placeholder="YOM">
+                                    @*<input type="text" name="keyword" id="keyword" placeholder="YOM">*@
+                                    <input type="text" name="searchModel.YOM" id="searchModel_YOM" class="form-control" placeholder="YOM">
+
+                                    @*@Html.TextBoxFor(m => m.searchModel.YOM, new { @class = "form-control", placeholder = "YOM" })*@
+
                                 </div>
                             </div>
 
@@ -41,7 +48,7 @@
                                             <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
                                         </svg>
                                     </label>
-                                    <select name="category" id="category">
+                                    @*<select name="category" id="category">
                                         <option value="none" selected disabled>Make</option>
                                         <option value="">All</option>
                                         <option value="acura">Acura</option>
@@ -108,7 +115,77 @@
 
 
                                     </select>
-                                </div>
+                                    <input type="text" name="searchModel.Make" id="searchModel_Make" class="form-control" placeholder="Make">*@
+                                <select name="searchModel.Make" id="searchModel_Make" class="form-control">
+                                    <option value="none" selected disabled>Make</option>
+                                    <option value="">All</option>
+                                    <option value="Acura">Acura</option>
+                                    <option value="Alfa Romeo">Alfa Romeo</option>
+                                    <option value="AM General">AM General</option>
+                                    <option value="Aston Martin">Aston Martin</option>
+                                    <option value="Audi">Audi</option>
+                                    <option value="Bentley">Bentley</option>
+                                    <option value="BMW">BMW</option>
+                                    <option value="Buick">Buick</option>
+                                    <option value="Cadillac">Cadillac</option>
+                                    <option value="Chevrolet">Chevrolet</option>
+                                    <option value="Chrysler">Chrysler</option>
+                                    <option value="Dodge">Dodge</option>
+                                    <option value="Ferrari">Ferrari</option>
+                                    <option value="FIAT">FIAT</option>
+                                    <option value="Fisker">Fisker</option>
+                                    <option value="Ford">Ford</option>
+                                    <option value="Freightliner">Freightliner</option>
+                                    <option value="Genesis">Genesis</option>
+                                    <option value="GMC">GMC</option>
+                                    <option value="Honda">Honda</option>
+                                    <option value="HUMMER">HUMMER</option>
+                                    <option value="Hyundai">Hyundai</option>
+                                    <option value="INFINITI">INFINITI</option>
+                                    <option value="Isuzu">Isuzu</option>
+                                    <option value="Jaguar">Jaguar</option>
+                                    <option value="Jeep">Jeep</option>
+                                    <option value="Karma">Karma</option>
+                                    <option value="Kia">Kia</option>
+                                    <option value="Lamborghini">Lamborghini</option>
+                                    <option value="Land Rover">Land Rover</option>
+                                    <option value="Lexus">Lexus</option>
+                                    <option value="Lincoln">Lincoln</option>
+                                    <option value="Lotus">Lotus</option>
+                                    <option value="Lucid">Lucid</option>
+                                    <option value="Maserati">Maserati</option>
+                                    <option value="Maybach">Maybach</option>
+                                    <option value="Mazda">Mazda</option>
+                                    <option value="McLaren">McLaren</option>
+                                    <option value="Mercedes">Mercedes-Benz</option>
+                                    <option value="Mercury">Mercury</option>
+                                    <option value="MINI">MINI</option>
+                                    <option value="Mitsubishi">Mitsubishi</option>
+                                    <option value="Nissan">Nissan</option>
+                                    <option value="Oldsmobile">Oldsmobile</option>
+                                    <option value="Plymouth">Plymouth</option>
+                                    <option value="Polestar">Polestar</option>
+                                    <option value="Pontiac">Pontiac</option>
+                                    <option value="Porsche">Porsche</option>
+                                    <option value="Ram">Ram</option>
+                                    <option value="Rivian">Rivian</option>
+                                    <option value="Rolls-Royce">Rolls-Royce</option>
+                                    <option value="Saab">Saab</option>
+                                    <option value="Saturn">Saturn</option>
+                                    <option value="Scion">Scion</option>
+                                    <option value="Smart">Smart</option>
+                                    <option value="Subaru">Subaru</option>
+                                    <option value="Suzuki">Suzuki</option>
+                                    <option value="Tesla">Tesla</option>
+                                    <option value="Toyota">Toyota</option>
+                                    <option value="Volkswagen">Volkswagen</option>
+                                    <option value="Volvo">Volvo</option>
+
+
+
+                                </select>
+
+</div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 p-0">
                                 <div class="search-input">
@@ -118,73 +195,88 @@
                                             <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z" />
                                         </svg>
                                     </label>
-                                    <select name="category" id="category">
-                                        <option value="none" selected disabled>Model</option>
-                                        <option value="">All</option>
-                                        <option value="1-series">1 Series</option>
-                                        <option value="1-series-m">1 Series M</option>
-                                        <option value="2-series">2 Series</option>
-                                        <option value="3-series">3 Series</option>
-                                        <option value="4-series">4 Series</option>
-                                        <option value="5-series">5 Series</option>
-                                        <option value="6-series">6 Series</option>
-                                        <option value="7-series">7 Series</option>
-                                        <option value="8-series">8 Series</option>
-                                        <option value="i3">i3</option>
-                                        <option value="i4">i4</option>
-                                        <option value="i7">i7</option>
-                                        <option value="i8">i8</option>
-                                        <option value="ix">iX</option>
-                                        <option value="m2">M2</option>
-                                        <option value="m3">M3</option>
-                                        <option value="m4">M4</option>
-                                        <option value="m5">M5</option>
-                                        <option value="m6">M6</option>
-                                        <option value="m8">M8</option>
-                                        <option value="x1">X1</option>
-                                        <option value="x2">X2</option>
-                                        <option value="x3">X3</option>
-                                        <option value="x3-m">X3 M</option>
-                                        <option value="x4">X4</option>
-                                        <option value="x4-m">X4 M</option>
-                                        <option value="x5">X5</option>
-                                        <option value="x5-m">X5 M</option>
-                                        <option value="x6">X6</option>
-                                        <option value="x6-m">X6 M</option>
-                                        <option value="x7">X7</option>
-                                        <option value="z3">Z3</option>
-                                        <option value="z4">Z4</option>
-                                        <option value="z8">Z8</option>
-                                    </select>
-                                </div>
+                                        <select name="searchModel.Model" id="searchModel_Model" class="form-control">
+
+                                            <option value="none" selected disabled>Model</option>
+                                            <option value="">All</option>
+                                            <option value="1-series">1 Series</option>
+                                            <option value="1-series-m">1 Series M</option>
+                                            <option value="2-series">2 Series</option>
+                                            <option value="3-series">3 Series</option>
+                                            <option value="4-series">4 Series</option>
+                                            <option value="5-series">5 Series</option>
+                                            <option value="6-series">6 Series</option>
+                                            <option value="7-series">7 Series</option>
+                                            <option value="8-series">8 Series</option>
+                                            <option value="i3">i3</option>
+                                            <option value="i4">i4</option>
+                                            <option value="i7">i7</option>
+                                            <option value="i8">i8</option>
+                                            <option value="ix">iX</option>
+                                            <option value="m2">M2</option>
+                                            <option value="m3">M3</option>
+                                            <option value="m4">M4</option>
+                                            <option value="m5">M5</option>
+                                            <option value="m6">M6</option>
+                                            <option value="m8">M8</option>
+                                            <option value="x1">X1</option>
+                                            <option value="x2">X2</option>
+                                            <option value="x3">X3</option>
+                                            <option value="x3-m">X3 M</option>
+                                            <option value="x4">X4</option>
+                                            <option value="x4-m">X4 M</option>
+                                            <option value="x5">X5</option>
+                                            <option value="x5-m">X5 M</option>
+                                            <option value="x6">X6</option>
+                                            <option value="x6-m">X6 M</option>
+                                            <option value="x7">X7</option>
+                                            <option value="z3">Z3</option>
+                                            <option value="z4">Z4</option>
+                                            <option value="z8">Z8</option>
+                                        </select>
+</div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12 p-0">
                                 <div class="search-input">
                                     <label for="location">
                                         <i class="lni lni-car theme-color"></i>
                                     </label>
-                                    <select name="location" id="location">
-                                        <option value="none" selected disabled>Body Style</option>
-                                        <option value="">All</option>
-                                        <option value="convertible">Convertible</option>
-                                        <option value="coupe">Coupe</option>
-                                        <option value="hatchback">Hatchback</option>
-                                        <option value="sedan">Sedan</option>
-                                        <option value="suv">SUV</option>
-                                        <option value="truck">Truck</option>
-                                        <option value="van">Van</option>
-                                        <option value="wagon">Wagon</option>
-                                        <option value="unknown">Unknown</option>
-                                    </select>
+                                    <select name="searchModel.BodyType" id="searchModel_BodyType" class="form-control">
+
+                                            <option value="none" selected disabled>Body Style</option>
+                                            <option value="">All</option>
+                                            <option value="Convertible">Convertible</option>
+                                            <option value="Coupe">Coupe</option>
+                                            <option value="Hatchback">Hatchback</option>
+                                            <option value="Sedan">Sedan</option>
+                                            <option value="SUV">SUV</option>
+                                            <option value="Truck">Truck</option>
+                                            <option value="Van">Van</option>
+                                            <option value="Wagon">Wagon</option>
+                                            <option value="Unknown">Unknown</option>
+                                        </select>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 p-0">
+                                @*<div class="search-btn button">
+            <button id="search" class="btn"><i class="lni lni-search-alt"></i> Search</button>
+
+        </div>*@
                                 <div class="search-btn button">
-                                    <button class="btn"><i class="lni lni-search-alt"></i> Search</button>
+                                    <button class="btn" onclick="redirectToCarDetails()"><i class="lni lni-search-alt"></i> Search</button>
                                 </div>
+
+                                    <script>
+                                        function redirectToCarDetails() {
+                                        var url = '@Url.Content("~/CarDetails/SearchItems")';
+                                        window.location.href = url;
+                                        }
+                                    </script>
+
                             </div>
                         </div>
                     </div>
+                    }
                     <!-- End Search Form -->
                 </div>
             </div>
@@ -202,7 +294,7 @@
                         <!-- Start Single Category -->
                         <a href="#" class="single-cat">
                             <div class="icon">
-                                <img src="~/Content/images/carlogos/subaru.svg" alt="#">
+                                <img src="~/Content/images/carlogos/subaru.svg" alt="#"  >
                             </div>
 
                             <h3>Subaru</h3>
@@ -339,270 +431,318 @@
                 </div>
             </div>
         </div>
-        <div class="single-head">
-            <div class="row" data-masonry='{"percentPosition": true }'>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Grid -->
-                    <div class="single-grid wow fadeInUp" data-wow-delay=".2s">
-                        <div class="image">
-                            <a href="item-details.html" class="thumbnail"><img src="~/Content/images/cars/e63s.jpg" alt="#"></a>
-                            <div class="author">
-                                <div class="author-image">
-                                    <a href="javascript:void(0)">
-                                        <img src="https://via.placeholder.com/100x100" alt="#">
-                                        <span>James Kamau</span>
-                                    </a>
-                                </div>
-                                <p class="sale">On auction</p>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="top-content">
-                                <a href="javascript:void(0)" class="tag">Car Auction</a>
-                                <h3 class="title">
-                                    <a href="item-details.html">2018 Mercedes E63s AMG 4MATIC+</a>
-                                </h3>
-                                <p class="update-time">Last Updated: 2 mins ago</p>
-                                <ul class="rating">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><a href="javascript:void(0)">(35)</a></li>
-                                </ul>
-                                <ul class="info-list">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i>1 day</a></li>
-                                </ul>
-                            </div>
-                            <div class="bottom-content">
-                                <p class="price">Current Bid: <span>KES 4,556,000</span></p>
-                                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Grid -->
+
+        <!-- Start Single Grid -->
+        <!--<div class="single-grid wow fadeInUp" data-wow-delay=".2s">
+        <div class="image">
+            <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="~/Content/images/cars/e63s.jpg" alt="#"></a>
+            <div class="author">
+                <div class="author-image">
+                    <a href="javascript:void(0)">
+                        <img src="https://via.placeholder.com/100x100" alt="#">
+                        <span>James Kamau</span>
+                    </a>
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Grid -->
-                    <div class="single-grid wow fadeInUp" data-wow-delay=".4s">
-                        <div class="image">
-                            <a href="item-details.html" class="thumbnail"><img src="~/Content/images/cars/Macan1.jpg" alt="#"></a>
-                            <div class="author">
-                                <div class="author-image">
-                                    <a href="javascript:void(0)">
-                                        <img src="https://via.placeholder.com/100x100" alt="#">
-                                        <span>Alex Njui</span>
-                                    </a>
-                                </div>
-                                <p class="sale">For Sale</p>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="top-content">
-                                <a href="javascript:void(0)" class="tag">Brand New</a>
-                                <h3 class="title">
-                                    <a href="item-details.html">Porsche Macan GTS</a>
-                                </h3>
-                                <p class="update-time">Last Updated: 2 hours ago</p>
-                                <ul class="rating">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><a href="javascript:void(0)">(20)</a></li>
-                                </ul>
-                                <ul class="info-list">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Along Ngong. Rd, Nairobi</a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Jan 7, 2023</a></li>
-                                </ul>
-                            </div>
-                            <div class="bottom-content">
-                                <p class="price">Starting Price: <span>KES 10,000,000</span></p>
-                                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Grid -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Grid -->
-                    <div class="single-grid wow fadeInUp" data-wow-delay=".6s">
-                        <div class="image">
-                            <a href="item-details.html" class="thumbnail"><img src="~/Content/images/cars/RS6.jpg" alt="#"></a>
-                            <div class="author">
-                                <div class="author-image">
-                                    <a href="javascript:void(0)">
-                                        <img src="https://via.placeholder.com/100x100" alt="#">
-                                        <span>Imports by Kairo</span>
-                                    </a>
-                                </div>
-                                <p class="sale">For Sale</p>
-                            </div>
-                            <p class="item-position"><i class="lni lni-bolt"></i> Featured</p>
-                        </div>
-                        <div class="content">
-                            <div class="top-content">
-                                <a href="javascript:void(0)" class="tag">New Used</a>
-                                <h3 class="title">
-                                    <a href="item-details.html">Audi RS6 Avant Vorsprung</a>
-                                </h3>
-                                <p class="update-time">Last Updated: 3 hours ago</p>
-                                <ul class="rating">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><a href="javascript:void(0)">(55)</a></li>
-                                </ul>
-                                <ul class="info-list">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Mar 18, 2023</a></li>
-                                </ul>
-                            </div>
-                            <div class="bottom-content">
-                                <p class="price">Starting Price: <span>KES 23,540,000</span></p>
-                                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Grid -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Grid -->
-                    <div class="single-grid wow fadeInUp" data-wow-delay=".2s">
-                        <div class="image">
-                            <a href="item-details.html" class="thumbnail"><img src="~/Content/images/cars/Bentley.jpg" alt="#"></a>
-                            <div class="author">
-                                <div class="author-image">
-                                    <a href="javascript:void(0)">
-                                        <img src="https://via.placeholder.com/100x100" alt="#">
-                                        <span>Juma Mwanza</span>
-                                    </a>
-                                </div>
-                                <p class="sale">For Sale</p>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="top-content">
-                                <a href="javascript:void(0)" class="tag">New, Assembled locally</a>
-                                <h3 class="title">
-                                    <a href="item-details.html">2022 Bentley Bentayga</a>
-                                </h3>
-                                <p class="update-time">Last Updated: 4 hours ago</p>
-                                <ul class="rating">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><a href="javascript:void(0)">(35)</a></li>
-                                </ul>
-                                <ul class="info-list">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Mombasa, KE</a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Apr 12, 2023</a></li>
-                                </ul>
-                            </div>
-                            <div class="bottom-content">
-                                <p class="price">Starting Price: <span>KES 9,500,000</span></p>
-                                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Grid -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Grid -->
-                    <div class="single-grid wow fadeInUp" data-wow-delay=".4s">
-                        <div class="image">
-                            <a href="item-details.html" class="thumbnail"><img src="~/Content/images/cars/X5M.jpg" alt="#"></a>
-                            <div class="author">
-                                <div class="author-image">
-                                    <a href="javascript:void(0)">
-                                        <img src="https://via.placeholder.com/100x100" alt="#">
-                                        <span>Thomas Deco</span>
-                                    </a>
-                                </div>
-                                <p class="sale">Rental</p>
-                            </div>
-                            <p class="item-position"><i class="lni lni-bolt"></i> Featured</p>
-                        </div>
-                        <div class="content">
-                            <div class="top-content">
-                                <a href="javascript:void(0)" class="tag">Rental Cars</a>
-                                <h3 class="title">
-                                    <a href="item-details.html">2021 BMW X5 M Competition</a>
-                                </h3>
-                                <p class="update-time">Last Updated: 5 hours ago</p>
-                                <ul class="rating">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><a href="javascript:void(0)">(35)</a></li>
-                                </ul>
-                                <ul class="info-list">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nakuru, KE</a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> May 25, 2023</a></li>
-                                </ul>
-                            </div>
-                            <div class="bottom-content">
-                                <p class="price">Starts From: <span>KES 5,000/day</span></p>
-                                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Grid -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Grid -->
-                    <div class="single-grid wow fadeInUp" data-wow-delay=".6s">
-                        <div class="image">
-                            <a href="item-details.html" class="thumbnail"><img src="~/Content/images/cars/landrover.jpg" alt="#"></a>
-                            <div class="author">
-                                <div class="author-image">
-                                    <a href="javascript:void(0)">
-                                        <img src="https://via.placeholder.com/100x100" alt="#">
-                                        <span>Jonson Kuria</span>
-                                    </a>
-                                </div>
-                                <p class="sale">For Sale</p>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="top-content">
-                                <a href="javascript:void(0)" class="tag">On Sale</a>
-                                <h3 class="title">
-                                    <a href="item-details.html">2022 Range Rover Autobiography</a>
-                                </h3>
-                                <p class="update-time">Last Updated: 7 hours ago</p>
-                                <ul class="rating">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><a href="javascript:void(0)">(20)</a></li>
-                                </ul>
-                                <ul class="info-list">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Feb 18, 2023</a></li>
-                                </ul>
-                            </div>
-                            <div class="bottom-content">
-                                <p class="price">Starting Price: <span>KES 3,450,000</span></p>
-                                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Grid -->
-                </div>
+                <p class="sale">On auction</p>
             </div>
         </div>
-    </div>
+        <div class="content">
+            <div class="top-content">
+                <a href="javascript:void(0)" class="tag">Car Auction</a>
+                <h3 class="title">
+                    <a href="~/CarDetails/ItemDetails">2018 Mercedes E63s AMG 4MATIC+</a>
+                </h3>
+                <p class="update-time">Last Updated: 2 mins ago</p>
+                <ul class="rating">
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><a href="javascript:void(0)">(35)</a></li>
+                </ul>
+                <ul class="info-list">
+                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
+                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i>1 day</a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <p class="price">Current Bid: <span>KES 4,556,000</span></p>
+                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+            </div>
+        </div>
+    </div>-->
+        <!-- End Single Grid -->
+        <!--</div>
+    <div class="col-lg-4 col-md-6 col-12">-->
+        <!-- Start Single Grid -->
+        <!--<div class="single-grid wow fadeInUp" data-wow-delay=".4s">
+        <div class="image">
+            <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="~/Content/images/cars/Macan1.jpg" alt="#"></a>
+            <div class="author">
+                <div class="author-image">
+                    <a href="javascript:void(0)">
+                        <img src="https://via.placeholder.com/100x100" alt="#">
+                        <span>Alex Njui</span>
+                    </a>
+                </div>
+                <p class="sale">For Sale</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="top-content">
+                <a href="javascript:void(0)" class="tag">Brand New</a>
+                <h3 class="title">
+                    <a href="~/CarDetails/ItemDetails">Porsche Macan GTS</a>
+                </h3>
+                <p class="update-time">Last Updated: 2 hours ago</p>
+                <ul class="rating">
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><a href="javascript:void(0)">(20)</a></li>
+                </ul>
+                <ul class="info-list">
+                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Along Ngong. Rd, Nairobi</a></li>
+                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Jan 7, 2023</a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <p class="price">Starting Price: <span>KES 10,000,000</span></p>
+                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+            </div>
+        </div>
+    </div>-->
+        <!-- End Single Grid -->
+        <!--</div>
+    <div class="col-lg-4 col-md-6 col-12">-->
+        <!-- Start Single Grid -->
+        <!--<div class="single-grid wow fadeInUp" data-wow-delay=".6s">
+        <div class="image">
+            <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="~/Content/images/cars/RS6.jpg" alt="#"></a>
+            <div class="author">
+                <div class="author-image">
+                    <a href="javascript:void(0)">
+                        <img src="https://via.placeholder.com/100x100" alt="#">
+                        <span>Imports by Kairo</span>
+                    </a>
+                </div>
+                <p class="sale">For Sale</p>
+            </div>
+            <p class="item-position"><i class="lni lni-bolt"></i> Featured</p>
+        </div>
+        <div class="content">
+            <div class="top-content">
+                <a href="javascript:void(0)" class="tag">New Used</a>
+                <h3 class="title">
+                    <a href="~/CarDetails/ItemDetails">Audi RS6 Avant Vorsprung</a>
+                </h3>
+                <p class="update-time">Last Updated: 3 hours ago</p>
+                <ul class="rating">
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><a href="javascript:void(0)">(55)</a></li>
+                </ul>
+                <ul class="info-list">
+                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
+                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Mar 18, 2023</a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <p class="price">Starting Price: <span>KES 23,540,000</span></p>
+                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+            </div>
+        </div>
+    </div>-->
+        <!-- End Single Grid -->
+        <!--</div>
+    <div class="col-lg-4 col-md-6 col-12">-->
+        <!-- Start Single Grid -->
+        <!--<div class="single-grid wow fadeInUp" data-wow-delay=".2s">
+        <div class="image">
+            <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="~/Content/images/cars/Bentley.jpg" alt="#"></a>
+            <div class="author">
+                <div class="author-image">
+                    <a href="javascript:void(0)">
+                        <img src="https://via.placeholder.com/100x100" alt="#">
+                        <span>Juma Mwanza</span>
+                    </a>
+                </div>
+                <p class="sale">For Sale</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="top-content">
+                <a href="javascript:void(0)" class="tag">New, Assembled locally</a>
+                <h3 class="title">
+                    <a href="~/CarDetails/ItemDetails">2022 Bentley Bentayga</a>
+                </h3>
+                <p class="update-time">Last Updated: 4 hours ago</p>
+                <ul class="rating">
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><a href="javascript:void(0)">(35)</a></li>
+                </ul>
+                <ul class="info-list">
+                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Mombasa, KE</a></li>
+                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Apr 12, 2023</a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <p class="price">Starting Price: <span>KES 9,500,000</span></p>
+                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+            </div>
+        </div>
+    </div>-->
+        <!-- End Single Grid -->
+        <!--</div>
+    <div class="col-lg-4 col-md-6 col-12">-->
+        <!-- Start Single Grid -->
+        <!--<div class="single-grid wow fadeInUp" data-wow-delay=".4s">
+        <div class="image">
+            <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="~/Content/images/cars/X5M.jpg" alt="#"></a>
+            <div class="author">
+                <div class="author-image">
+                    <a href="javascript:void(0)">
+                        <img src="https://via.placeholder.com/100x100" alt="#">
+                        <span>Thomas Deco</span>
+                    </a>
+                </div>
+                <p class="sale">Rental</p>
+            </div>
+            <p class="item-position"><i class="lni lni-bolt"></i> Featured</p>
+        </div>
+        <div class="content">
+            <div class="top-content">
+                <a href="javascript:void(0)" class="tag">Rental Cars</a>
+                <h3 class="title">
+                    <a href="~/CarDetails/ItemDetails">2021 BMW X5 M Competition</a>
+                </h3>
+                <p class="update-time">Last Updated: 5 hours ago</p>
+                <ul class="rating">
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><a href="javascript:void(0)">(35)</a></li>
+                </ul>
+                <ul class="info-list">
+                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nakuru, KE</a></li>
+                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> May 25, 2023</a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <p class="price">Starts From: <span>KES 5,000/day</span></p>
+                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+            </div>
+        </div>
+    </div>-->
+        <!-- End Single Grid -->
+        <!--</div>
+    <div class="col-lg-4 col-md-6 col-12">-->
+        <!-- Start Single Grid -->
+        <!--<div class="single-grid wow fadeInUp" data-wow-delay=".6s">
+        <div class="image">
+            <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="~/Content/images/cars/landrover.jpg" alt="#"></a>
+            <div class="author">
+                <div class="author-image">
+                    <a href="javascript:void(0)">
+                        <img src="https://via.placeholder.com/100x100" alt="#">
+                        <span>Jonson Kuria</span>
+                    </a>
+                </div>
+                <p class="sale">For Sale</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="top-content">
+                <a href="javascript:void(0)" class="tag">On Sale</a>
+                <h3 class="title">
+                    <a href="~/CarDetails/ItemDetails">2022 Range Rover Autobiography</a>
+                </h3>
+                <p class="update-time">Last Updated: 7 hours ago</p>
+                <ul class="rating">
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><i class="lni lni-star-filled"></i></li>
+                    <li><a href="javascript:void(0)">(20)</a></li>
+                </ul>
+                <ul class="info-list">
+                    <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Nairobi, KE</a></li>
+                    <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Feb 18, 2023</a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <p class="price">Starting Price: <span>KES 3,450,000</span></p>
+                <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+            </div>
+        </div>
+    </div>-->
+       
+            <div class="single-head">
+                <div class="row" data-masonry='{"percentPosition": true }'>
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="single-grid wow fadeInUp" data-wow-delay=".2s">
+                                <div class="image">
+                                    <a href="~/CarDetails/ItemDetails" class="thumbnail"><img src="@Url.Content("~/Content/images/cars/e63s.jpg")" alt="#"></a>
+                                    <div class="author">
+                                        <div class="author-image">
+                                            <a href="javascript:void(0)">
+                                                <img src="https://via.placeholder.com/100x100" alt="#">
+                                                <span>@item.Model</span>
+                                            </a>
+                                        </div>
+                                        <p class="sale">@item.Category</p>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="top-content">
+                                        <a href="javascript:void(0)" class="tag">Car Auction</a>
+                                        <h3 class="title">
+                                            @*<a href="~/CarDetails/ItemDetails">@item.YOM @item.Make @item.Model</a>*@
+                                            @*<a href="@Url.Action("~/CarDetails/ItemDetails", new { id = @item.CarID })">@item.YOM @item.Make @item.Model</a>*@
+                                            <a href="@Url.Action("ItemDetails", "CarDetails", new { id = item.CarID })">@item.YOM @item.Make</a>
+
+                                        </h3>
+                                        <p class="update-time">Last Updated: @item.UploadDate</p>
+                                        <ul class="rating">
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                <li><i class="lni lni-star-filled"></i></li>
+                                            }
+                                            <li><a href="javascript:void(0)">@item.Miles</a></li>
+                                        </ul>
+                                        <ul class="info-list">
+                                            <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> @item.CarLocation</a></li>
+                                            <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> @item.UploadDate</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="bottom-content">
+                                        <p class="price">Current Bid: <span>@item.Price</span></p>
+                                        <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- End Single Grid -->
+                        </div>
+                    }
+                    </div>
+            </div>
+        
+        </div>
 </section>
 <!-- /End Items Grid Area -->
