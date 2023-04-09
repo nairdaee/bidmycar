@@ -1,6 +1,5 @@
 ﻿@{
     Layout = "~/Views/Shared/Dash_Layout.cshtml";
-    ViewBag.Title = "Dashboard";
 }
 <!-- Start Dashboard Section -->
 <section class="dashboard section">
@@ -11,14 +10,11 @@
                 <div class="dashboard-sidebar">
                     <div class="user-image">
                         <img src="~/Content/images/avatars/image1.jpg" alt="#">
-                        @if (Session["Name"] != null)
-                        {
-                            <h3>
-                                @Session["Name"].ToString()
-                                <span><a href="javascript:void(0)">nairdaee</a></span>
-                            </h3>
-                        }
-                        </div>
+                        <h3>
+                            Adrian Etenyi
+                            <span><a href="javascript:void(0)">nairdaee</a></span>
+                        </h3>
+                    </div>
                     <div class="dashboard-menu">
                         <ul>
                             <li>
