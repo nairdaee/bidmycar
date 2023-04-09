@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace BidMyCar.Controllers
 {
-    public class UserProfileController : Controller
+    public class UsersProfileController : Controller
     {
-        // GET: UserProfile
+        // GET: UsersProfile
         public ActionResult Index()
         {
             return View();
