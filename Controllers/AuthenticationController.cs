@@ -15,8 +15,6 @@ using System.Threading.Tasks;
 using Google.Apis.Auth.OAuth2;
 using Newtonsoft.Json;
 using System.Data.Entity;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNet.Identity.Owin;
 
 namespace BidMyCar.Controllers
 {
@@ -38,22 +36,22 @@ namespace BidMyCar.Controllers
             }
 
 
-                // Get Google access token using authorization code
-                var clientId = "288450486046-07ts86j3aobfbr611dc973rq9vu586jq.apps.googleusercontent.com";
-                var clientSecret = "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";
-                var url = "http://localhost:60694/Authentication/LoginCallback";
-                var token = await GoogleAuth.GetAuthAccessToken(code, clientId, clientSecret, url);
-                var userProfile = await GoogleAuth.GetProfileResponseAsync(token.AccessToken.ToString());
-                
+            // Get Google access token using authorization code
+            var clientId = "288450486046-07ts86j3aobfbr611dc973rq9vu586jq.apps.googleusercontent.com";
+            var clientSecret = "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";
+            var url = "http://localhost:60694/Authentication/LoginCallback";
+            var token = await GoogleAuth.GetAuthAccessToken(code, clientId, clientSecret, url);
+            var userProfile = await GoogleAuth.GetProfileResponseAsync(token.AccessToken.ToString());
 
-                if(userProfile != null)
+
+            if (userProfile != null)
+            {
+                var googleUser = JsonConvert.DeserializeObject<GoogleInfo>(userProfile);
+
+                // Check if user already exists in the database
+                var existingUser = await db.UsersInfo.FirstOrDefaultAsync(u => u.Email == googleUser.Email);
+                if (existingUser == null)
                 {
-                    var googleUser = JsonConvert.DeserializeObject<GoogleInfo>(userProfile);
-
-                    // Check if user already exists in the database
-                    var existingUser = await db.UsersInfo.FirstOrDefaultAsync(u => u.Email == googleUser.Email);
-                    if (existingUser == null)
-                    {
                     // if User does not exist, create a new user entity
                     try
                     {
@@ -61,7 +59,7 @@ namespace BidMyCar.Controllers
                         newUser.Name = googleUser.GivenName;
                         newUser.GoogleId = googleUser.Id;
 
-                        
+
                         // Save the new user to the database
                         db.UsersInfo.Add(newUser);
                         db.SaveChanges();
@@ -87,24 +85,24 @@ namespace BidMyCar.Controllers
                         // Throw a new DbEntityValidationException with the improved exception message.
                         throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
                     }
-                    
-                    }
-                    else
-                    {
-                        // Store the user information in the session
-                        Session["UserId"] = existingUser.UserID;
-                        Session["Email"] = existingUser.Email;
-                        Session["Name"] = existingUser.Name;
-
-                    }
 
                 }
-           
-       
+                else
+                {
+                    // Store the user information in the session
+                    Session["UserId"] = existingUser.UserID;
+                    Session["Email"] = existingUser.Email;
+                    Session["Name"] = existingUser.Name;
+
+                }
+
+            }
 
 
 
-            return RedirectToAction("Index", "UsersProfile");
+
+
+            return RedirectToAction("Dashboard", "Profile");
 
         }
 
@@ -147,7 +145,7 @@ namespace BidMyCar.Controllers
                     Session["Name"] = user.Name.ToString();
 
                     //redirect to user profile
-                    return RedirectToAction("Index", "UsersProfile");
+                    return RedirectToAction("SelectUserType", "Profile");
 
                 }
                 else
@@ -163,7 +161,7 @@ namespace BidMyCar.Controllers
         //login
         public ActionResult Login()
         {
-           
+
 
             var clientId = "288450486046-07ts86j3aobfbr611dc973rq9vu586jq.apps.googleusercontent.com";
             var url = "http://localhost:60694/Authentication/LoginCallback";
@@ -192,7 +190,7 @@ namespace BidMyCar.Controllers
 
                     Session["UserID"] = user.UserID.ToString();
                     Session["Email"] = user.Email.ToString();
-                    return RedirectToAction("Index", "UsersProfile");
+                    return RedirectToAction("Dashboard", "Profile");
 
                 }
                 else
@@ -296,12 +294,18 @@ namespace BidMyCar.Controllers
                 message.AlternateViews.Add(plainTextView);
                 message.AlternateViews.Add(htmlView);
 
-                smtp.Send(message);
+                try
+                {
+                    smtp.Send(message);
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
 
 
         }
-
         public ActionResult ResetPassword(string id)
         {
             //Verify the reset password link
@@ -328,6 +332,33 @@ namespace BidMyCar.Controllers
             }
         }
 
+        /*public ActionResult ResetPassword(string id)
+        {
+            //Verify the reset password link
+            //Find account associated with this link
+            //redirect to reset password page
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                return HttpNotFound();
+            }
+
+            using (db)
+            {
+                var user = db.UsersInfo.Where(a => a.resetCode == id).FirstOrDefault();
+                if (user != null)
+                {
+                    resetPassword model = new resetPassword();
+                    model.resetCode = id;
+                    return View(model);
+                }
+                else
+                {
+                    return HttpNotFound();
+                }
+            }
+        }
+                */
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ResetPassword(resetPassword reset)
@@ -336,7 +367,7 @@ namespace BidMyCar.Controllers
             {
                 using (db)
                 {
-                    var user = db.UsersInfo.FirstOrDefault(a => a.resetCode == reset.resetCode);
+                    var user = db.UsersInfo.FirstOrDefault((System.Linq.Expressions.Expression<Func<UsersInfo, bool>>)(a => a.resetCode == reset.resetCode));
                     if (user != null)
                     {
                         user.Password = Encryption.Hash(reset.NewPassword);
