@@ -1,28 +1,4 @@
-﻿@*<!DOCTYPE html>
-
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>@ViewBag.Title</title>
-    </head>
-    <body>
-        <div>
-
-            @RenderBody()
-        </div>
-    </body>
-    </html>*@
-@*<!DOCTYPE html>
-    <html class="no-js" lang="zxx">
-
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <title>Bid My Car</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon-64x64.png" />*@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -34,12 +10,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/content/images/logo/favicon-64x64.png")" />
     <!-- other head content -->
     <!-- ========================= CSS here ========================= -->
-    @*<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
-        <link rel="stylesheet" href="assets/css/animate.css" />
-        <link rel="stylesheet" href="assets/css/tiny-slider.css" />
-        <link rel="stylesheet" href="assets/css/glightbox.min.css" />
-        <link rel="stylesheet" href="assets/css/main.css" />*@
+
     @Styles.Render("~/Content/css/bootstrap.min.css")
     @Styles.Render("~/Content/css/LineIcons.2.0.css")
     @Styles.Render("~/Content/css/animate.css")
@@ -48,7 +19,12 @@
     @Styles.Render("~/Content/css/main.css")
 
 
-
+    @*<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+        <link rel="stylesheet" href="assets/css/animate.css" />
+        <link rel="stylesheet" href="assets/css/tiny-slider.css" />
+        <link rel="stylesheet" href="assets/css/glightbox.min.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />*@
 </head>
 <body class="theme--default">
     <!-- Preloader -->
@@ -146,6 +122,12 @@
     </div>
     @RenderBody()
     <!-- End Theme Alert -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @{
+        Layout = null;
+    }
     <!-- ========================= toggle theme ========================= -->
     <a onclick="themeToggle()" class="scroll-top btn-hover">
         <i class="lni lni-sun"></i>
@@ -165,6 +147,9 @@
     @Scripts.Render("~/Content/js/tiny-slider.js")
     @Scripts.Render("~/Content/js/glightbox.min.js")
     @Scripts.Render("~/Content/js/main.js")
+
+
+
     <script type="text/javascript">
         //========= Category Slider
         tns({

@@ -108,33 +108,37 @@
                             <!-- Start Single List -->
                             <div class="single-item-list">
                                 <div class="row align-items-center">
-                                    <div class="col-lg-5 col-md-5 col-12">
-                                        <div class="item-image">
-                                            <img src="./assets/images/cars/911.jpg" alt="#">
-                                            <div class="content">
-                                                <h3 class="title"><a href="javascript:void(0)">2023 Porsche 911 Turbo S</a></h3>
-                                                <span class="price">Ksh. 50,000,000</span>
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="col-lg-5 col-md-5 col-12">
+                                            <div class="item-image">
+                                                <img src="./assets/images/cars/911.jpg" alt="#">
+                                                <div class="content">
+                                                    <h3 class="title"><a href="javascript:void(0)">@item.YOM @item.Make @item.Model</a></h3>
+                                                    <span class="price">Ksh. @item.Price</span>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <p>@item.Make</p>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <p>@item.Condition</p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-12 align-right">
+                                            <ul class="action-btn">
+                                                <li><a href="javascript:void(0)"><i class="lni lni-pencil"></i></a></li>
+                                                <li><a href="javascript:void(0)"><i class="lni lni-eye"></i></a></li>
+                                                <li><a href="javascript:void(0)"><i class="lni lni-trash"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    }
                                     </div>
-                                    <div class="col-lg-2 col-md-2 col-12">
-                                        <p>Porsche</p>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-12">
-                                        <p>Brand New</p>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-12 align-right">
-                                        <ul class="action-btn">
-                                            <li><a href="javascript:void(0)"><i class="lni lni-pencil"></i></a></li>
-                                            <li><a href="javascript:void(0)"><i class="lni lni-eye"></i></a></li>
-                                            <li><a href="javascript:void(0)"><i class="lni lni-trash"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
+                                    
                             <!-- End Single List -->
                             <!-- Start Single List -->
-                            <div class="single-item-list">
+                            <!--<div class="single-item-list">
                                 <div class="row align-items-center">
                                     <div class="col-lg-5 col-md-5 col-12">
                                         <div class="item-image">
@@ -159,10 +163,10 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                             <!-- End Single List -->
                             <!-- Start Single List -->
-                            <div class="single-item-list">
+                            <!--<div class="single-item-list">
                                 <div class="row align-items-center">
                                     <div class="col-lg-5 col-md-5 col-12">
                                         <div class="item-image">
@@ -187,10 +191,10 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                             <!-- End Single List -->
                             <!-- Start Single List -->
-                            <div class="single-item-list">
+                            <!--<div class="single-item-list">
                                 <div class="row align-items-center">
                                     <div class="col-lg-5 col-md-5 col-12">
                                         <div class="item-image">
@@ -215,7 +219,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                             <!-- End Single List -->
                             <!-- Pagination -->
                             <div class="pagination left">
