@@ -1,0 +1,8 @@
+﻿@{
+    Layout = null;
+}
+
+@if (Session["Name"] != null)
+{
+    <p>Welcome, @Session["Name"].ToString()!</p>
+}

@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Registration | BidMyCar";
+}
+
+@model BidMyCar.Models.UsersInfo
+
+@Html.Raw(ViewBag.InsertMessage)
+<!-- start Registration section -->
+<section class="login registration section pt-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
+                <div class="form-head">
+                    <h4 class="title">Join BidMyCar.</h4>
+                    @using (Html.BeginForm("Register", "Authentication", FormMethod.Post))
+                    {
+
+
+
+
+                        <div class="socila-login">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" class="facebook">
+                                        <i class="lni lni-facebook-original"></i>Continue with
+                                        Facebook
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@ViewBag.Response" class="google"><i class="lni lni-google"></i>Continue with Google</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="apple"><i class="lni lni-apple"></i>Continue with Apple</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="alt-option">
+                            <span>Or</span>
+                        </div>
+
+                        //error message
+                        // Display any error messages
+                        if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                        {
+                            <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                        }
+
+                        //Display any success messages
+                        if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                        {
+                            <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+                        }
+
+
+                       
+                        <div class="form-floating mb-3">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter your name" })
+                            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                            <label>Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Enter your name" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            <label>Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter your name" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            <label>Password</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Enter your name" })
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                            <label>Confirm Password</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            @Html.HiddenFor(a => a.GoogleId)
+                        </div>
+
+
+                        <div class="check-and-pass">
+                            <div class="row align-items-center">
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input width-auto"
+                                               id="exampleCheck1">
+                                        <label class="form-check-label">
+                                            Agree to our <a href="javascript:void(0)">
+                                                Terms and
+                                                Conditions
+                                            </a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <button type="submit" class="btn">Register</button>
+                        </div>
+                        <p class="outer-link">
+                            Already have an account? <a href="/Authentication/Login"> Login Now</a>
+                        </p>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@Scripts.Render("~/bundles/jqueryval")
+<!-- End Registration section -->

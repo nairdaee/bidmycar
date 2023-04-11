@@ -1,0 +1,190 @@
+﻿<section class="item-details section pt-120">
+    <div class="container">
+        <div class="top-area">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="product-images">
+                        <main id="gallery">
+                            <div class="main-img">
+                                <img src="~/Content/images/cars/dbx1.jpg" id="current" alt="#">
+                            </div>
+                            <div class="images">
+                                <img src="~/Content/images/cars/dbx2.jpg" class="img" alt="#">
+                                <img src="~/Content/images/cars/dbx3.jpg" class="img" alt="#">
+                                <img src="~/Content/images/cars/dbx4.jpg" class="img" alt="#">
+                                <img src="~/Content/images/cars/dbx5.jpg" class="img" alt="#">
+                                <img src="~/Content/images/cars/dbx6.jpg" class="img" alt="#">
+                            </div>
+                        </main>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="product-info">
+                        <h2 class="title">@Model.YOM @Model.Make @Model.Model </h2>
+                        <p class="location"><i class="lni lni-map-marker"></i><a href="javascript:void(0)">@Model.CarLocation</a></p>
+                        <h3 class="price position-relative">
+                            @Model.Price
+                            <span class="position-absolute top-0 start-100 translate-right badge bg-warning text-dark">
+                                Fixed
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </h3>
+                        <br>
+
+                        <div class="list-info">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li><span>Condition:</span>@Model.Condition</li>
+                                <li><span>Miles:</span> @Model.Miles</li>
+                                <li><span>Color:</span>@Model.Color</li>
+                                <li><span>Transmission:</span>@Model.Transmission</li>
+                                <li><span>Engine Size:</span>@Model.EngineSize</li>
+                                <li><span>Power Output:</span>@Model.PowerOutput</li>
+                                <li><span>Model Year:</span> @Model.YOM</li>
+                            </ul>
+                        </div>
+                        <div class="contact-info">
+                            <ul>
+                                <li>
+                                    <a href="tel:+254794677590" class="call">
+                                        <i class="lni lni-phone"></i>
+                                        +254 7********
+                                        <span>Call for an immediate response</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:example@gmail.com" class="mail">
+                                        <i class="lni lni-whatsapp"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="social-share">
+                            <h4>Share Ad</h4>
+                            <ul>
+                                <li><a href="javascript:void(0)" class="facebook"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)" class="twitter"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)" class="google"><i class="lni lni-google"></i></a></li>
+                                <li><a href="javascript:void(0)" class="linkedin"><i class="lni lni-linkedin-original"></i></a></li>
+                                <li><a href="javascript:void(0)" class="pinterest"><i class="lni lni-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item-details-blocks">
+            <div class="row">
+                <div class="col-lg-8 col-md-7 col-12">
+                    <!-- Start Single Block -->
+                    <div class="single-block description">
+                        <h3>Description</h3>
+                        <p>
+                            @Model.CarDescription
+                        </p>
+
+                    </div>
+                    <!-- End Single Block -->
+                    <!-- Start Single Block -->
+                    <div class="single-block tags">
+                        <h3>Features</h3> <!-- Remember to change 'tags' to 'features'-->
+                        
+                        <ul>
+                            @*@foreach (var Feature in Model.Features)
+        {
+            <li><a href="javascript:void(0)">@Feature</a></li>
+        }*@
+                            @foreach (var feature in Model.Features.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                            {
+                                <li><a href="javascript:void(0)">@feature</a></li>
+                            }
+                        </ul>
+
+
+
+                    </div>
+                    <!-- End Single Block -->
+
+                </div>
+                <div class="col-lg-4 col-md-5 col-12">
+                    <div class="item-details-sidebar">
+                        <!-- Start Single Block -->
+                        <div class="single-block author">
+                            <h3>Dealer</h3>
+                            <div class="content">
+                                <img src="~/Content/images/dealers/mascardi.webp" alt="#">
+                                <h4>Mascardi Cars</h4>                                
+                                <a href="javascript:void(0)" class="see-all">See All Active Ads</a>
+                            </div>
+                        </div>
+                        <!-- End Single Block -->
+                        <!-- Start Single Block -->
+                        <div class="single-block contant-seller comment-form ">
+                            <h3>Contact Dealer via Email</h3>
+                            <form action="#" method="POST">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" name="name" class="form-control"
+                                                   placeholder="Your Name" />
+                                            <label>Your name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="email" name="email"
+                                                   class="form-control" placeholder="Your Email" />
+                                            <label>Your email</label>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-box form-group">
+                                            <textarea name="#" class="form-control form-control-custom"
+                                                      placeholder="Your Message">Hi, I am interested in purchasing this @Model.YOM @Model.Make @Model.Model</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="button">
+                                            <button type="submit" class="btn">Send Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- End Single Block -->
+                        <!-- Start Single Block -->
+                        <div class="single-block ">
+                            <h3>Location</h3>
+                            <div class="mapouter">
+                                <div class="gmap_canvas" id="gmap_canvas">
+                                </div>
+
+                                <style>
+                                    .mapouter {
+                                        position: relative;
+                                        text-align: right;
+                                        height: 300px;
+                                        width: 100%;
+                                    }
+                                </style>
+                                <style>
+                                    .gmap_canvas {
+                                        overflow: hidden;
+                                        background: none !important;
+                                        height: 300px;
+                                        width: 100%;
+                                    }
+                                </style>
+
+                            </div>
+                        </div>
+                        <!-- End Single Block -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- End Item Details -->

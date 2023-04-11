@@ -38,8 +38,7 @@ namespace BidMyCar.Models
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Confirm password and password do not match")]
         public string ConfirmPassword { get; set; }
+        public string resetCode { get; set; }
+        public string GoogleId { get; set; }
     }
-
-
 }
-

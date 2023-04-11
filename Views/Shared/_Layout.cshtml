@@ -90,10 +90,12 @@
                             <div class="login-button">
                                 <ul>
                                     <li>
-                                        @Html.ActionLink("login", "Login", "Home", null, new { @class = "nav-link active" })
+                                        <i class="lni lni-enter"></i>
+                                        @Html.ActionLink("Login", "Login", "Authentication", null, new { @class = "nav-link active" })
                                     </li>
                                     <li>
-                                        @Html.ActionLink("register", "Register", "Home", null, new { @class = "nav-link active" })
+                                        <i class="lni lni-user"></i>
+                                        @Html.ActionLink("Register", "Register", "Authentication", null, new { @class = "nav-link active" })
                                     </li>
                                 </ul>
                             </div>

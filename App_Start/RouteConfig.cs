@@ -16,7 +16,12 @@ namespace BidMyCar
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "ItemDetails",
+                url: "CarDetails/ItemDetails/{id}",
+                defaults: new { controller = "CarDetails", action = "ItemDetails", id = UrlParameter.Optional }
             );
         }
     }
