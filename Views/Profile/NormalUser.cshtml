@@ -2,6 +2,10 @@
     Layout = "~/Views/Shared/Dash_Layout.cshtml";
 }
 
+@model BidMyCar.Models.Profile
+
+@Html.Raw(ViewBag.InsertMessage)
+
 <!-- Start Breadcrumbs -->
 <div class="breadcrumbs mt-80">
     <div class="container">
@@ -78,51 +82,61 @@
                             <div class="image">
                                 <img src="https://via.placeholder.com/300x300" alt="#">
                             </div>
-                            <form class="profile-setting-form">
+
+                            <!--Buyer form-->
+
+                            @using (Html.BeginForm("NormalUser", "Profile", FormMethod.Post, new { @class = "profile-setting-form" }))
+                            {
                                 <div class="row">
                                     <div class="col-lg-6 col-12">
                                         <div class="form-group">
                                             <label>Your Name*</label>
-                                            <input type="text" name="name" id="txtName" required="required" value="Adrian Etenyi" "     />
+                                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", type = "text", required = "required" })
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <div class="form-group">
                                             <label>Username*</label>
-                                            <input type="text" name="name" id="txtUsername" required="required" value="nairdaee" />
+                                            @Html.TextBoxFor(m => m.Username, new { @class = "form-control", type = "text", required = "required" })
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <div class="form-group">
                                             <label>Email Address*</label>
-                                            <input type="email" name="email" id="txtEmail" required="required" value="etadriano2@gmail.com" />
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "text", required = "required" })
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <div class="form-group">
                                             <label>Phone Number</label>
-                                            <input type="tel" name="email" required="required" />
+                                            @Html.TextBoxFor(m => m.Phone_no, new { @class = "form-control", required = "required" })
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group upload-image">
                                             <label>Profile Image*</label>
-                                            <input type="file" name="photo" accept="image/*" id="txtLogo">
+                                            <input accept="image/*" class="form-control upload-image" name="Profile_Image" type="file" />
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group message">
                                             <label>About You*</label>
-                                            <textarea name="description" cols="40" rows="10" id="txtDescription"></textarea>
+                                            @Html.TextAreaFor(m => m.Bio, new { @class = "form-control", cols = "40", rows = "10" })
                                         </div>
                                     </div>
+
+                                    @Html.Hidden("UserType", "buyer")
+
                                     <div class="col-12">
                                         <div class="form-group button mb-0">
                                             <button type="submit" class="btn ">Create Profile</button>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            }
+
+                            <!--End of form-->
+
                         </div>
                     </div>
                     <!-- End Profile Settings Area -->

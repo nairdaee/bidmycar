@@ -54,23 +54,19 @@
 
                        
                         <div class="form-floating mb-3">
-                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter your name" })
-                            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter your name", required = "required" })
                             <label>Name</label>
                         </div>
                         <div class="form-floating mb-3">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Enter your name" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Enter your name", required = "required" })
                             <label>Email</label>
                         </div>
                         <div class="form-floating mb-3">
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter your name" })
-                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter your name", required = "required" })
                             <label>Password</label>
                         </div>
                         <div class="form-floating mb-3">
-                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Enter your name" })
-                            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Enter your name", required = "required" })
                             <label>Confirm Password</label>
                         </div>
 

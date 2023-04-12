@@ -187,6 +187,24 @@
     <Compile Include="Models\CarDetailsDbContext.cs" />
     <Compile Include="Models\forgotPassword.cs" />
     <Compile Include="Models\GoogleInfo.cs" />
+    <Compile Include="Models\Profile.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Profile.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profile.cs">
+      <DependentUpon>Profile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profile.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Profile.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profile1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Profile.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\resetPassword.cs" />
     <Compile Include="Models\UsersInfo.Context.cs">
       <AutoGen>True</AutoGen>
@@ -300,6 +318,16 @@
       <DependentUpon>CarDetails.edmx</DependentUpon>
       <LastGenOutput>CarDetails.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Profile.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Profile.edmx</DependentUpon>
+      <LastGenOutput>Profile.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Profile.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Profile.edmx</DependentUpon>
+      <LastGenOutput>Profile1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\UsersInfo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UsersInfo.Context.cs</LastGenOutput>
@@ -331,6 +359,13 @@
     </EntityDeploy>
     <Content Include="Models\CarDetails.edmx.diagram">
       <DependentUpon>CarDetails.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Profile.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Profile.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Profile.edmx.diagram">
+      <DependentUpon>Profile.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -371,6 +406,7 @@
     <Content Include="Views\Authentication\Login.cshtml" />
     <Content Include="Views\Authentication\Register.cshtml" />
     <Content Include="Views\Authentication\ResetPassword.cshtml" />
+    <Content Include="Views\Profile\Dealership.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
