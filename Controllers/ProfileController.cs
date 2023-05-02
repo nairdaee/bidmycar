@@ -176,15 +176,24 @@ namespace BidMyCar.Controllers
         {
             if (ModelState.IsValid)
             {
+                // get the user id from the session
+                var userId = Session["userId"] != null ? (int)Session["userId"] : 0;
+
+                //get the usertype
                 var userType = Request.Form["UserType"];
 
                 if (userType != null)
                 {
                     // Save the new user to the database
                     user.User_type = userType;
+                    user.Prof_ID = userId;
+                    user.userId = userId;
                     db.Profile.Add(user);
                     db.SaveChanges();
 
+                    //redirect to the dashboard
+
+                    return RedirectToAction("Dashboard", "Profile");
 
                 }
 
