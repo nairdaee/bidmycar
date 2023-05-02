@@ -85,12 +85,12 @@
                                         <a href="/Profile/Dashboard"><i class="lni lni-dashboard"></i> Dashboard</a>
                                     </li>
                                     <li>
-                                        <a href="/"><i class="lni lni-exit"></i> Logout</a>
+                                        <a href="#" onclick="logout()"><i class="lni lni-exit"></i> Logout</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="button header-button">
-                                <a href="post-item.html" class="btn">Post an Ad</a>
+                                <a href="/Profile/PostItem" class="btn">Post an Ad</a>
                             </div>
 
                         </nav> <!-- navbar -->
@@ -170,6 +170,25 @@
                 body.classList.add("theme--default");
             }
         }</script>
+    <!--Logout functionality-->
+    <script>
+        function logout() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        // Redirect to the login page
+                        window.location.href = "/Authentication/Login";
+                    } else {
+                        // Handle error
+                        console.error(xhr.statusText);
+                    }
+                }
+            };
+            xhr.open("POST", "/Authentication/Logout");
+            xhr.send();
+        }
+    </script>
     <script>
         let body = document.body;
 

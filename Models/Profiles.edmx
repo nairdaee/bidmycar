@@ -10,22 +10,23 @@
             <PropertyRef Name="Prof_ID" />
           </Key>
           <Property Name="Prof_ID" Type="int" Nullable="false" />
-          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
           <Property Name="Phone_no" Type="int" />
-          <Property Name="Bio" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Bio" Type="varchar" MaxLength="1000" />
           <Property Name="Location" Type="varchar" MaxLength="50" />
           <Property Name="Instagram" Type="varchar" MaxLength="1000" />
           <Property Name="Twitter" Type="varchar" MaxLength="1000" />
           <Property Name="Youtube" Type="varchar" MaxLength="1000" />
           <Property Name="WebsiteUrl" Type="varchar" MaxLength="1000" />
-          <Property Name="User_type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_type" Type="varchar" MaxLength="50" />
+          <Property Name="userId" Type="int" />
         </EntityType>
         <EntityContainer Name="BidMyCarModel2StoreContainer">
           <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BidMyCarModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -34,17 +35,18 @@
             <PropertyRef Name="Prof_ID" />
           </Key>
           <Property Name="Prof_ID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Phone_no" Type="Int32" />
-          <Property Name="Bio" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Bio" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Instagram" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="Twitter" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="Youtube" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="WebsiteUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="User_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userId" Type="Int32" />
         </EntityType>
         <EntityContainer Name="BidMyCarEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Profiles" EntityType="Self.Profile" />
@@ -58,6 +60,7 @@
           <EntitySetMapping Name="Profiles">
             <EntityTypeMapping TypeName="BidMyCarModel2.Profile">
               <MappingFragment StoreEntitySet="Profile">
+                <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="Prof_ID" ColumnName="Prof_ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Username" ColumnName="Username" />

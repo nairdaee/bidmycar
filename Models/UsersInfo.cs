@@ -28,13 +28,9 @@ namespace BidMyCar.Models
         public string Email { get; set; }
 
         [DisplayName("Password")]
-        [Required(ErrorMessage = "Password is required!")]
-        [DataType(DataType.Password)]
-        [MinLength(6, ErrorMessage = "Minimum 6 characters required")]
         public string Password { get; set; }
 
         [DisplayName("ConfirmPassword")]
-        [Required(ErrorMessage = "Confirm is required!")]
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Confirm password and password do not match")]
         public string ConfirmPassword { get; set; }

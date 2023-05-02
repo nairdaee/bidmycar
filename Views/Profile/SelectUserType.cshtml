@@ -21,7 +21,7 @@
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4  col-6">
                                         <!-- Start Single Category -->
-                                        <a href="/Profile/NormalUser" class="single-cat wow fadeInUp"
+                                        <a href="#" onclick="selectUserType('buyer')" class="single-cat wow fadeInUp"
                                            data-wow-delay=".4s">
                                             <div class="icon">
                                                 <img src="~/Content/images/categories/car_buyer.svg" alt="#">
@@ -33,7 +33,7 @@
                                     </div>
                                     <div class="col-lg-4 col-md-4  col-6">
                                         <!-- Start Single Category -->
-                                        <a href="/Profile/IndividualSeller" class="single-cat wow fadeInUp"
+                                        <a href="#" onclick="selectUserType('seller')"  class="single-cat wow fadeInUp"
                                            data-wow-delay=".6s">
                                             <div class="icon">
                                                 <img src="~/Content/images/categories/independent_car_seller.svg" alt="#">
@@ -45,7 +45,7 @@
                                     </div>
                                     <div class="col-lg-4 col-md-4  col-12">
                                         <!-- Start Single Category -->
-                                        <a href="/Profile/Dealership" class="single-cat wow fadeInUp"
+                                        <a href="#" onclick="selectUserType('dealership')"  class="single-cat wow fadeInUp"
                                            data-wow-delay="1s">
                                             <div class="icon">
                                                 <img src="~/Content/images/categories/car_dealership.svg" alt="#">
@@ -66,3 +66,26 @@
         </div>
     </div>
 </section>
+<!--Function for selecting user type-->
+<script>
+    function selectUserType(userType) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/Profile/SelectUserType', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                if (userType === 'buyer') {
+                    window.location.href = '/Profile/NormalUser';
+                } else if (userType === 'seller') {
+                    window.location.href = '/Profile/IndividualSeller';
+                } else if (userType === 'dealership') {
+                    window.location.href = '/Profile/Dealership';
+                }
+            }
+            else if (xhr.readyState === 4 && xhr.status !== 200) {
+                alert('Error selecting user type.');
+            }
+        };
+        xhr.send('userType=' + encodeURIComponent(userType));
+    }
+</script>

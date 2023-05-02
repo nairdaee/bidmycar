@@ -36,6 +36,8 @@
                         </h3>
                     </div>
                     <div class="dashboard-menu">
+
+
                         <ul>
                             <li><a href="/Profile/Dashboard"><i class="lni lni-dashboard"></i> Dashboard</a></li>
                             <li>
@@ -59,7 +61,11 @@
                             </li>
                         </ul>
                         <div class="button">
-                            <a class="btn" href="javascript:void(0)">Logout</a>
+                            @using (Html.BeginForm("Logout", "Authentication", FormMethod.Post, new { id = "logout-form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn ">Logout</button>
+                            }
                         </div>
                     </div>
                 </div>
