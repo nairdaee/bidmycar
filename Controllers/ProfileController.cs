@@ -31,41 +31,39 @@ namespace BidMyCar.Controllers
         }
 
 
-        //dashboard
         public ActionResult Dashboard(Profile user)
         {
-            //get the session
+            // Get the user's ID from the session
+            var userId = Session["userId"]?.ToString();
 
-            Session["Prof_ID"] = user.Prof_ID.ToString();
-
-            //send the userId to a variable
-            var id = Session["Prof_ID"]?.ToString();
-
-            if (string.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(userId))
             {
                 return RedirectToAction("Login", "Authentication");
             }
 
-            if (!int.TryParse(id, out int userId))
+            // Convert the user ID to an integer
+            if (!int.TryParse(userId, out int id))
             {
                 return RedirectToAction("Login", "Authentication");
             }
 
-            // get the user type from the database based on user id
+            // Get the user's type from the database based on the ID
             var userType = db.Profile
-                .Where(u => u.Prof_ID == userId)
+                .Where(u => u.Prof_ID == id)
                 .Select(u => u.User_type)
                 .FirstOrDefault();
 
+            // Pass the user type to the view using ViewBag
             ViewBag.UserType = userType;
 
-            // get the user's details from the database based on user id
+            // Get the user's details from the database based on the ID
             var person = db.Profile
-                .Where(u => u.Prof_ID == userId)
+                .Where(u => u.Prof_ID == id)
                 .FirstOrDefault();
 
             return View(person);
         }
+
         public ActionResult NormalUser()
         {
 

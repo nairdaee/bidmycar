@@ -39,26 +39,40 @@
 
 
                         <ul>
-                            <li><a href="/Profile/Dashboard"><i class="lni lni-dashboard"></i> Dashboard</a></li>
-                            <li>
-                                <a class="active" href="/Profile/ProfileSettings"><i class="lni lni-pencil-alt"></i> Edit Profile</a>
-                            </li>
-                            <li>
-                                <a href="/Profile/MyItems">
-                                    <i class="lni lni-bolt-alt"></i> My Cars
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Profile/PostItem">
-                                    <i class="lni lni-circle-plus"></i> Post An
-                                    Ad
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Profile/BookmarkedItems">
-                                    <i class="lni lni-bookmark"></i> Favorite Cars
-                                </a>
-                            </li>
+
+                            <!--Seller and dealership views-->
+                            @if (ViewBag.UserType == "seller" || ViewBag.UserType == "dealership")
+                            {
+                                <li><a href="/Profile/Dashboard"><i class="lni lni-dashboard"></i> Dashboard</a></li>
+                                <li>
+                                    <a class="active" href="/Profile/ProfileSettings"><i class="lni lni-pencil-alt"></i> Edit Profile</a>
+                                </li>
+                                <li>
+                                    <a href="/Profile/MyItems">
+                                        <i class="lni lni-bolt-alt"></i> My Cars
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Profile/PostItem">
+                                        <i class="lni lni-circle-plus"></i> Post An
+                                        Ad
+                                    </a>
+                                </li>
+                            }
+                            <!--Buyer's view'-->
+                            @if (ViewBag.UserType == "buyer")
+                            {
+                                <li><a href="/Profile/Dashboard"><i class="lni lni-dashboard"></i> Dashboard</a></li>
+                                <li>
+                                    <a class="active" href="/Profile/ProfileSettings"><i class="lni lni-pencil-alt"></i> Edit Profile</a>
+                                </li>
+                                <li>
+                                    <a href="/Profile/BookmarkedItems">
+                                        <i class="lni lni-bookmark"></i> Favorite Cars
+                                    </a>
+                                </li>
+                            }
+
                         </ul>
                         <div class="button">
                             @using (Html.BeginForm("Logout", "Authentication", FormMethod.Post, new { id = "logout-form" }))
@@ -71,53 +85,60 @@
                 </div>
                 <!-- Start Dashboard Sidebar -->
             </div>
+
             <div class="col-lg-9 col-md-8 col-12">
                 <div class="main-content">
                     <!-- Start Details Lists -->
-                    <div class="details-lists">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <!-- Start Single List -->
-                                <div class="single-list">
-                                    <div class="list-icon">
-                                        <i class="lni lni-checkmark-circle"></i>
+                    @if (ViewBag.UserType == "seller" || ViewBag.UserType == "dealership")
+                    {
+                        <div class="details-lists">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <!-- Start Single List -->
+                                    <div class="single-list">
+                                        <div class="list-icon">
+                                            <i class="lni lni-checkmark-circle"></i>
+                                        </div>
+                                        <h3>
+                                            340
+                                            <span>Total Cars Posted</span>
+                                        </h3>
                                     </div>
-                                    <h3>
-                                        340
-                                        <span>Total Cars Posted</span>
-                                    </h3>
+                                    <!-- End Single List -->
                                 </div>
-                                <!-- End Single List -->
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <!-- Start Single List -->
-                                <div class="single-list two">
-                                    <div class="list-icon">
-                                        <i class="lni lni-bolt"></i>
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <!-- Start Single List -->
+                                    <div class="single-list two">
+                                        <div class="list-icon">
+                                            <i class="lni lni-bolt"></i>
+                                        </div>
+                                        <h3>
+                                            23
+                                            <span>Featured Cars </span>
+                                        </h3>
                                     </div>
-                                    <h3>
-                                        23
-                                        <span>Featured Cars </span>
-                                    </h3>
+                                    <!-- End Single List -->
                                 </div>
-                                <!-- End Single List -->
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <!-- Start Single List -->
-                                <div class="single-list three">
-                                    <div class="list-icon">
-                                        <i class="lni lni-emoji-sad"></i>
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <!-- Start Single List -->
+                                    <div class="single-list three">
+                                        <div class="list-icon">
+                                            <i class="lni lni-emoji-sad"></i>
+                                        </div>
+                                        <h3>
+                                            45
+                                            <span>Expired Listings </span>
+                                        </h3>
                                     </div>
-                                    <h3>
-                                        45
-                                        <span>Expired Listings </span>
-                                    </h3>
+                                    <!-- End Single List -->
                                 </div>
-                                <!-- End Single List -->
                             </div>
                         </div>
-                    </div>
+                    }
                     <!-- End Details Lists -->
+
+
+
                     <div class="row">
                         <div class="col-lg-6 col-md-12 col-12">
                             <!-- Start Activity Log -->
@@ -170,43 +191,47 @@
                         </div>
                         <div class="col-lg-6 col-md-12 col-12">
                             <!-- Start Recent Items -->
-                            <div class="recent-items dashboard-block">
-                                <h3 class="block-title">Recently viewed cars</h3>
-                                <ul>
-                                    <li>
-                                        <div class="image">
-                                            <a href="javascript:void(0)"><img src="~/Content/images/cars/dbx1.jpg" alt="#"></a>
-                                        </div>
-                                        <a href="javascript:void(0)" class="title">2023 BWM X5M Competition</a>
-                                        <span class="time">12 Minutes Ago</span>
-                                        <span class="remove"><a href="javascript:void(0)"><i class="lni lni-close"></i></a></span>
-                                    </li>
-                                    <li>
-                                        <div class="image">
-                                            <a href="javascript:void(0)"><img src="~/Content/images/cars/flyingspur.jpg" alt="#"></a>
-                                        </div>
-                                        <a href="javascript:void(0)" class="title">2023 Bentley Flying Spur W12</a>
-                                        <span class="time">2 Hours Ago</span>
-                                        <span class="remove"><a href="javascript:void(0)"><i class="lni lni-close"></i></a></span>
-                                    </li>
-                                    <li>
-                                        <div class="image">
-                                            <a href="javascript:void(0)"><img src="~/Content/images/cars/panamera.jpeg" alt="#"></a>
-                                        </div>
-                                        <a href="javascript:void(0)" class="title">2022 Porsche Panamera 4S Sport Turismo</a>
-                                        <span class="time">1 week Ago</span>
-                                        <span class="remove"><a href="javascript:void(0)"><i class="lni lni-close"></i></a></span>
-                                    </li>
-                                    <li>
-                                        <div class="image">
-                                            <a href="javascript:void(0)"><img src="~/Content/images//cars/Macan1.jpg" alt="#"></a>
-                                        </div>
-                                        <a href="javascript:void(0)" class="title">2023 Porsche Macan Turbo S</a>
-                                        <span class="time">3 week Ago</span>
-                                        <span class="remove"><a href="javascript:void(0)"><i class="lni lni-close"></i></a></span>
-                                    </li>
-                                </ul>
-                            </div>
+
+                            @if (ViewBag.UserType == "buyer")
+                            {
+                                <div class="recent-items dashboard-block">
+                                    <h3 class="block-title">Recently viewed cars</h3>
+                                    <ul>
+                                        <li>
+                                            <div class="image">
+                                                <a href="javascript:void(0)"><img src="~/Content/images/cars/dbx1.jpg" alt="#"></a>
+                                            </div>
+                                            <a href="javascript:void(0)" class="title">2023 BWM X5M Competition</a>
+                                            <span class="time">12 Minutes Ago</span>
+                                            <span class="remove"><a href="javascript:void(0)"><i class="lni lni-close"></i></a></span>
+                                        </li>
+                                        <li>
+                                            <div class="image">
+                                                <a href="javascript:void(0)"><img src="~/Content/images/cars/flyingspur.jpg" alt="#"></a>
+                                            </div>
+                                            <a href="javascript:void(0)" class="title">2023 Bentley Flying Spur W12</a>
+                                            <span class="time">2 Hours Ago</span>
+                                            <span class="remove"><a href="javascript:void(0)"><i class="lni lni-close"></i></a></span>
+                                        </li>
+                                        <li>
+                                            <div class="image">
+                                                <a href="javascript:void(0)"><img src="~/Content/images/cars/panamera.jpeg" alt="#"></a>
+                                            </div>
+                                            <a href="javascript:void(0)" class="title">2022 Porsche Panamera 4S Sport Turismo</a>
+                                            <span class="time">1 week Ago</span>
+                                            <span class="remove"><a href="javascript:void(0)"><i class="lni lni-close"></i></a></span>
+                                        </li>
+                                        <li>
+                                            <div class="image">
+                                                <a href="javascript:void(0)"><img src="~/Content/images//cars/Macan1.jpg" alt="#"></a>
+                                            </div>
+                                            <a href="javascript:void(0)" class="title">2023 Porsche Macan Turbo S</a>
+                                            <span class="time">3 week Ago</span>
+                                            <span class="remove"><a href="javascript:void(0)"><i class="lni lni-close"></i></a></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            }
                             <!-- End Recent Items -->
                         </div>
                     </div>
