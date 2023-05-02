@@ -187,23 +187,26 @@
     <Compile Include="Models\CarDetailsDbContext.cs" />
     <Compile Include="Models\forgotPassword.cs" />
     <Compile Include="Models\GoogleInfo.cs" />
-    <Compile Include="Models\Profile.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Profile.Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Profile.cs">
-      <DependentUpon>Profile.tt</DependentUpon>
+      <DependentUpon>Profiles.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Profile.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Profile.edmx</DependentUpon>
+      <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Profile1.cs">
+    <Compile Include="Models\Profiles.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Profile.tt</DependentUpon>
+      <DependentUpon>Profiles.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profiles.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Profiles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profiles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Profiles.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\resetPassword.cs" />
     <Compile Include="Models\UsersInfo.Context.cs">
@@ -318,15 +321,15 @@
       <DependentUpon>CarDetails.edmx</DependentUpon>
       <LastGenOutput>CarDetails.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Profile.Context.tt">
+    <Content Include="Models\Profiles.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Profile.edmx</DependentUpon>
-      <LastGenOutput>Profile.Context.cs</LastGenOutput>
+      <DependentUpon>Profiles.edmx</DependentUpon>
+      <LastGenOutput>Profiles.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Profile.tt">
+    <Content Include="Models\Profiles.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Profile.edmx</DependentUpon>
-      <LastGenOutput>Profile1.cs</LastGenOutput>
+      <DependentUpon>Profiles.edmx</DependentUpon>
+      <LastGenOutput>Profiles.cs</LastGenOutput>
     </Content>
     <Content Include="Models\UsersInfo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -360,12 +363,12 @@
     <Content Include="Models\CarDetails.edmx.diagram">
       <DependentUpon>CarDetails.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\Profile.edmx">
+    <EntityDeploy Include="Models\Profiles.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Profile.Designer.cs</LastGenOutput>
+      <LastGenOutput>Profiles.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Profile.edmx.diagram">
-      <DependentUpon>Profile.edmx</DependentUpon>
+    <Content Include="Models\Profiles.edmx.diagram">
+      <DependentUpon>Profiles.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -407,6 +410,7 @@
     <Content Include="Views\Authentication\Register.cshtml" />
     <Content Include="Views\Authentication\ResetPassword.cshtml" />
     <Content Include="Views\Profile\Dealership.cshtml" />
+    <Content Include="Views\Profile\IndividualSeller.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -67,6 +67,7 @@
                         </div>
                         <div class="form-floating mb-3">
                             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Enter your name", required = "required" })
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
                             <label>Confirm Password</label>
                         </div>
 

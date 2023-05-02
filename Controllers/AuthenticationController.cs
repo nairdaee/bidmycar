@@ -69,6 +69,9 @@ namespace BidMyCar.Controllers
                         Session["UserId"] = newUser.UserID;
                         Session["Email"] = newUser.Email;
                         Session["Name"] = newUser.Name;
+
+                        //redirect to user profile
+                        return RedirectToAction("SelectUserType", "Profile", new { userId = Session["UserId"] });
                     }
 
                     catch (DbEntityValidationException ex)
@@ -86,6 +89,8 @@ namespace BidMyCar.Controllers
                         // Throw a new DbEntityValidationException with the improved exception message.
                         throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
                     }
+
+
 
                 }
                 else
@@ -138,15 +143,13 @@ namespace BidMyCar.Controllers
                     db.UsersInfo.Add(user);
                     db.SaveChanges();
 
-                    // Success message
-                    ViewBag.InsertMessage = "<script> alert('User Registered Successfully!')</script>";
 
                     //store data into session
                     Session["UserID"] = user.UserID.ToString();
                     Session["Name"] = user.Name.ToString();
 
                     //redirect to user profile
-                    return RedirectToAction("SelectUserType", "Profile");
+                    return RedirectToAction("SelectUserType", "Profile", new { userId = Session["UserID"] });
 
                 }
                 else

@@ -26,5 +26,6 @@ namespace BidMyCar.Models
         public string Youtube { get; set; }
         public string WebsiteUrl { get; set; }
         public string User_type { get; set; }
+        public Nullable<int> userId { get; set; }
     }
 }
