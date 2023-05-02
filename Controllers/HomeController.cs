@@ -66,7 +66,6 @@ namespace BidMyCar.Controllers
         //}
         public ActionResult Index()
         {
-           
             List<CarDetail> cars = new List<CarDetail>();
 
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["BidMyCarEntities1"].ConnectionString.Replace("metadata=res://*/", "")))
@@ -99,6 +98,9 @@ namespace BidMyCar.Controllers
                             car.Transmission = reader.GetString(15);
                             car.EngineSize = reader.GetString(16);
                             car.PowerOutput = reader.GetString(17);
+                            car.Status = reader.GetString(18);
+                            car.Rating = reader.GetString(19);
+                            car.Currency = reader.GetString(20);
 
                             // Add the car to the list
                             cars.Add(car);

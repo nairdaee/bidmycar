@@ -1,7 +1,12 @@
-﻿@{
+﻿@Html.ValidationSummary(true)
+
+@{
     Layout = "~/Views/Shared/Dash_Layout.cshtml";
 }
 
+@model BidMyCar.Models.Profile
+
+@Html.Raw(ViewBag.InsertMessage)
 
 
 <!-- Start Breadcrumbs -->
@@ -80,76 +85,85 @@
                             <div class="image">
                                 <img src="https://via.placeholder.com/300x300" alt="#">
                             </div>
-                            <form class="profile-setting-form" method="post" ">
+                            <div class="profile-setting-form">
+                                @using (Html.BeginForm("IndividualSeller", "Profile", FormMethod.Post, new { @class = "profile-setting-form" }))
+                                {
+                                    <div class="row">
 
-                                <div class="row">
-                                    <div class="col-lg-6 col-12">
-                                        <div class="form-group">
-                                            <label>Your Full Name*</label>
-                                            <input type="text" name="name" id="txtName" required="required">
+
+                                        <div class="col-lg-6 col-12">
+                                            <div class="form-group">
+                                                <label>Official Dealership Name*</label>
+                                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", type = "text", required = "required" })
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <div class="form-group">
+                                                <label>Location*</label>
+                                                @Html.TextBoxFor(m => m.Location, new { @class = "form-control", type = "text", required = "required" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <div class="form-group">
+                                                <label>Username*</label>
+                                                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", type = "text", required = "required" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <div class="form-group">
+                                                <label>Email Address*</label>
+                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "text", required = "required" })
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group upload-image">
+                                                <label>Dealership Logo*</label>
+                                                <input type="file" name="image" id="txtLogo" required="required" />
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group message">
+                                                <label>About Dealership*</label>
+                                                @Html.TextAreaFor(m => m.Bio, new { @class = "form-control", cols = "40", rows = "10" })
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group message">
+                                                <label>Website url*</label>
+                                                @Html.TextBoxFor(m => m.WebsiteUrl, new { @class = "form-control", type = "url", required = "required" })
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group message">
+                                                <label>Instagram</label>
+                                                @Html.TextBoxFor(m => m.Instagram, new { @class = "form-control", type = "url" })
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group message">
+                                                <label>Twitter</label>
+                                                @Html.TextBoxFor(m => m.Twitter, new { @class = "form-control", type = "url" })
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group message">
+                                                <label>Youtube</label>
+                                                @Html.TextBoxFor(m => m.Youtube, new { @class = "form-control", type = "url" })
+                                            </div>
+                                        </div>
+
+                                        @Html.Hidden("UserType", "dealership")
+
+                                        <div class="col-12">
+                                            <div class="form-group button mb-0">
+                                                <button type="submit" class="btn ">Create Profile</button>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-12">
-                                        <div class="form-group">
-                                            <label>Location*</label>
-                                            <input type="text" name="location" id="txtLocation" required="required" />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-12">
-                                        <div class="form-group">
-                                            <label>Username*</label>
-                                            <input type="text" name="username" id="txtUsername" required="required" />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-12">
-                                        <div class="form-group">
-                                            <label>Email Address*</label>
-                                            <input type="email" name="email" id="txtEmail" required="required" />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-12">
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="tel" name="email" required="required" />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-12">
-                                        <div class="form-group upload-image">
-                                            <label>Profile Photo</label>
-                                            <input type="file" name="image" id="txtLogo" required="required" />
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group message">
-                                            <label>Your Bio</label>
-                                            <textarea name="desc" id="txtDescription" required="required" rows="10"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group message">
-                                            <label>Instagram</label>
-                                            <input type="url" name="ig_url" maxlength="200" id="txtInstagramUrl">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group message">
-                                            <label>Twitter</label>
-                                            <input type="url" name="tw_url" maxlength="200" id="txtTwitterUrl">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group message">
-                                            <label>Youtube</label>
-                                            <input type="url" name="yt_url" maxlength="200" id="txtYoutubeUrl">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group button mb-0">
-                                            <button type="submit" class="btn ">Create Profile</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                                }
+
+                            </div>
                         </div>
                     </div>
                     <!-- End Profile Settings Area -->

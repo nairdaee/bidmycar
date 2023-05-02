@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using Google.Apis.Auth.OAuth2;
 using Newtonsoft.Json;
 using System.Data.Entity;
+using System.Web.Security;
 
 namespace BidMyCar.Controllers
 {
@@ -68,6 +69,8 @@ namespace BidMyCar.Controllers
                         Session["UserId"] = newUser.UserID;
                         Session["Email"] = newUser.Email;
                         Session["Name"] = newUser.Name;
+
+                        return RedirectToAction("SelectUserType", "Profile");
                     }
 
                     catch (DbEntityValidationException ex)
@@ -91,9 +94,9 @@ namespace BidMyCar.Controllers
                 {
                     // Store the user information in the session
                     Session["UserId"] = existingUser.UserID;
-                    Session["Email"] = existingUser.Email;
-                    Session["Name"] = existingUser.Name;
-
+                    int userId = (int)Session["UserId"];
+                    var userData = db.UsersInfo.FirstOrDefault(u => u.UserID == userId);
+                    ViewBag.UserData = userData;
                 }
 
             }
@@ -175,39 +178,56 @@ namespace BidMyCar.Controllers
         //login
         //POST LOGIN
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult Login(UsersInfo user)
         {
-
-            //check if the email is valid
-            var credentials = db.UsersInfo.Where(m => m.Email == user.Email).FirstOrDefault();
+            // check if the email is valid
+            var credentials = db.UsersInfo.SingleOrDefault(m => m.Email == user.Email);
             if (credentials != null)
             {
-
+                // check if the password is valid
                 if (string.Compare(Encryption.Hash(user.Password), credentials.Password) == 0)
                 {
+                    // create authentication ticket
+                    var authTicket = new FormsAuthenticationTicket(
+                        1, // version
+                        user.Email, // user name
+                        DateTime.Now, // issue time
+                        DateTime.Now.AddMinutes(30), // expiration time
+                        true, // persistent
+                        credentials.UserID.ToString() // user data (store user ID)
+                    );
 
+                    // encrypt ticket and create cookie
+                    var encryptedTicket = FormsAuthentication.Encrypt(authTicket);
+                    var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket)
+                    {
+                        HttpOnly = true,
+                        Secure = FormsAuthentication.RequireSSL,
+                        Domain = FormsAuthentication.CookieDomain,
+                        Path = FormsAuthentication.FormsCookiePath,
+                        Expires = authTicket.Expiration,
+                    };
 
-                    Session["UserID"] = user.UserID.ToString();
-                    Session["Email"] = user.Email.ToString();
+                    // add cookie to response
+                    Response.Cookies.Add(authCookie);
+
                     return RedirectToAction("Dashboard", "Profile");
-
                 }
                 else
                 {
-                    // Error message
                     ViewBag.ErrorMessage = "Invalid credentials!";
                 }
             }
             else
             {
-                // Error message
                 ViewBag.ErrorMessage = "Email address not found!";
-
             }
 
             return View();
         }
+
 
 
 
@@ -389,6 +409,14 @@ namespace BidMyCar.Controllers
             }
 
             return View();
+        }
+
+        //logout
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            Session.Abandon();
+            return RedirectToAction("Login", "Authentication");
         }
 
     }

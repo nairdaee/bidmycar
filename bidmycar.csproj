@@ -187,6 +187,24 @@
     <Compile Include="Models\CarDetailsDbContext.cs" />
     <Compile Include="Models\forgotPassword.cs" />
     <Compile Include="Models\GoogleInfo.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profile.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Profile.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profile.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\resetPassword.cs" />
     <Compile Include="Models\UsersInfo.Context.cs">
       <AutoGen>True</AutoGen>
@@ -205,6 +223,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VehicleImage.cs">
+      <DependentUpon>VehicleImages.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VehicleImages.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VehicleImages.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VehicleImages.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VehicleImages.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VehicleImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VehicleImages.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -238,6 +274,27 @@
     <Content Include="Content\images\carlogos\porsche.svg" />
     <Content Include="Content\images\carlogos\subaru.svg" />
     <Content Include="Content\images\carlogos\toyota.svg" />
+    <Content Include="Content\images\cars\2013 AUDI A3_1.jpg" />
+    <Content Include="Content\images\cars\2013 AUDI A3_2.jpg" />
+    <Content Include="Content\images\cars\2013 AUDI A3_3.jpg" />
+    <Content Include="Content\images\cars\2013 AUDI A3_4.jpg" />
+    <Content Include="Content\images\cars\2013 AUDI A3_5.jpg" />
+    <Content Include="Content\images\cars\2013 BMW 5 SERIES_1.jpg" />
+    <Content Include="Content\images\cars\2013 BMW 5 SERIES_2.jpg" />
+    <Content Include="Content\images\cars\2013 BMW 5 SERIES_3.jpg" />
+    <Content Include="Content\images\cars\2013 BMW 5 SERIES_4.jpg" />
+    <Content Include="Content\images\cars\2013 BMW 5 SERIES_5.jpg" />
+    <Content Include="Content\images\cars\2013 MITSUBISHI GALANT FORTIS_1.jpg" />
+    <Content Include="Content\images\cars\2013 MITSUBISHI GALANT FORTIS_2.jpg" />
+    <Content Include="Content\images\cars\2013 MITSUBISHI GALANT FORTIS_3.jpg" />
+    <Content Include="Content\images\cars\2013 MITSUBISHI GALANT FORTIS_4.jpg" />
+    <Content Include="Content\images\cars\2013 MITSUBISHI GALANT FORTIS_5.jpg" />
+    <Content Include="Content\images\cars\2013 PORSCHE CAYENNE_1.jpg" />
+    <Content Include="Content\images\cars\2013 PORSCHE CAYENNE_2.jpg" />
+    <Content Include="Content\images\cars\2013 PORSCHE CAYENNE_3.jpg" />
+    <Content Include="Content\images\cars\2013 PORSCHE CAYENNE_4.jpg" />
+    <Content Include="Content\images\cars\2013 PORSCHE CAYENNE_5.jpg" />
+    <Content Include="Content\images\cars\911.jpg" />
     <Content Include="Content\images\cars\Bentley.jpg" />
     <Content Include="Content\images\cars\dbx1.jpg" />
     <Content Include="Content\images\cars\dbx2.jpg" />
@@ -300,6 +357,16 @@
       <DependentUpon>CarDetails.edmx</DependentUpon>
       <LastGenOutput>CarDetails.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Profile.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Profile.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\UsersInfo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UsersInfo.Context.cs</LastGenOutput>
@@ -309,6 +376,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UsersInfo.edmx</DependentUpon>
       <LastGenOutput>UsersInfo1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\VehicleImages.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VehicleImages.edmx</DependentUpon>
+      <LastGenOutput>VehicleImages.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\VehicleImages.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VehicleImages.edmx</DependentUpon>
+      <LastGenOutput>VehicleImages.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -331,6 +408,20 @@
     </EntityDeploy>
     <Content Include="Models\CarDetails.edmx.diagram">
       <DependentUpon>CarDetails.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Profile.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Profile.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Profile.edmx.diagram">
+      <DependentUpon>Profile.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\VehicleImages.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VehicleImages.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\VehicleImages.edmx.diagram">
+      <DependentUpon>VehicleImages.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -371,6 +462,8 @@
     <Content Include="Views\Authentication\Login.cshtml" />
     <Content Include="Views\Authentication\Register.cshtml" />
     <Content Include="Views\Authentication\ResetPassword.cshtml" />
+    <Content Include="Views\Profile\IndividualSeller.cshtml" />
+    <Content Include="Views\Profile\Dealership.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -5,27 +5,75 @@
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="product-images">
                         <main id="gallery">
-                            <div class="main-img">
-                                <img src="~/Content/images/cars/dbx1.jpg" id="current" alt="#">
-                            </div>
-                            <div class="images">
-                                <img src="~/Content/images/cars/dbx2.jpg" class="img" alt="#">
-                                <img src="~/Content/images/cars/dbx3.jpg" class="img" alt="#">
-                                <img src="~/Content/images/cars/dbx4.jpg" class="img" alt="#">
-                                <img src="~/Content/images/cars/dbx5.jpg" class="img" alt="#">
-                                <img src="~/Content/images/cars/dbx6.jpg" class="img" alt="#">
-                            </div>
+                            @if (!string.IsNullOrEmpty(Model.Item2.Iframe))
+                            {
+                                <div class="ratio ratio-16x9">
+                                    <iframe title="BidMyCar 360 Interactive View"
+                                            src=@Model.Item2.Iframe
+                                            style="border:0px #ffffff none;"
+                                            name="myiFrame"
+                                            scrolling="no"
+                                            frameborder="1"
+                                            marginheight="0px"
+                                            marginwidth="0px"
+                                            height="500px"
+                                            width="600px"
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                            }
+                            else if (!string.IsNullOrEmpty(Model.Item2.Youtube))
+                            {
+                                <div class="ratio ratio-16x9">
+                                    <iframe width="605"
+                                            height="315"
+                                            src=@Model.Item2.Youtube
+                                            title="YouTube video player"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                            }
+                            else if (!string.IsNullOrEmpty(Model.Item2.Vimeo))
+                            {
+                                <div class="ratio ratio-16x9">
+                                    <iframe src=@Model.Item2.Vimeo
+                                            width="{video_width}"
+                                            height="{video_height}"
+                                            frameborder="0"
+                                            title="{video_title}"
+                                            webkitallowfullscreen
+                                            mozallowfullscreen
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="main-img">
+                                    <img src="~/Content/images/cars/dbx1.jpg" id="current" alt="#">
+                                </div>
+                                <div class="images">
+                                    <img src="@Model.Item2.Image1" class="img" alt="#">
+                                    <img src="~/Content/images/cars/dbx3.jpg" class="img" alt="#">
+                                    <img src="~/Content/images/cars/dbx4.jpg" class="img" alt="#">
+                                    <img src="~/Content/images/cars/dbx5.jpg" class="img" alt="#">
+                                    <img src="~/Content/images/cars/dbx6.jpg" class="img" alt="#">
+                                </div>
+                            }
                         </main>
+
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="product-info">
-                        <h2 class="title">@Model.YOM @Model.Make @Model.Model </h2>
-                        <p class="location"><i class="lni lni-map-marker"></i><a href="javascript:void(0)">@Model.CarLocation</a></p>
+                        <h2 class="title">@Model.Item1.YOM @Model.Item1.Make @Model.Item1.Model </h2>
+                        <p class="location"><i class="lni lni-map-marker"></i><a href="javascript:void(0)">@Model.Item1.CarLocation</a></p>
                         <h3 class="price position-relative">
-                            @Model.Price
+                            @Model.Item1.Price
                             <span class="position-absolute top-0 start-100 translate-right badge bg-warning text-dark">
-                                Fixed
+                                @Model.Item1.Status
                                 <span class="visually-hidden">unread messages</span>
                             </span>
                         </h3>
@@ -34,13 +82,13 @@
                         <div class="list-info">
                             <h4>Specifications</h4>
                             <ul>
-                                <li><span>Condition:</span>@Model.Condition</li>
-                                <li><span>Miles:</span> @Model.Miles</li>
-                                <li><span>Color:</span>@Model.Color</li>
-                                <li><span>Transmission:</span>@Model.Transmission</li>
-                                <li><span>Engine Size:</span>@Model.EngineSize</li>
-                                <li><span>Power Output:</span>@Model.PowerOutput</li>
-                                <li><span>Model Year:</span> @Model.YOM</li>
+                                <li><span>Condition:</span>@Model.Item1.Condition</li>
+                                <li><span>Miles:</span> @Model.Item1.Miles</li>
+                                <li><span>Color:</span>@Model.Item1.Color</li>
+                                <li><span>Transmission:</span>@Model.Item1.Transmission</li>
+                                <li><span>Engine Size:</span>@Model.Item1.EngineSize</li>
+                                <li><span>Power Output:</span>@Model.Item1.PowerOutput</li>
+                                <li><span>Model Year:</span> @Model.Item1.YOM</li>
                             </ul>
                         </div>
                         <div class="contact-info">
@@ -80,7 +128,7 @@
                     <div class="single-block description">
                         <h3>Description</h3>
                         <p>
-                            @Model.CarDescription
+                            @Model.Item1.CarDescription
                         </p>
 
                     </div>
@@ -94,7 +142,7 @@
         {
             <li><a href="javascript:void(0)">@Feature</a></li>
         }*@
-                            @foreach (var feature in Model.Features.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                            @foreach (var feature in Model.Item1.Features.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                             {
                                 <li><a href="javascript:void(0)">@feature</a></li>
                             }
@@ -141,7 +189,7 @@
                                     <div class="col-12">
                                         <div class="form-box form-group">
                                             <textarea name="#" class="form-control form-control-custom"
-                                                      placeholder="Your Message">Hi, I am interested in purchasing this @Model.YOM @Model.Make @Model.Model</textarea>
+                                                      placeholder="Your Message">Hi, I am interested in purchasing this @Model.Item1.YOM @Model.Item1.Make @Model.Item1.Model</textarea>
                                         </div>
                                     </div>
                                     <div class="col-12">
