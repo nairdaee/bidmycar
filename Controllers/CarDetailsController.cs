@@ -20,18 +20,20 @@ namespace BidMyCar.Controllers
         //{
         //    return View();
         //}
-     
+
         public ActionResult SearchItems(CarDetail searchModel)
         {
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["BidMyCarEntities1"].ConnectionString.Replace("metadata=res://*/", "")))
             {
                 connection.Open();
-                string query = "SELECT * FROM CarDetails WHERE (@Make IS NULL OR Make LIKE @Make) AND (@YOM IS NULL OR YOM = @YOM) AND (@BodyType IS NULL OR BodyType = @BodyType)";
+                string query = "SELECT * FROM CarDetails WHERE (@Make IS NULL OR Make LIKE @Make) AND (@YOM IS NULL OR YOM = @YOM) AND (@BodyType IS NULL OR BodyType = @BodyType) AND (@Category IS NULL OR Category = @Category) AND (@Condition IS NULL OR Condition = @Condition)";
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Model", string.IsNullOrEmpty(searchModel.Model) ? (object)DBNull.Value : searchModel.Model);
                     command.Parameters.AddWithValue("@Make", string.IsNullOrEmpty(searchModel.Make) ? DBNull.Value : (object)(searchModel.Make + '%'));
                     command.Parameters.AddWithValue("@BodyType", string.IsNullOrEmpty(searchModel.BodyType) ? (object)DBNull.Value : searchModel.BodyType);
+                    command.Parameters.AddWithValue("@Category", string.IsNullOrEmpty(searchModel.Category) ? (object)DBNull.Value : searchModel.Category);
+                    command.Parameters.AddWithValue("@Condition", string.IsNullOrEmpty(searchModel.Condition) ? (object)DBNull.Value : searchModel.Condition);
                     command.Parameters.AddWithValue("@YOM", searchModel.YOM == 0 ? (object)DBNull.Value : searchModel.YOM);
                     using (var reader = command.ExecuteReader())
                     {
@@ -56,7 +58,10 @@ namespace BidMyCar.Controllers
                                 Transmission = record.GetString(15),
                                 EngineSize = record.GetString(16),
                                 PowerOutput = record.GetString(17),
-                            })
+                                Status = reader.GetString(18),
+                                Rating = reader.GetString(19),
+                                Currency = reader.GetString(20)
+                    })
                             .ToList();
 
                         return View(carViewModels);
@@ -68,50 +73,24 @@ namespace BidMyCar.Controllers
 
 
 
-        //public ActionResult SearchItems(CarDetail searchModel)
-        //{
-        //    using (var db = new CarDetailsDbContext())
-        //    {
-        //        //    var cars = db.CarDetails.AsQueryable();
 
-        //        //if (searchModel.YOM == 0)
-        //        //{
-        //        //    cars = cars.Where(c => c.YOM == searchModel.YOM);
-        //        //}
-
-        //        //if (!string.IsNullOrEmpty(searchModel.Make))
-        //        //{
-        //        //    cars = cars.Where(c => c.Make.Contains(searchModel.Make));
-        //        //}
-
-        //        //if (!string.IsNullOrEmpty(searchModel.Model))
-        //        //{
-        //        //    cars = cars.Where(c => c.Model.Contains(searchModel.Model));
-        //        //}
-
-        //        //if (!string.IsNullOrEmpty(searchModel.BodyType))
-        //        //{
-        //        //    cars = cars.Where(c => c.BodyType.Contains(searchModel.BodyType));
-        //        //}
-
-        //        //return View("SearchItems", cars.ToList());
-        //        var cars = db.CarDetails.Where(c =>
-        //        ( c.YOM == searchModel.YOM) ||
-        //        ( c.Make.Contains(searchModel.Make)) ||
-        //        ( c.Model.Contains(searchModel.Model)) ||
-        //        (c.BodyType.Contains(searchModel.BodyType))
-        //    ).ToList();
-
-        //        return View("SearchItems", cars);
-        //    }
-        //}
 
         public ActionResult ItemDetails(int id)
         {
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["BidMyCarEntities1"].ConnectionString.Replace("metadata=res://*/", "")))
             {
                 connection.Open();
-                string query = "SELECT * FROM CarDetails WHERE CarID=@CarID";
+                //CarID, cd.YOM, cd.Make, cd.Model, cd.BodyType, cd.Condition, cd.Category, " +
+                //   "cd.Features, cd.CarDescription, cd.CarLocation, cd.UploadDate, cd.Price, cd.UserID, " +
+                //   "cd.Color, cd.Miles, cd.Transmission, cd.EngineSize, cd.PowerOutput,
+                //ImageID, vi.CarID, vi.Image1, vi.Image2, vi.Image3, vi.Image4, vi.Image5
+                string query = "SELECT cd.*, " +
+                "vi.* " +
+                "FROM CarDetails cd " +
+                "JOIN VehicleImages vi ON cd.CarID = vi.CarID " +
+                "WHERE cd.CarID = @CarID";
+
+
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@CarID", id);
@@ -138,17 +117,123 @@ namespace BidMyCar.Controllers
                             car.Transmission = reader.GetString(15);
                             car.EngineSize = reader.GetString(16);
                             car.PowerOutput = reader.GetString(17);
+                            car.Status = reader.GetString(18);
+                            car.Rating = reader.GetString(19);
+                            car.Currency = reader.GetString(20);
 
+
+                            // Load vehicle images into a list
+                            VehicleImage vehicle = new VehicleImage();
+                            vehicle.ImageID = reader.GetInt32(21);
+                            vehicle.CarID = reader.GetInt32(22);
+                            vehicle.Image1 = reader.GetString(23);
+                            vehicle.Image2 = reader.GetString(24);
+                            vehicle.Image3 = reader.GetString(25);
+                            vehicle.Image4 = reader.GetString(26);
+                            vehicle.Image5 = reader.GetString(27);
+                            if (!reader.IsDBNull(28))
+                            {
+                                vehicle.Iframe = reader.GetString(28);
+
+                            }
+                           
+                            if (!reader.IsDBNull(29))
+                            {
+                                vehicle.Youtube = reader.GetString(29);
+                            }
+
+                            if (!reader.IsDBNull(30))
+                            { 
+                                vehicle.Vimeo = reader.GetString(30);
+                            }
+
+
+                            var data = Tuple.Create(car, vehicle);
                             // Pass the car details to the view
-                            return View(car);
+                            return View("ItemDetails", data);
                         }
                     }
                 }
+
+
+                // If no matching car was found, return an error view
+                return View("Error");
             }
 
-            // If no matching car was found, return an error view
-            return View("Error");
+            //}
+            //    public IActionResult Index()
+            //    {
+            //        var carDetails = new List<CarDetailModel>();
+            //        var vehicleImages = new List<VehicleImageModel>();
+
+            //        using (var connection = new SqlConnection(_connectionString))
+            //        {
+            //            connection.Open();
+
+            //            // Retrieve all fields from CarDetails table
+            //            using (var command = new SqlCommand("SELECT * FROM CarDetails", connection))
+            //            {
+            //                using (var reader = command.ExecuteReader())
+            //                {
+            //                    while (reader.Read())
+            //                    {
+            //                        var carDetail = new CarDetailModel()
+            //                        {
+            //                            CarID = (int)reader["CarID"],
+            //                            YOM = (int)reader["YOM"],
+            //                            Make = (string)reader["Make"],
+            //                            Model = (string)reader["Model"],
+            //                            BodyType = (string)reader["BodyType"],
+            //                            Condition = (string)reader["Condition"],
+            //                            Category = (string)reader["Category"],
+            //                            Features = (string)reader["Features"],
+            //                            CarDescription = (string)reader["CarDescription"],
+            //                            CarLocation = (string)reader["CarLocation"],
+            //                            UploadDate = (DateTime)reader["UploadDate"],
+            //                            Price = (int)reader["Price"],
+            //                            UserID = (int)reader["UserID"],
+            //                            Color = (string)reader["Color"],
+            //                            Miles = (int)reader["Miles"],
+            //                            Transmission = (string)reader["Transmission"],
+            //                            EngineSize = (string)reader["EngineSize"],
+            //                            PowerOutput = (string)reader["PowerOutput"]
+            //                        };
+            //                        carDetails.Add(carDetail);
+            //                    }
+            //                }
+            //            }
+
+            //            // Retrieve all fields from VehicleImages table
+            //            using (var command = new SqlCommand("SELECT * FROM VehicleImages", connection))
+            //            {
+            //                using (var reader = command.ExecuteReader())
+            //                {
+            //                    while (reader.Read())
+            //                    {
+            //                        var vehicleImage = new VehicleImage()
+            //                        {
+            //                            ImageID = (int)reader["ImageID"],
+            //                            CarID = (int)reader["CarID"],
+            //                            Image1 = (string)reader["Image1"],
+            //                            Image2 = (string)reader["Image2"],
+            //                            Image3 = (string)reader["Image3"],
+            //                            Image4 = (string)reader["Image4"],
+            //                            Image5 = (string)reader["Image5"]
+            //                        };
+            //                        vehicleImages.Add(vehicleImage);
+            //                    }
+            //                }
+            //            }
+
+            //            connection.Close();
+            //        }
+
+            //        ViewBag.CarDetails = carDetails;
+            //        ViewBag.VehicleImages = vehicleImages;
+
+            //        return View();
+             }
         }
 
-    }
-    }
+}
+

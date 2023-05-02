@@ -32,5 +32,12 @@ namespace BidMyCar.Models
         public string Transmission { get; set; }
         public string EngineSize { get; set; }
         public string PowerOutput { get; set; }
+        public List<string> VehicleImages { get; set; }
+        public string Status { get; set; }
+        public string Rating { get; set; }
+
+        public string Currency { get; set; }
+
+
     }
 }

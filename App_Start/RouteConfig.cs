@@ -23,6 +23,11 @@ namespace BidMyCar
                 url: "CarDetails/ItemDetails/{id}",
                 defaults: new { controller = "CarDetails", action = "ItemDetails", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+               name: "PostItem",
+               url: "Profile/PostItem/{id}",
+               defaults: new { controller = "Profile", action = "PostItem", id = UrlParameter.Optional }
+           );
         }
     }
 }
