@@ -11,14 +11,12 @@ namespace BidMyCar.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    
+
     public partial class Profile
     {
         public int Prof_ID { get; set; }
-        [Required]
+        public string Name { get; set; }
         public string Username { get; set; }
-        [Required]
         public string Email { get; set; }
         public Nullable<int> Phone_no { get; set; }
         public string Bio { get; set; }
@@ -27,10 +25,7 @@ namespace BidMyCar.Models
         public string Twitter { get; set; }
         public string Youtube { get; set; }
         public string WebsiteUrl { get; set; }
-        [Required]
         public string User_type { get; set; }
-        [Required]
-        public string Name { get; set;}
-        public int UserID { get; set; }
+        public Nullable<int> userId { get; set; }
     }
 }
